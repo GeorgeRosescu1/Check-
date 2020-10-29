@@ -6,22 +6,21 @@
 //
 
 import UIKit
-import MaterialComponents.MaterialTextFields
+import MaterialComponents.MDCOutlinedTextField
 
 
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var logoImageView: UIImageView!
-    
-    
-    var emailMaterialTextField = MDCOutlinedTextField(frame: CGRect(x: 33, y: 263, width: 349, height: 34))
-    var passwordMaterialTextField = MDCOutlinedTextField(frame: CGRect(x: 33, y: 354, width: 349, height: 34))
+    @IBOutlet weak var emailTextField: MDCOutlinedTextField!
+    @IBOutlet weak var passwordTextField: MDCOutlinedTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
+        configureKeyboardToolbar()
         
     }
     
@@ -42,41 +41,41 @@ class SignUpViewController: UIViewController {
         
         logoImageView.layer.cornerRadius = 8
         
-        emailMaterialTextField.label.text = "Email address"
-        emailMaterialTextField.setFloatingLabelColor(.white, for: .editing)
-        emailMaterialTextField.setFloatingLabelColor(.white, for: .normal)
-        emailMaterialTextField.setNormalLabelColor(.gray, for: .normal)
-        emailMaterialTextField.placeholder = "example@mail.com"
-        emailMaterialTextField.leadingAssistiveLabel.text = "Your email address. You will log in with it."
-        emailMaterialTextField.setLeadingAssistiveLabelColor(.white, for: .editing)
-        emailMaterialTextField.setLeadingAssistiveLabelColor(.white, for: .normal)
-        emailMaterialTextField.leadingAssistiveLabel.isHidden = true
-        emailMaterialTextField.setOutlineColor(.gray, for: .normal)
-        emailMaterialTextField.setOutlineColor(.white, for: .editing)
-        emailMaterialTextField.setTextColor(.white, for: .normal)
-        emailMaterialTextField.setTextColor(.white, for: .editing)
-        emailMaterialTextField.sizeToFit()
-        self.view.addSubview(emailMaterialTextField)
-        //make custom view with xib to use this in other screens as well
+        self.view.addSubview(emailTextField.configureAuthenticationTextField(labelText: Constants.emailLabel, placeholderText: Constants.emailPlaceholder, leadingAssistiveLabel: Constants.emailLeadingAssistiveLabel))
         
-        passwordMaterialTextField.label.text = "Password"
-        passwordMaterialTextField.setFloatingLabelColor(.white, for: .editing)
-        passwordMaterialTextField.setFloatingLabelColor(.white, for: .normal)
-        passwordMaterialTextField.setNormalLabelColor(.gray, for: .normal)
-        passwordMaterialTextField.leadingAssistiveLabel.text = "Min 6 characters, 1 digit and capital letter."
-        passwordMaterialTextField.leadingAssistiveLabel.isHidden = true
-        passwordMaterialTextField.setLeadingAssistiveLabelColor(.white, for: .editing)
-        passwordMaterialTextField.setLeadingAssistiveLabelColor(.white, for: .normal)
-        passwordMaterialTextField.setTextColor(.white, for: .normal)
-        passwordMaterialTextField.setTextColor(.white, for: .editing)
-        passwordMaterialTextField.setOutlineColor(.gray, for: .normal)
-        passwordMaterialTextField.setOutlineColor(.white, for: .editing)
-        passwordMaterialTextField.sizeToFit()
-        self.view.addSubview(passwordMaterialTextField)
+        self.view.addSubview(passwordTextField.configureAuthenticationTextField(labelText: Constants.passwordLabel, placeholderText: Constants.passwordPlaceholder, leadingAssistiveLabel: Constants.passwordLeadingAssistiveLabel))
+    }
+    
+    private func configureKeyboardToolbar() {
+        let toolbar = UIToolbar()
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(toolbarDoneAction(_:)))
+        
+        doneButton.tintColor = #colorLiteral(red: 0.05882352941, green: 0.1882352941, blue: 0.3411764706, alpha: 1)
+        toolbar.items = [doneButton]
+        toolbar.sizeToFit()
+        toolbar.isTranslucent = true
+        emailTextField.inputAccessoryView = toolbar
+        passwordTextField.inputAccessoryView = toolbar
+    }
+    
+    
+    @objc func toolbarDoneAction(_ sender: UITextField) {
+        [emailTextField, passwordTextField].forEach { $0?.resignFirstResponder() }
     }
     
 }
 
 extension SignUpViewController: UITextFieldDelegate {
     
+}
+
+private struct Constants {
+    
+    static let emailLabel = "Email address"
+    static let emailPlaceholder = "example@mail.com"
+    static let emailLeadingAssistiveLabel = "You will use your email address to log in."
+    
+    static let passwordLabel = "Password"
+    static let passwordPlaceholder: String? = nil
+    static let passwordLeadingAssistiveLabel = "Min six characters, one digit and one upper letter."
 }
