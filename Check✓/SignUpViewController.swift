@@ -16,6 +16,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: MDCOutlinedTextField!
     @IBOutlet weak var passwordTextField: MDCOutlinedTextField!
     
+    var textFieldsAreCompleted = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +27,12 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
-        print("Sign up")
+        if !textFieldsAreCompleted {
+            // if both -> alert, if one -> message on that one
+            MesssagesHandler.displaySmallErrorWithBody("Text fields are mandatory")
+        } else {
+            print("Ready to sign up")
+        }
     }
     
     @IBAction func backToLogin(_ sender: UIButton) {
@@ -36,7 +43,6 @@ class SignUpViewController: UIViewController {
         signUpButton.layer.cornerRadius = 8
         signUpButton.layer.shadowOpacity = 0.2
         signUpButton.layer.shadowRadius = 16
-        signUpButton.isEnabled = false
         signUpButton.alpha = 0.8
         
         logoImageView.layer.cornerRadius = 8
