@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: MDCOutlinedTextField!
     @IBOutlet weak var passwordTextField: MDCOutlinedTextField!
     
-    var textFieldsAreCompleted = false
+    
     let emailToolbar = UIToolbar()
     let passwordToolbar = UIToolbar()
     let nextButton = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(toolbarNextAction(_:)))
@@ -23,8 +23,26 @@ class SignUpViewController: UIViewController {
     
     var isToolbarShowButtonVisible = true
     
+    var isPasswordValid = true
+    var isEmailValid = true
+    var textFieldsAreCompleted = false
+    var emailText: String? {
+        didSet {
+            validateEmail()
+        }
+    }
+    
+    var passwordText: String? {
+        didSet {
+            validatePassword()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let signUpVC = self.view.addInputVisibilityController()
+        signUpVC.toBeVisibleView = signUpButton
+        signUpVC.extraSpaceAboveKeyboard = 10
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -35,10 +53,16 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
-        if !textFieldsAreCompleted {
+        guard textFieldsAreCompleted else {
             AlertMessages.displaySmallErrorWithBody("Text fields are mandatory")
-        } else {
             
+            return
+        }
+        
+        guard isEmailValid && isPasswordValid else {
+            AlertMessages.displaySmallErrorWithBody("Please fill the registration with valid data")
+            
+            return
         }
     }
     
@@ -95,6 +119,66 @@ class SignUpViewController: UIViewController {
         passwordTextField.becomeFirstResponder()
     }
     
+    private func validateEmail() {
+        //regex
+        guard let emailText = emailText else {
+            
+            return
+        }
+        
+        if emailText.isEmpty {
+            emailTextField.leadingAssistiveLabel.text = "Email address is mandatory."
+            emailTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
+            
+            return
+        } else if !emailText.contains("@") {
+            emailTextField.leadingAssistiveLabel.text = "Please enter a valid email address."
+            emailTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
+            
+            return
+        }
+        
+        isEmailValid = true
+    }
+    
+    private func validatePassword() {
+        guard let passwordText = passwordText else {
+            
+            return
+        }
+        
+        if passwordText.count < 6 {
+            passwordTextField.leadingAssistiveLabel.text = "Password should be at least 6 chars long."
+            passwordTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
+        } else {
+            var validation1 = false
+            var validation2 = false
+            for char in passwordText {
+                if char.isUppercase{
+                    validation1 = true
+                }
+                if char >= "0" && char <= "9" {
+                    validation2 = true
+                }
+            }
+            
+            if !validation1 {
+                passwordTextField.leadingAssistiveLabel.text = "Password should contain upper case."
+                passwordTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
+                
+                return
+            }
+            
+            if !validation2 {
+                passwordTextField.leadingAssistiveLabel.text = "Password should contain digit."
+                passwordTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
+                
+                return
+            }
+        }
+        isEmailValid = true
+    }
+    
 }
 
 extension SignUpViewController: UITextFieldDelegate {
@@ -109,7 +193,32 @@ extension SignUpViewController: UITextFieldDelegate {
             return true
         }
         
+        textFieldsAreCompleted = !emailTextField.text!.isEmpty && !passwordTextField.text!.isEmpty
         return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            emailTextField.leadingAssistiveLabel.text = Constants.emailLeadingAssistiveLabel
+        case passwordTextField:
+            passwordTextField.leadingAssistiveLabel.text = Constants.passwordLeadingAssistiveLabel
+        default:
+            return true
+        }
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case emailTextField:
+            emailText = emailTextField.text
+        case passwordTextField:
+            passwordText = passwordTextField.text
+        default:
+            return
+        }
     }
     
 }
