@@ -15,7 +15,8 @@
 		F026EC8C253F02D400DBED7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8B253F02D400DBED7E /* Assets.xcassets */; };
 		F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8D253F02D400DBED7E /* LaunchScreen.storyboard */; };
 		F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */; };
-		F0578A56254AA573002BD397 /* MessagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0578A55254AA573002BD397 /* MessagesHandler.swift */; };
+		F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490D1254C7C5500020E82 /* FirebaseAuth.swift */; };
+		F06490DB254C7CA200020E82 /* AlertMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490DA254C7CA200020E82 /* AlertMessages.swift */; };
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
 		F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */; };
 		F0A7BC522545CAE700764CF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BC512545CAE700764CF4 /* LoginViewController.swift */; };
@@ -36,7 +37,8 @@
 		F026EC8E253F02D400DBED7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F026EC90253F02D400DBED7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
-		F0578A55254AA573002BD397 /* MessagesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHandler.swift; sourceTree = "<group>"; };
+		F06490D1254C7C5500020E82 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
+		F06490DA254C7CA200020E82 /* AlertMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessages.swift; sourceTree = "<group>"; };
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
 		F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		F0A7BC512545CAE700764CF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -96,11 +98,13 @@
 		F026EC81253F02D300DBED7E /* Check✓ */ = {
 			isa = PBXGroup;
 			children = (
+				F06490D8254C7C8800020E82 /* SwiftMessages */,
 				F026EC82253F02D300DBED7E /* AppDelegate.swift */,
 				F026EC84253F02D300DBED7E /* SceneDelegate.swift */,
 				F026EC9A253F03D700DBED7E /* Screens */,
 				F026EC9B253F03E900DBED7E /* Models */,
 				F067747A2549E8FF006ABE24 /* Extensions */,
+				F06490D0254C7C1200020E82 /* Firebase */,
 				F026EC9C253F040200DBED7E /* Protocols */,
 				F026EC8B253F02D400DBED7E /* Assets.xcassets */,
 				F026EC8D253F02D400DBED7E /* LaunchScreen.storyboard */,
@@ -124,7 +128,6 @@
 				F03D7C312545EC2E005D6A83 /* Enums */,
 				F0A58CDE253F0FF60024B7EF /* ViewModel */,
 				F0DF4F182544543400E576D8 /* OnboardingScreen.swift */,
-				F0578A55254AA573002BD397 /* MessagesHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +154,23 @@
 				F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		F06490D0254C7C1200020E82 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				F06490D1254C7C5500020E82 /* FirebaseAuth.swift */,
+			);
+			name = Firebase;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F06490D8254C7C8800020E82 /* SwiftMessages */ = {
+			isa = PBXGroup;
+			children = (
+				F06490DA254C7CA200020E82 /* AlertMessages.swift */,
+			);
+			name = SwiftMessages;
 			sourceTree = "<group>";
 		};
 		F067747A2549E8FF006ABE24 /* Extensions */ = {
@@ -294,9 +314,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */,
+				F06490DB254C7CA200020E82 /* AlertMessages.swift in Sources */,
 				F0A7BC522545CAE700764CF4 /* LoginViewController.swift in Sources */,
 				F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */,
-				F0578A56254AA573002BD397 /* MessagesHandler.swift in Sources */,
 				F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */,
 				F026EC87253F02D300DBED7E /* OnboardingViewController.swift in Sources */,
 				F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */,

@@ -8,7 +8,6 @@
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
 
-
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
@@ -17,26 +16,58 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: MDCOutlinedTextField!
     
     var textFieldsAreCompleted = false
+    let emailToolbar = UIToolbar()
+    let passwordToolbar = UIToolbar()
+    let nextButton = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(toolbarNextAction(_:)))
+    let showPassword = UIBarButtonItem(title: "Show password", style: .plain, target: self, action: #selector(showPassword(_:)))
+    
+    var isToolbarShowButtonVisible = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
         configureUI()
-        configureKeyboardToolbar()
+        configureTextFields()
         
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
         if !textFieldsAreCompleted {
-            // if both -> alert, if one -> message on that one
-            MesssagesHandler.displaySmallErrorWithBody("Text fields are mandatory")
+            AlertMessages.displaySmallErrorWithBody("Text fields are mandatory")
         } else {
-            print("Ready to sign up")
+            
         }
     }
     
     @IBAction func backToLogin(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func configureTextFields() {
+        
+        self.view.addSubview(emailTextField.configureAuthenticationTextField(labelText: Constants.emailLabel, placeholderText: Constants.emailPlaceholder, leadingAssistiveLabel: Constants.emailLeadingAssistiveLabel))
+        self.view.addSubview(passwordTextField.configureAuthenticationTextField(labelText: Constants.passwordLabel, placeholderText: Constants.passwordPlaceholder, leadingAssistiveLabel: Constants.passwordLeadingAssistiveLabel))
+        
+        passwordTextField.isSecureTextEntry = true
+        
+        nextButton.tintColor = #colorLiteral(red: 0.05882352941, green: 0.1882352941, blue: 0.3411764706, alpha: 1)
+        showPassword.tintColor = #colorLiteral(red: 0.05882352941, green: 0.1882352941, blue: 0.3411764706, alpha: 1)
+        
+        emailToolbar.items = [nextButton]
+        emailToolbar.sizeToFit()
+        emailToolbar.isTranslucent = true
+        emailTextField.inputAccessoryView = emailToolbar
+        
+        passwordToolbar.sizeToFit()
+        passwordToolbar.isTranslucent = true
+        passwordToolbar.items = [showPassword]
+        passwordTextField.inputAccessoryView = passwordToolbar
+        
+        emailTextField.returnKeyType = .next
+        passwordTextField.returnKeyType = .go
     }
     
     private func configureUI() {
@@ -47,31 +78,39 @@ class SignUpViewController: UIViewController {
         
         logoImageView.layer.cornerRadius = 8
         
-        self.view.addSubview(emailTextField.configureAuthenticationTextField(labelText: Constants.emailLabel, placeholderText: Constants.emailPlaceholder, leadingAssistiveLabel: Constants.emailLeadingAssistiveLabel))
-        
-        self.view.addSubview(passwordTextField.configureAuthenticationTextField(labelText: Constants.passwordLabel, placeholderText: Constants.passwordPlaceholder, leadingAssistiveLabel: Constants.passwordLeadingAssistiveLabel))
     }
     
-    private func configureKeyboardToolbar() {
-        let toolbar = UIToolbar()
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(toolbarDoneAction(_:)))
-        
-        doneButton.tintColor = #colorLiteral(red: 0.05882352941, green: 0.1882352941, blue: 0.3411764706, alpha: 1)
-        toolbar.items = [doneButton]
-        toolbar.sizeToFit()
-        toolbar.isTranslucent = true
-        emailTextField.inputAccessoryView = toolbar
-        passwordTextField.inputAccessoryView = toolbar
+    @objc func showPassword(_ sender: UITextField) {
+        if isToolbarShowButtonVisible {
+            showPassword.title = "Hide password"
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            showPassword.title = "Show password"
+            passwordTextField.isSecureTextEntry = true
+        }
+        isToolbarShowButtonVisible = !isToolbarShowButtonVisible
     }
     
-    
-    @objc func toolbarDoneAction(_ sender: UITextField) {
-        [emailTextField, passwordTextField].forEach { $0?.resignFirstResponder() }
+    @objc func toolbarNextAction(_ sender: UITextField) {
+        passwordTextField.becomeFirstResponder()
     }
     
 }
 
 extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            passwordTextField.resignFirstResponder()
+        default:
+            return true
+        }
+        
+        return true
+    }
     
 }
 
