@@ -7,6 +7,7 @@
 
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -49,7 +50,6 @@ class SignUpViewController: UIViewController {
         
         configureUI()
         configureTextFields()
-        
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
@@ -63,6 +63,16 @@ class SignUpViewController: UIViewController {
             AlertMessages.displaySmallErrorWithBody("Please fill the registration with valid data")
             
             return
+        }
+        
+        Auth.auth().createUser(withEmail: emailText!, password: passwordText!) { (authResult, error) in
+            if let error = error {
+                AlertMessages.displaySmallErrorWithBody(error.localizedDescription)
+            } else {
+                print(authResult)
+                AlertMessages.displaySmallErrorWithBody("Success")
+            }
+            
         }
     }
     

@@ -9,16 +9,10 @@ import UIKit
 import MaterialComponents.MDCOutlinedTextField
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var emailTextField: MDCOutlinedTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailTextField.label.text = "Email address"
-        emailTextField.setFloatingLabelColor(.white, for: .editing)
-        emailTextField.setFloatingLabelColor(.white, for: .normal)
-        emailTextField.setNormalLabelColor(.gray, for: .normal)
-        emailTextField.placeholder = "example@mail.com"
         
     }
 
