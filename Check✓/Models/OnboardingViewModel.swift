@@ -10,6 +10,7 @@ import UIKit
 
 struct OnboardingViewModel {
     let onboardingScreens: [OnboardingScreens] = [.First, .Second, .Third, .Fourth]
+    
     var currentPage = 0
     
     func getCurrentPageContent() -> OnboardingScreen {

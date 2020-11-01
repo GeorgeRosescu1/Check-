@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var emailTextField: MDCOutlinedTextField!
     @IBOutlet weak var passwordTextField: MDCOutlinedTextField!
-    
+    @IBOutlet weak var buttonSpinner: UIActivityIndicatorView!
     
     let emailToolbar = UIToolbar()
     let passwordToolbar = UIToolbar()
@@ -27,22 +27,25 @@ class SignUpViewController: UIViewController {
     var isPasswordValid = true
     var isEmailValid = true
     var textFieldsAreCompleted = false
+    
     var emailText: String? {
         didSet {
-            validateEmail()
+          isEmailValid = validateEmail()
         }
     }
     
     var passwordText: String? {
         didSet {
-            validatePassword()
+           isPasswordValid = validatePassword()
         }
     }
     
+    //MARK: Visibility controller
+    var signUpVC: TTInputVisibilityController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let signUpVC = self.view.addInputVisibilityController()
-        signUpVC.toBeVisibleView = signUpButton
+        signUpVC = self.view.addInputVisibilityController()
         signUpVC.extraSpaceAboveKeyboard = 10
         
         emailTextField.delegate = self
@@ -53,6 +56,9 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
+        emailTextField.endEditing(true)
+        passwordTextField.endEditing(true)
+        
         guard textFieldsAreCompleted else {
             AlertMessages.displaySmallErrorWithBody("Text fields are mandatory")
             
@@ -65,25 +71,30 @@ class SignUpViewController: UIViewController {
             return
         }
         
+        buttonSpinner.startAnimating()
+        signUpButton.isEnabled = false
+        emailTextField.isUserInteractionEnabled = false
+        passwordTextField.isUserInteractionEnabled = false
+        
         Auth.auth().createUser(withEmail: emailText!, password: passwordText!) { (authResult, error) in
+            self.buttonSpinner.stopAnimating()
+            self.signUpButton.isEnabled = true
+            self.emailTextField.isUserInteractionEnabled = true
+            self.passwordTextField.isUserInteractionEnabled = true
             if let error = error {
                 AlertMessages.displaySmallErrorWithBody(error.localizedDescription)
             } else {
                 print(authResult)
-                AlertMessages.displaySmallErrorWithBody("Success")
+                AlertMessages.displaySmallSuccessWithBody("Success")
             }
             
         }
     }
     
-    @IBAction func backToLogin(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     private func configureTextFields() {
         
-        self.view.addSubview(emailTextField.configureAuthenticationTextField(labelText: Constants.emailLabel, placeholderText: Constants.emailPlaceholder, leadingAssistiveLabel: Constants.emailLeadingAssistiveLabel))
-        self.view.addSubview(passwordTextField.configureAuthenticationTextField(labelText: Constants.passwordLabel, placeholderText: Constants.passwordPlaceholder, leadingAssistiveLabel: Constants.passwordLeadingAssistiveLabel))
+        self.view.addSubview(emailTextField.configureAuthenticationTextField(labelText: SignUpConstants.emailLabel, placeholderText: SignUpConstants.emailPlaceholder, leadingAssistiveLabel: SignUpConstants.emailLeadingAssistiveLabel))
+        self.view.addSubview(passwordTextField.configureAuthenticationTextField(labelText: SignUpConstants.passwordLabel, placeholderText: SignUpConstants.passwordPlaceholder, leadingAssistiveLabel: SignUpConstants.passwordLeadingAssistiveLabel))
         
         passwordTextField.isSecureTextEntry = true
         
@@ -102,6 +113,11 @@ class SignUpViewController: UIViewController {
         
         emailTextField.returnKeyType = .next
         passwordTextField.returnKeyType = .go
+        
+        emailTextField.keyboardType = .emailAddress
+        
+        emailTextField.autocorrectionType = .no
+        passwordTextField.autocorrectionType = .no
     }
     
     private func configureUI() {
@@ -112,6 +128,10 @@ class SignUpViewController: UIViewController {
         
         logoImageView.layer.cornerRadius = 8
         
+    }
+    
+    @IBAction func backToLogin(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func showPassword(_ sender: UITextField) {
@@ -128,112 +148,9 @@ class SignUpViewController: UIViewController {
     @objc func toolbarNextAction(_ sender: UITextField) {
         passwordTextField.becomeFirstResponder()
     }
-    
-    private func validateEmail() {
-        //regex
-        guard let emailText = emailText else {
-            
-            return
-        }
-        
-        if emailText.isEmpty {
-            emailTextField.leadingAssistiveLabel.text = "Email address is mandatory."
-            emailTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
-            
-            return
-        } else if !emailText.contains("@") {
-            emailTextField.leadingAssistiveLabel.text = "Please enter a valid email address."
-            emailTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
-            
-            return
-        }
-        
-        isEmailValid = true
-    }
-    
-    private func validatePassword() {
-        guard let passwordText = passwordText else {
-            
-            return
-        }
-        
-        if passwordText.count < 6 {
-            passwordTextField.leadingAssistiveLabel.text = "Password should be at least 6 chars long."
-            passwordTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
-        } else {
-            var validation1 = false
-            var validation2 = false
-            for char in passwordText {
-                if char.isUppercase{
-                    validation1 = true
-                }
-                if char >= "0" && char <= "9" {
-                    validation2 = true
-                }
-            }
-            
-            if !validation1 {
-                passwordTextField.leadingAssistiveLabel.text = "Password should contain upper case."
-                passwordTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
-                
-                return
-            }
-            
-            if !validation2 {
-                passwordTextField.leadingAssistiveLabel.text = "Password should contain digit."
-                passwordTextField.setLeadingAssistiveLabelColor(#colorLiteral(red: 0.8821824193, green: 0.3163513541, blue: 0.4430304468, alpha: 1), for: .normal)
-                
-                return
-            }
-        }
-        isEmailValid = true
-    }
-    
 }
 
-extension SignUpViewController: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case emailTextField:
-            passwordTextField.becomeFirstResponder()
-        case passwordTextField:
-            passwordTextField.resignFirstResponder()
-        default:
-            return true
-        }
-        
-        textFieldsAreCompleted = !emailTextField.text!.isEmpty && !passwordTextField.text!.isEmpty
-        return true
-    }
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        switch textField {
-        case emailTextField:
-            emailTextField.leadingAssistiveLabel.text = Constants.emailLeadingAssistiveLabel
-        case passwordTextField:
-            passwordTextField.leadingAssistiveLabel.text = Constants.passwordLeadingAssistiveLabel
-        default:
-            return true
-        }
-        
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField {
-        case emailTextField:
-            emailText = emailTextField.text
-        case passwordTextField:
-            passwordText = passwordTextField.text
-        default:
-            return
-        }
-    }
-    
-}
-
-private struct Constants {
+struct SignUpConstants {
     
     static let emailLabel = "Email address"
     static let emailPlaceholder = "example@mail.com"

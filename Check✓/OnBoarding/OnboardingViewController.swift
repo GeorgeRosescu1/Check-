@@ -21,7 +21,6 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageControl.numberOfPages = 4
         
         nextButton.layer.cornerRadius = 8
         nextButton.layer.shadowOpacity = 0.2
@@ -41,10 +40,12 @@ class OnboardingViewController: UIViewController {
             
             if pageControl.currentPage == onboardingVM.onboardingScreens.count - 1 {
                 skipButton.isHidden = true
-                nextButton.setTitle("Finish", for: .normal)
-                nextButton.frame = CGRect(x: nextButton.frame.minX - 20, y: nextButton.frame.minY, width: nextButton.frame.width + 40, height: nextButton.frame.height)
-                nextButton.setImage(nil, for: .normal)
-                nextButton.layer.cornerRadius = nextButton.frame.height / 2
+                UIView.animate(withDuration: 0.8) {
+                    self.nextButton.setTitle("Finish", for: .normal)
+                    self.nextButton.frame = CGRect(x: self.nextButton.frame.minX - 20, y: self.nextButton.frame.minY, width: self.nextButton.frame.width + 40, height: self.nextButton.frame.height)
+                    self.nextButton.setImage(nil, for: .normal)
+                    self.nextButton.layer.cornerRadius = self.nextButton.frame.height / 2
+                }
             }
         }
     }

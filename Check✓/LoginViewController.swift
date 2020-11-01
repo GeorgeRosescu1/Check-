@@ -16,6 +16,11 @@ class LoginViewController: UIViewController {
         
     }
 
+    @IBAction func loginAction(_ sender: UIButton) {
+            print("Log in")
+        
+    }
+    
     @IBAction func goToRegister(_ sender: UIButton) {
         guard let registerVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "SignUpViewController") as? SignUpViewController else { return }
         self.navigationController?.pushViewController(registerVC, animated: true)

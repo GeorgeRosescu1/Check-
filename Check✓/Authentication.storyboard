@@ -47,6 +47,9 @@
                                 <rect key="frame" x="184" y="509" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log in"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="Gu9-Qk-dJ4" eventType="touchUpInside" id="bet-9g-UJK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CEva abureala de login etc ect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRy-d2-FgJ">
                                 <rect key="frame" x="20" y="432" width="231" height="21"/>
@@ -104,6 +107,35 @@
                                 <color key="textColor" name="dark blue color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPJ-Yl-6Bd">
+                                <rect key="frame" x="20" y="451" width="303" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="By continuing you agree with Check's ">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="Avenir-Book"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Terms and Conditions">
+                                        <attributes>
+                                            <color key="NSColor" red="0.84313725490196079" green="0.2196078431372549" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Avenir-Book"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" and ">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="Avenir-Book"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Privacy Policy">
+                                        <attributes>
+                                            <color key="NSColor" red="0.84313725490196079" green="0.2196078431372549" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="Avenir-Book"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It's all about food, good times and the loved ones." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63I-AO-vlo">
                                 <rect key="frame" x="143" y="148" width="221" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -136,18 +168,16 @@
                                     <action selector="backToLogin:" destination="VYc-IS-9xc" eventType="touchUpInside" id="1Bl-E8-9HQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By continuing you agree with Check's Terms and Conditions and Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPJ-Yl-6Bd">
-                                <rect key="frame" x="20" y="451" width="303" height="49"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b2w-0r-IPE">
+                                <rect key="frame" x="197" y="563" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EDr-B4-0E7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="buttonSpinner" destination="b2w-0r-IPE" id="k0V-HK-bsF"/>
                         <outlet property="emailTextField" destination="FfP-4Z-FRU" id="52f-9F-zhV"/>
                         <outlet property="logoImageView" destination="70o-g1-pCm" id="dXG-ld-o8C"/>
                         <outlet property="passwordTextField" destination="ro4-Hy-WfK" id="cN1-Ug-I5e"/>
@@ -189,7 +219,7 @@
             <color red="0.059000000357627869" green="0.18799999356269836" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="dark blue color">
-            <color red="0.058823529411764705" green="0.18823529411764706" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.059000000357627869" green="0.18799999356269836" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary Color">
             <color red="0.23100000619888306" green="0.72500002384185791" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
