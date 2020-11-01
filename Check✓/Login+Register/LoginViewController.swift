@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  Check✓
 //
 //  Created by George Rosescu on 25/10/2020.
@@ -7,15 +7,12 @@
 
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
-import Firebase
 
-class SignUpViewController: UIViewController {
+class LoginViewController: UIViewController {
     
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var emailTextField: MDCOutlinedTextField!
     @IBOutlet weak var passwordTextField: MDCOutlinedTextField!
-    @IBOutlet weak var buttonSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var loginButton: UIButton!
     
     let emailToolbar = UIToolbar()
     let passwordToolbar = UIToolbar()
@@ -24,29 +21,16 @@ class SignUpViewController: UIViewController {
     
     var isToolbarShowButtonVisible = true
     
-    var isPasswordValid = true
-    var isEmailValid = true
-    var textFieldsAreCompleted = false
-    
-    var emailText: String? {
-        didSet {
-          isEmailValid = validateEmail()
-        }
-    }
-    
-    var passwordText: String? {
-        didSet {
-           isPasswordValid = validatePassword()
-        }
-    }
-    
     //MARK: Visibility controller
-    var signUpVC: TTInputVisibilityController!
+    var loginVC: TTInputVisibilityController!
+    
+    var emailText: String?
+    var passwordText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpVC = self.view.addInputVisibilityController()
-        signUpVC.extraSpaceAboveKeyboard = 10
+        loginVC = self.view.addInputVisibilityController()
+        loginVC.extraSpaceAboveKeyboard = 10
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -55,44 +39,11 @@ class SignUpViewController: UIViewController {
         configureTextFields()
     }
     
-    @IBAction func signUpAction(_ sender: UIButton) {
-        emailTextField.endEditing(true)
-        passwordTextField.endEditing(true)
-        
-        guard textFieldsAreCompleted else {
-            AlertMessages.displaySmallErrorWithBody("Text fields are mandatory")
-            
-            return
-        }
-        
-        guard isEmailValid && isPasswordValid else {
-            AlertMessages.displaySmallErrorWithBody("Please fill the registration with valid data")
-            
-            return
-        }
-        
-        buttonSpinner.startAnimating()
-        signUpButton.isEnabled = false
-        emailTextField.isUserInteractionEnabled = false
-        passwordTextField.isUserInteractionEnabled = false
-        
-        Auth.auth().createUser(withEmail: emailText!, password: passwordText!) { (authResult, error) in
-            self.buttonSpinner.stopAnimating()
-            self.signUpButton.isEnabled = true
-            self.emailTextField.isUserInteractionEnabled = true
-            self.passwordTextField.isUserInteractionEnabled = true
-            if let error = error {
-                AlertMessages.displaySmallErrorWithBody(error.localizedDescription)
-            } else {
-                print(authResult)
-                AlertMessages.displaySmallSuccessWithBody("Success")
-            }
-            
-        }
+    private func configureUI() {
+        loginButton.configureRoundButtonWithShadow()
     }
     
     private func configureTextFields() {
-        
         self.view.addSubview(emailTextField.configureAuthenticationTextField(labelText: SignUpConstants.emailLabel, placeholderText: SignUpConstants.emailPlaceholder, leadingAssistiveLabel: SignUpConstants.emailLeadingAssistiveLabel))
         self.view.addSubview(passwordTextField.configureAuthenticationTextField(labelText: SignUpConstants.passwordLabel, placeholderText: SignUpConstants.passwordPlaceholder, leadingAssistiveLabel: SignUpConstants.passwordLeadingAssistiveLabel))
         
@@ -120,19 +71,6 @@ class SignUpViewController: UIViewController {
         passwordTextField.autocorrectionType = .no
     }
     
-    private func configureUI() {
-        signUpButton.layer.cornerRadius = 8
-        signUpButton.layer.shadowOpacity = 0.2
-        signUpButton.layer.shadowRadius = 16
-        signUpButton.alpha = 0.8
-        
-        logoImageView.layer.cornerRadius = 8
-        
-    }
-    
-    @IBAction func backToLogin(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
     
     @objc func showPassword(_ sender: UITextField) {
         if isToolbarShowButtonVisible {
@@ -148,15 +86,17 @@ class SignUpViewController: UIViewController {
     @objc func toolbarNextAction(_ sender: UITextField) {
         passwordTextField.becomeFirstResponder()
     }
-}
-
-struct SignUpConstants {
     
-    static let emailLabel = "Email address"
-    static let emailPlaceholder = "example@mail.com"
-    static let emailLeadingAssistiveLabel = "You will use your email address to log in."
+    @IBAction func loginAction(_ sender: UIButton) {
+        print("Log in")
+        
+    }
+    @IBAction func forgotPasswordAction(_ sender: UIButton) {
+        print("forgot pass :(")
+    }
     
-    static let passwordLabel = "Password"
-    static let passwordPlaceholder: String? = nil
-    static let passwordLeadingAssistiveLabel = "Min six characters, one digit and one upper letter."
+    @IBAction func goToRegister(_ sender: UIButton) {
+        guard let chooseEntittVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") as? ChooseEntityViewController else { return }
+        self.navigationController?.pushViewController(chooseEntittVc, animated: true)
+    }
 }

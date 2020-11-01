@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		34C3FFD3A13E9082198DEC78 /* Pods_Check_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */; };
+		F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */; };
+		F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */; };
 		F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC82253F02D300DBED7E /* AppDelegate.swift */; };
 		F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC84253F02D300DBED7E /* SceneDelegate.swift */; };
 		F026EC87253F02D300DBED7E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC86253F02D300DBED7E /* OnboardingViewController.swift */; };
@@ -19,6 +21,7 @@
 		F06490DB254C7CA200020E82 /* AlertMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490DA254C7CA200020E82 /* AlertMessages.swift */; };
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
 		F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */; };
+		F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */; };
 		F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */; };
 		F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */; };
 		F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */; };
@@ -33,6 +36,8 @@
 		319B0EE301B6932B16361821 /* Pods-Check✓.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.debug.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.debug.xcconfig"; sourceTree = "<group>"; };
 		3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2C95DD3C0ADF2D28099035 /* Pods-Check✓.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.release.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.release.xcconfig"; sourceTree = "<group>"; };
+		F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F026EC7F253F02D300DBED7E /* Check✓.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check✓.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F026EC82253F02D300DBED7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F026EC84253F02D300DBED7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		F06490DA254C7CA200020E82 /* AlertMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessages.swift; sourceTree = "<group>"; };
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
 		F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+TextFields.swift"; sourceTree = "<group>"; };
+		F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEntityViewController.swift; sourceTree = "<group>"; };
 		F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchRecognizer.swift; sourceTree = "<group>"; };
 		F08BCDBD254C89B600907F9E /* TTInputVisibilityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTInputVisibilityController.h; sourceTree = "<group>"; };
 		F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TTInputVisibilityController.swift; path = "../../../scooter-move-ios.nosync/Move/View/TTVisibilityController/TTInputVisibilityController.swift"; sourceTree = "<group>"; };
@@ -188,8 +194,28 @@
 			isa = PBXGroup;
 			children = (
 				F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */,
+				F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F06946C3254EBEC1005F9F50 /* Login+Register */ = {
+			isa = PBXGroup;
+			children = (
+				F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */,
+				F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */,
+				F0A7BC512545CAE700764CF4 /* LoginViewController.swift */,
+				F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */,
+			);
+			path = "Login+Register";
+			sourceTree = "<group>";
+		};
+		F06946C4254EBEE1005F9F50 /* Register Flow */ = {
+			isa = PBXGroup;
+			children = (
+				F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */,
+			);
+			name = "Register Flow";
 			sourceTree = "<group>";
 		};
 		F08BCDB9254C89A200907F9E /* TTViewController */ = {
@@ -214,9 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				F0A7BC552545CCB900764CF4 /* Authentication.storyboard */,
-				F0A7BC512545CAE700764CF4 /* LoginViewController.swift */,
-				F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */,
-				F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */,
+				F06946C3254EBEC1005F9F50 /* Login+Register */,
+				F06946C4254EBEE1005F9F50 /* Register Flow */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -341,6 +366,7 @@
 				F06490DB254C7CA200020E82 /* AlertMessages.swift in Sources */,
 				F0A7BC522545CAE700764CF4 /* LoginViewController.swift in Sources */,
 				F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */,
+				F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */,
 				F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */,
 				F026EC87253F02D300DBED7E /* OnboardingViewController.swift in Sources */,
 				F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */,
@@ -349,6 +375,8 @@
 				F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */,
 				F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */,
 				F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */,
+				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
+				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
 			);
