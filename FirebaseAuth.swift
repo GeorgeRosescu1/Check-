@@ -6,8 +6,17 @@
 //
 
 import Foundation
+import Firebase
 
 class FirebaseAuth {
+    
+    static func logout() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            debugPrint("Error while logging out \(error)")
+        }
+    }
     
 }
 

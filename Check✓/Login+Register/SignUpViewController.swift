@@ -85,8 +85,7 @@ class SignUpViewController: UIViewController {
                 AlertMessages.displaySmallErrorWithBody(error.localizedDescription)
             } else {
                 AlertMessages.displaySmallSuccessWithBody("User checked✓")
-                guard let registerVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "SignUpViewController") as? SignUpViewController else { return }
-                self.navigationController?.pushViewController(registerVC, animated: true)
+                
             }
             
         }

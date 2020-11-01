@@ -10,6 +10,8 @@
 		34C3FFD3A13E9082198DEC78 /* Pods_Check_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */; };
 		F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */; };
 		F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */; };
+		F010EFD4254EEABF00608287 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F010EFD3254EEABF00608287 /* MainPage.storyboard */; };
+		F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */; };
 		F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC82253F02D300DBED7E /* AppDelegate.swift */; };
 		F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC84253F02D300DBED7E /* SceneDelegate.swift */; };
 		F026EC87253F02D300DBED7E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC86253F02D300DBED7E /* OnboardingViewController.swift */; };
@@ -38,6 +40,8 @@
 		8D2C95DD3C0ADF2D28099035 /* Pods-Check✓.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.release.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.release.xcconfig"; sourceTree = "<group>"; };
 		F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+TextFields.swift"; sourceTree = "<group>"; };
+		F010EFD3254EEABF00608287 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
+		F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerMainPageViewController.swift; sourceTree = "<group>"; };
 		F026EC7F253F02D300DBED7E /* Check✓.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check✓.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F026EC82253F02D300DBED7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F026EC84253F02D300DBED7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F010EFD2254EEAA400608287 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				F010EFD3254EEABF00608287 /* MainPage.storyboard */,
+				F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
 		F026EC76253F02D300DBED7E = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +146,7 @@
 		F026EC9A253F03D700DBED7E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F010EFD2254EEAA400608287 /* MainPage */,
 				F0A7BC502545C9EB00764CF4 /* Authentication */,
 				F026EC9E253F075600DBED7E /* OnBoarding */,
 			);
@@ -305,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F010EFD4254EEABF00608287 /* MainPage.storyboard in Resources */,
 				F0F702BB254C98E60034695B /* GoogleService-Info.plist in Resources */,
 				F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */,
 				F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */,
@@ -379,6 +394,7 @@
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
+				F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

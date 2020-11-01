@@ -12,6 +12,7 @@ enum AppStoryboards: String {
     
     case Onboarding = "Main"
     case Authenthication = "Authentication"
+    case MainPage = "MainPage"
     
     var instance: UIStoryboard? {
         return UIStoryboard(name: self.rawValue, bundle: nil)

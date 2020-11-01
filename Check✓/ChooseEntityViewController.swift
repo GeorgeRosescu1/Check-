@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class ChooseEntityViewController: UIViewController {
     
@@ -16,6 +17,11 @@ class ChooseEntityViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+          print(auth)
+            print(user)
+        }
         
         configureUI()
     }

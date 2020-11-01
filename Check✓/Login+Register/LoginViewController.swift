@@ -7,6 +7,7 @@
 
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -37,6 +38,13 @@ class LoginViewController: UIViewController {
         
         configureUI()
         configureTextFields()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil {
+            guard let mainVc = AppStoryboards.MainPage.instance?.instantiateViewController(identifier: "CheckerMainPageViewController") as? CheckerMainPageViewController else { return }
+            self.navigationController?.pushViewController(mainVc, animated: true)
+        }
     }
     
     private func configureUI() {
