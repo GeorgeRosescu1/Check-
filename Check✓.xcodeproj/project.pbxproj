@@ -24,6 +24,7 @@
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
 		F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */; };
 		F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */; };
+		F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */; };
 		F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */; };
 		F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */; };
 		F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */; };
@@ -56,6 +57,7 @@
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
 		F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEntityViewController.swift; sourceTree = "<group>"; };
+		F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthModel.swift; sourceTree = "<group>"; };
 		F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchRecognizer.swift; sourceTree = "<group>"; };
 		F08BCDBD254C89B600907F9E /* TTInputVisibilityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTInputVisibilityController.h; sourceTree = "<group>"; };
 		F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TTInputVisibilityController.swift; path = "../../../scooter-move-ios.nosync/Move/View/TTVisibilityController/TTInputVisibilityController.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				F03D7C312545EC2E005D6A83 /* Enums */,
 				F0A58CDE253F0FF60024B7EF /* ViewModel */,
 				F0DF4F182544543400E576D8 /* OnboardingScreen.swift */,
+				F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */,
 				F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */,
 				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
+				F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: MDCOutlinedTextField!
     @IBOutlet weak var passwordTextField: MDCOutlinedTextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     let emailToolbar = UIToolbar()
     let passwordToolbar = UIToolbar()
@@ -38,13 +39,6 @@ class LoginViewController: UIViewController {
         
         configureUI()
         configureTextFields()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-            guard let mainVc = AppStoryboards.MainPage.instance?.instantiateViewController(identifier: "CheckerMainPageViewController") as? CheckerMainPageViewController else { return }
-            self.navigationController?.pushViewController(mainVc, animated: true)
-        }
     }
     
     private func configureUI() {
@@ -95,8 +89,22 @@ class LoginViewController: UIViewController {
         passwordTextField.becomeFirstResponder()
     }
     
+    //session
     @IBAction func loginAction(_ sender: UIButton) {
-        print("Log in")
+        loginButton.isUserInteractionEnabled = false
+        loginButton.alpha = 0.7
+        spinner.startAnimating()
+        FirebaseAuth.loginUserWithEmail(emailText!, password: passwordText!) { (loginModel) in
+            self.loginButton.isUserInteractionEnabled = true
+            self.loginButton.alpha = 1
+            self.spinner.stopAnimating()
+            if loginModel.error != nil {
+                AlertMessages.displaySmallErrorWithBody("User not found or user may have been deleted.")
+            } else {
+                guard let mainVc = AppStoryboards.MainPage.instance?.instantiateViewController(identifier: "CheckerMainPageViewController") as? CheckerMainPageViewController else { return }
+                self.navigationController?.pushViewController(mainVc, animated: true)
+            }
+        }
         
     }
     @IBAction func forgotPasswordAction(_ sender: UIButton) {

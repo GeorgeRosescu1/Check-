@@ -73,21 +73,23 @@ class SignUpViewController: UIViewController {
         
         buttonSpinner.startAnimating()
         signUpButton.isEnabled = false
+        signUpButton.alpha = 0.7
         emailTextField.isUserInteractionEnabled = false
         passwordTextField.isUserInteractionEnabled = false
         
-        Auth.auth().createUser(withEmail: emailText!, password: passwordText!) { (authResult, error) in
+        
+        FirebaseAuth.signUpUserWithEmail(emailText!, password: passwordText!) { (signUpModel) in
             self.buttonSpinner.stopAnimating()
             self.signUpButton.isEnabled = true
+            self.signUpButton.alpha = 1
             self.emailTextField.isUserInteractionEnabled = true
             self.passwordTextField.isUserInteractionEnabled = true
-            if let error = error {
+            
+            if let error = signUpModel.error {
                 AlertMessages.displaySmallErrorWithBody(error.localizedDescription)
             } else {
                 AlertMessages.displaySmallSuccessWithBody("User checked✓")
-                
             }
-            
         }
     }
     
@@ -127,12 +129,8 @@ class SignUpViewController: UIViewController {
         
     }
     
-    @IBAction func backToLogin(_ sender: UIButton) {
-        for viewController in self.navigationController!.viewControllers {
-            if viewController is LoginViewController {
-                self.navigationController?.popToViewController(viewController, animated: true)
-            }
-        }
+    @IBAction func backAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func showPassword(_ sender: UITextField) {

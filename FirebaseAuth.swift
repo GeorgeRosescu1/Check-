@@ -18,5 +18,23 @@ class FirebaseAuth {
         }
     }
     
+    static func signUpUserWithEmail(_ email: String, password: String, complition: @escaping (_ result: FirebaseAuthModel) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            if let error = error {
+                complition(FirebaseAuthModel(error: error, authResponse: nil))
+            } else {
+                complition(FirebaseAuthModel(error: nil, authResponse: authResult!))
+            }
+        }
+    }
+    
+    static func loginUserWithEmail(_ email: String, password: String, complition: @escaping (_ result: FirebaseAuthModel) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                complition(FirebaseAuthModel(error: error, authResponse: nil))
+            } else {
+                complition(FirebaseAuthModel(error: nil, authResponse: authResult!))
+            }
+        }
+    }
 }
-
