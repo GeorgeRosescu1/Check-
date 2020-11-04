@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		34C3FFD3A13E9082198DEC78 /* Pods_Check_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */; };
+		F00CA4EF25531D3000FC79C9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00CA4EE25531D3000FC79C9 /* Alerts.swift */; };
 		F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */; };
 		F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */; };
-		F010EFD4254EEABF00608287 /* MainPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F010EFD3254EEABF00608287 /* MainPage.storyboard */; };
+		F010EFD4254EEABF00608287 /* CheckerAppMainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */; };
 		F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */; };
 		F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC82253F02D300DBED7E /* AppDelegate.swift */; };
 		F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC84253F02D300DBED7E /* SceneDelegate.swift */; };
@@ -19,12 +20,15 @@
 		F026EC8C253F02D400DBED7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8B253F02D400DBED7E /* Assets.xcassets */; };
 		F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8D253F02D400DBED7E /* LaunchScreen.storyboard */; };
 		F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */; };
+		F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */; };
+		F0577443255284E100BD2F22 /* CheckerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */; };
 		F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490D1254C7C5500020E82 /* FirebaseAuth.swift */; };
-		F06490DB254C7CA200020E82 /* AlertMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490DA254C7CA200020E82 /* AlertMessages.swift */; };
+		F06490DB254C7CA200020E82 /* SwiftMessagesAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490DA254C7CA200020E82 /* SwiftMessagesAlert.swift */; };
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
 		F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */; };
 		F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */; };
 		F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */; };
+		F08B915425518D0000B9273A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B915325518D0000B9273A /* Session.swift */; };
 		F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */; };
 		F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */; };
 		F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */; };
@@ -39,9 +43,10 @@
 		319B0EE301B6932B16361821 /* Pods-Check✓.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.debug.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.debug.xcconfig"; sourceTree = "<group>"; };
 		3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2C95DD3C0ADF2D28099035 /* Pods-Check✓.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.release.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.release.xcconfig"; sourceTree = "<group>"; };
+		F00CA4EE25531D3000FC79C9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+TextFields.swift"; sourceTree = "<group>"; };
-		F010EFD3254EEABF00608287 /* MainPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPage.storyboard; sourceTree = "<group>"; };
+		F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckerAppMainMenu.storyboard; sourceTree = "<group>"; };
 		F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerMainPageViewController.swift; sourceTree = "<group>"; };
 		F026EC7F253F02D300DBED7E /* Check✓.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check✓.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F026EC82253F02D300DBED7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,12 +57,15 @@
 		F026EC8E253F02D400DBED7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F026EC90253F02D400DBED7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
+		F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerProfileViewController.swift; sourceTree = "<group>"; };
+		F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerTabBarViewController.swift; sourceTree = "<group>"; };
 		F06490D1254C7C5500020E82 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
-		F06490DA254C7CA200020E82 /* AlertMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessages.swift; sourceTree = "<group>"; };
+		F06490DA254C7CA200020E82 /* SwiftMessagesAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessagesAlert.swift; sourceTree = "<group>"; };
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
 		F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEntityViewController.swift; sourceTree = "<group>"; };
 		F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthModel.swift; sourceTree = "<group>"; };
+		F08B915325518D0000B9273A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchRecognizer.swift; sourceTree = "<group>"; };
 		F08BCDBD254C89B600907F9E /* TTInputVisibilityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTInputVisibilityController.h; sourceTree = "<group>"; };
 		F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TTInputVisibilityController.swift; path = "../../../scooter-move-ios.nosync/Move/View/TTVisibilityController/TTInputVisibilityController.swift"; sourceTree = "<group>"; };
@@ -98,13 +106,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F010EFD2254EEAA400608287 /* MainPage */ = {
+		F010EFD2254EEAA400608287 /* CheckerAppMainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				F010EFD3254EEABF00608287 /* MainPage.storyboard */,
+				F057743C255280D500BD2F22 /* Profile */,
+				F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */,
 				F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */,
+				F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */,
 			);
-			name = MainPage;
+			name = CheckerAppMainMenu;
 			sourceTree = "<group>";
 		};
 		F026EC76253F02D300DBED7E = {
@@ -131,7 +141,7 @@
 				F026EC82253F02D300DBED7E /* AppDelegate.swift */,
 				F026EC84253F02D300DBED7E /* SceneDelegate.swift */,
 				F08BCDB9254C89A200907F9E /* TTViewController */,
-				F06490D8254C7C8800020E82 /* SwiftMessages */,
+				F06490D8254C7C8800020E82 /* Alerts+Messages */,
 				F026EC9A253F03D700DBED7E /* Screens */,
 				F026EC9B253F03E900DBED7E /* Models */,
 				F067747A2549E8FF006ABE24 /* Extensions */,
@@ -148,7 +158,7 @@
 		F026EC9A253F03D700DBED7E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				F010EFD2254EEAA400608287 /* MainPage */,
+				F010EFD2254EEAA400608287 /* CheckerAppMainMenu */,
 				F0A7BC502545C9EB00764CF4 /* Authentication */,
 				F026EC9E253F075600DBED7E /* OnBoarding */,
 			);
@@ -162,6 +172,7 @@
 				F0A58CDE253F0FF60024B7EF /* ViewModel */,
 				F0DF4F182544543400E576D8 /* OnboardingScreen.swift */,
 				F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */,
+				F08B915325518D0000B9273A /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +201,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		F057743C255280D500BD2F22 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		F06490D0254C7C1200020E82 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,12 +218,13 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		F06490D8254C7C8800020E82 /* SwiftMessages */ = {
+		F06490D8254C7C8800020E82 /* Alerts+Messages */ = {
 			isa = PBXGroup;
 			children = (
-				F06490DA254C7CA200020E82 /* AlertMessages.swift */,
+				F06490DA254C7CA200020E82 /* SwiftMessagesAlert.swift */,
+				F00CA4EE25531D3000FC79C9 /* Alerts.swift */,
 			);
-			name = SwiftMessages;
+			name = "Alerts+Messages";
 			sourceTree = "<group>";
 		};
 		F067747A2549E8FF006ABE24 /* Extensions */ = {
@@ -322,7 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F010EFD4254EEABF00608287 /* MainPage.storyboard in Resources */,
+				F010EFD4254EEABF00608287 /* CheckerAppMainMenu.storyboard in Resources */,
 				F0F702BB254C98E60034695B /* GoogleService-Info.plist in Resources */,
 				F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */,
 				F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */,
@@ -380,9 +400,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08B915425518D0000B9273A /* Session.swift in Sources */,
+				F00CA4EF25531D3000FC79C9 /* Alerts.swift in Sources */,
 				F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */,
-				F06490DB254C7CA200020E82 /* AlertMessages.swift in Sources */,
+				F06490DB254C7CA200020E82 /* SwiftMessagesAlert.swift in Sources */,
 				F0A7BC522545CAE700764CF4 /* LoginViewController.swift in Sources */,
+				F0577443255284E100BD2F22 /* CheckerTabBarViewController.swift in Sources */,
 				F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */,
 				F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */,
 				F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */,
@@ -399,6 +422,7 @@
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
 				F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */,
+				F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

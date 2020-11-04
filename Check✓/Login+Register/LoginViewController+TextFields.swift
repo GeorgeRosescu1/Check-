@@ -44,9 +44,9 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
         case emailTextField:
-            emailText = emailTextField.text
+            emailText = emailTextField.text!
         case passwordTextField:
-            passwordText = passwordTextField.text
+            passwordText = passwordTextField.text!
         default:
             return
         }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  OnboardingViewController.swift
 //  Check✓
 //
 //  Created by George Rosescu on 20/10/2020.

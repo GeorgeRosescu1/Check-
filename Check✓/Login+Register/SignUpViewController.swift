@@ -60,13 +60,13 @@ class SignUpViewController: UIViewController {
         passwordTextField.endEditing(true)
         
         guard textFieldsAreCompleted else {
-            AlertMessages.displaySmallErrorWithBody("Text fields are mandatory")
+            SwiftMessagesAlert.displaySmallErrorWithBody("Text fields are mandatory")
             
             return
         }
         
         guard isEmailValid && isPasswordValid else {
-            AlertMessages.displaySmallErrorWithBody("Please fill the registration with valid data")
+            SwiftMessagesAlert.displaySmallErrorWithBody("Please fill the registration with valid data")
             
             return
         }
@@ -86,9 +86,9 @@ class SignUpViewController: UIViewController {
             self.passwordTextField.isUserInteractionEnabled = true
             
             if let error = signUpModel.error {
-                AlertMessages.displaySmallErrorWithBody(error.localizedDescription)
+                SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
             } else {
-                AlertMessages.displaySmallSuccessWithBody("User checked✓")
+                SwiftMessagesAlert.displaySmallSuccessWithBody("User checked✓")
             }
         }
     }

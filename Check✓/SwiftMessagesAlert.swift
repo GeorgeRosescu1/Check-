@@ -8,7 +8,7 @@
 import Foundation
 import SwiftMessages
 
-struct AlertMessages {
+struct SwiftMessagesAlert {
     
     static func displaySmallErrorWithBody(_ body: String) {
         let errorView = MessageView.viewFromNib(layout: .statusLine)

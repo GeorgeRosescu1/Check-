@@ -15,9 +15,4 @@ class CheckerMainPageViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func logoutAction(_ sender: Any) {
-        FirebaseAuth.logout()
-        guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
-        self.navigationController?.pushViewController(loginVC, animated: true)
-    }
 }

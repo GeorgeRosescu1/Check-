@@ -15,13 +15,7 @@ class ChooseEntityViewController: UIViewController {
     @IBOutlet weak var checkerButton: UIButton!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        let handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-          print(auth)
-            print(user)
-        }
         
         configureUI()
     }

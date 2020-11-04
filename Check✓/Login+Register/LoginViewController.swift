@@ -26,8 +26,8 @@ class LoginViewController: UIViewController {
     //MARK: Visibility controller
     var loginVC: TTInputVisibilityController!
     
-    var emailText: String?
-    var passwordText: String?
+    var emailText = ""
+    var passwordText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,14 +94,14 @@ class LoginViewController: UIViewController {
         loginButton.isUserInteractionEnabled = false
         loginButton.alpha = 0.7
         spinner.startAnimating()
-        FirebaseAuth.loginUserWithEmail(emailText!, password: passwordText!) { (loginModel) in
+        FirebaseAuth.loginUserWithEmail(emailText, password: passwordText) { (loginModel) in
             self.loginButton.isUserInteractionEnabled = true
             self.loginButton.alpha = 1
             self.spinner.stopAnimating()
             if loginModel.error != nil {
-                AlertMessages.displaySmallErrorWithBody("User not found or user may have been deleted.")
+                SwiftMessagesAlert.displaySmallErrorWithBody("User not found or user may have been deleted.")
             } else {
-                guard let mainVc = AppStoryboards.MainPage.instance?.instantiateViewController(identifier: "CheckerMainPageViewController") as? CheckerMainPageViewController else { return }
+                guard let mainVc = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "TabBarViewController") as? CheckerTabBarViewController else { return }
                 self.navigationController?.pushViewController(mainVc, animated: true)
             }
         }
