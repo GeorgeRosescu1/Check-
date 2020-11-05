@@ -141,7 +141,7 @@
         <!--Checker Tab Bar View Controller-->
         <scene sceneID="eYg-OI-aUP">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarViewController" id="SKO-mk-q7g" customClass="CheckerTabBarViewController" customModule="Check_" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CheckerTabBarViewController" id="SKO-mk-q7g" customClass="CheckerTabBarViewController" customModule="Check_" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="YrT-fF-Xre">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

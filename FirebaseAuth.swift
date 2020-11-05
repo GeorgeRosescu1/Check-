@@ -13,6 +13,7 @@ class FirebaseAuth {
     static func logout() {
         do {
             try Auth.auth().signOut()
+            Session.userToken = Auth.auth().currentUser?.refreshToken
         } catch {
             debugPrint("Error while logging out \(error)")
         }
@@ -34,6 +35,7 @@ class FirebaseAuth {
                 complition(FirebaseAuthModel(error: error, authResponse: nil))
             } else {
                 complition(FirebaseAuthModel(error: nil, authResponse: authResult!))
+                Session.userToken = Auth.auth().currentUser?.refreshToken
             }
         }
     }

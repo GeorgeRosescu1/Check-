@@ -33,6 +33,7 @@ class OnboardingViewController: UIViewController {
         if pageControl.currentPage == onboardingVM.onboardingScreens.count - 1 {
             guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
             self.navigationController?.pushViewController(loginVC, animated: true)
+            Session.passedFirstTimeOnboarding = true
         } else {
             onboardingVM.nextPage()
             updateContent()
@@ -53,6 +54,7 @@ class OnboardingViewController: UIViewController {
     @IBAction func skipAction(_ sender: UIButton) {
         guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
         self.navigationController?.pushViewController(loginVC, animated: true)
+        Session.passedFirstTimeOnboarding = true
     }
     
     private func updateContent() {

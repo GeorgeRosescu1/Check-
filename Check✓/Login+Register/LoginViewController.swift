@@ -7,7 +7,6 @@
 
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
-import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -101,8 +100,8 @@ class LoginViewController: UIViewController {
             if loginModel.error != nil {
                 SwiftMessagesAlert.displaySmallErrorWithBody("User not found or user may have been deleted.")
             } else {
-                guard let mainVc = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "TabBarViewController") as? CheckerTabBarViewController else { return }
-                self.navigationController?.pushViewController(mainVc, animated: true)
+                guard let checkerMainMenuVc = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") as? CheckerTabBarViewController else { return }
+                self.navigationController?.pushViewController(checkerMainMenuVc, animated: true)
             }
         }
         
