@@ -27,11 +27,13 @@ class ChooseEntityViewController: UIViewController {
     
     @IBAction func checkPlaceAction(_ sender: UIButton) {
         guard let signUpVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "SignUpViewController") as? SignUpViewController else { return }
+        signUpVC.isUserChecker = false
         self.navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     @IBAction func checkerAction(_ sender: UIButton) {
         guard let signUpVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "SignUpViewController") as? SignUpViewController else { return }
+        signUpVC.isUserChecker = true
         self.navigationController?.pushViewController(signUpVC, animated: true)
     }
     

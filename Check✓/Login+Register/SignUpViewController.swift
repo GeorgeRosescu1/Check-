@@ -7,7 +7,6 @@
 
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
-import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -39,6 +38,8 @@ class SignUpViewController: UIViewController {
            isPasswordValid = validatePassword()
         }
     }
+    
+    var isUserChecker = false
     
     //MARK: Visibility controller
     var signUpVC: TTInputVisibilityController!
@@ -89,7 +90,17 @@ class SignUpViewController: UIViewController {
                 SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
             } else {
                 SwiftMessagesAlert.displaySmallSuccessWithBody("User checked✓")
+                self.navigateToRegistrationForm()
             }
+        }
+    }
+    
+    private func navigateToRegistrationForm() {
+        if isUserChecker {
+            guard let firstRegistrationPageVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerFirstPageRegistration") as? CheckerFirstPageRegistration else { return }
+            self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
+        } else {
+            print("ceva")
         }
     }
     
@@ -130,7 +141,8 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func backAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+       // self.navigationController?.popViewController(animated: true)
+        navigateToRegistrationForm()
     }
     
     @objc func showPassword(_ sender: UITextField) {

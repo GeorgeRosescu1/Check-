@@ -22,6 +22,7 @@
 		F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */; };
 		F040E4A2255C475A0017C1B6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A1255C475A0017C1B6 /* Product.swift */; };
 		F040E4A5255C49990017C1B6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A4255C49990017C1B6 /* Review.swift */; };
+		F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift */; };
 		F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */; };
 		F0577443255284E100BD2F22 /* CheckerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */; };
 		F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490D1254C7C5500020E82 /* FirebaseAuth.swift */; };
@@ -41,6 +42,7 @@
 		F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B232556B67200FAA364 /* Restaurant.swift */; };
 		F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B262556B6F500FAA364 /* Rezervation.swift */; };
 		F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF4F182544543400E576D8 /* OnboardingScreen.swift */; };
+		F0EA16BF255C5B04005A9924 /* CheckerFPage+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA16BE255C5B04005A9924 /* CheckerFPage+TextFields.swift */; };
 		F0F702BB254C98E60034695B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F702BA254C98E60034695B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,7 @@
 		F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
 		F040E4A1255C475A0017C1B6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F040E4A4255C49990017C1B6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerFirstPageRegistration.swift; sourceTree = "<group>"; };
 		F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerProfileViewController.swift; sourceTree = "<group>"; };
 		F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerTabBarViewController.swift; sourceTree = "<group>"; };
 		F06490D1254C7C5500020E82 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		F0D64B232556B67200FAA364 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F0D64B262556B6F500FAA364 /* Rezervation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rezervation.swift; sourceTree = "<group>"; };
 		F0DF4F182544543400E576D8 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		F0EA16BE255C5B04005A9924 /* CheckerFPage+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckerFPage+TextFields.swift"; sourceTree = "<group>"; };
 		F0F702BA254C98E60034695B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +216,22 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		F040E4A7255C4EF70017C1B6 /* Checker Registration */ = {
+			isa = PBXGroup;
+			children = (
+				F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift */,
+				F0EA16BE255C5B04005A9924 /* CheckerFPage+TextFields.swift */,
+			);
+			path = "Checker Registration";
+			sourceTree = "<group>";
+		};
+		F040E4A9255C4F110017C1B6 /* Restaurant Registration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Restaurant Registration";
+			sourceTree = "<group>";
+		};
 		F057743C255280D500BD2F22 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +281,8 @@
 		F06946C4254EBEE1005F9F50 /* Register Flow */ = {
 			isa = PBXGroup;
 			children = (
+				F040E4A9255C4F110017C1B6 /* Restaurant Registration */,
+				F040E4A7255C4EF70017C1B6 /* Checker Registration */,
 				F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */,
 			);
 			name = "Register Flow";
@@ -442,8 +464,10 @@
 				F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */,
 				F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */,
 				F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */,
+				F0EA16BF255C5B04005A9924 /* CheckerFPage+TextFields.swift in Sources */,
 				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
 				F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */,
+				F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift in Sources */,
 				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
