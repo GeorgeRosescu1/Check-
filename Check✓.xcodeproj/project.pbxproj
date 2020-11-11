@@ -20,6 +20,8 @@
 		F026EC8C253F02D400DBED7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8B253F02D400DBED7E /* Assets.xcassets */; };
 		F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8D253F02D400DBED7E /* LaunchScreen.storyboard */; };
 		F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */; };
+		F040E4A2255C475A0017C1B6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A1255C475A0017C1B6 /* Product.swift */; };
+		F040E4A5255C49990017C1B6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A4255C49990017C1B6 /* Review.swift */; };
 		F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */; };
 		F0577443255284E100BD2F22 /* CheckerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */; };
 		F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490D1254C7C5500020E82 /* FirebaseAuth.swift */; };
@@ -35,6 +37,9 @@
 		F0A7BC522545CAE700764CF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BC512545CAE700764CF4 /* LoginViewController.swift */; };
 		F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A7BC552545CCB900764CF4 /* Authentication.storyboard */; };
 		F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */; };
+		F0D64B212556B66000FAA364 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B202556B66000FAA364 /* Checker.swift */; };
+		F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B232556B67200FAA364 /* Restaurant.swift */; };
+		F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B262556B6F500FAA364 /* Rezervation.swift */; };
 		F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF4F182544543400E576D8 /* OnboardingScreen.swift */; };
 		F0F702BB254C98E60034695B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0F702BA254C98E60034695B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -57,6 +62,8 @@
 		F026EC8E253F02D400DBED7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F026EC90253F02D400DBED7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
+		F040E4A1255C475A0017C1B6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		F040E4A4255C49990017C1B6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerProfileViewController.swift; sourceTree = "<group>"; };
 		F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerTabBarViewController.swift; sourceTree = "<group>"; };
 		F06490D1254C7C5500020E82 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
@@ -73,6 +80,9 @@
 		F0A7BC512545CAE700764CF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0A7BC552545CCB900764CF4 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F0D64B202556B66000FAA364 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
+		F0D64B232556B67200FAA364 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		F0D64B262556B6F500FAA364 /* Rezervation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rezervation.swift; sourceTree = "<group>"; };
 		F0DF4F182544543400E576D8 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		F0F702BA254C98E60034695B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +178,7 @@
 		F026EC9B253F03E900DBED7E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F0D64B1E2556B64200FAA364 /* Users */,
 				F03D7C312545EC2E005D6A83 /* Enums */,
 				F0A58CDE253F0FF60024B7EF /* ViewModel */,
 				F0DF4F182544543400E576D8 /* OnboardingScreen.swift */,
@@ -281,6 +292,18 @@
 				F06946C4254EBEE1005F9F50 /* Register Flow */,
 			);
 			name = Authentication;
+			sourceTree = "<group>";
+		};
+		F0D64B1E2556B64200FAA364 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				F0D64B202556B66000FAA364 /* Checker.swift */,
+				F0D64B232556B67200FAA364 /* Restaurant.swift */,
+				F0D64B262556B6F500FAA364 /* Rezervation.swift */,
+				F040E4A1255C475A0017C1B6 /* Product.swift */,
+				F040E4A4255C49990017C1B6 /* Review.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,18 +432,23 @@
 				F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */,
 				F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */,
 				F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */,
+				F040E4A5255C49990017C1B6 /* Review.swift in Sources */,
 				F026EC87253F02D300DBED7E /* OnboardingViewController.swift in Sources */,
+				F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */,
 				F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */,
 				F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */,
 				F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */,
+				F0D64B212556B66000FAA364 /* Checker.swift in Sources */,
 				F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */,
 				F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */,
 				F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */,
 				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
 				F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */,
+				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
+				F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */,
 				F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */,
 				F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */,
 			);

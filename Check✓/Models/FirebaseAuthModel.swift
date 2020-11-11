@@ -12,5 +12,4 @@ struct FirebaseAuthModel {
     var error: Error?
     var authResponse: AuthDataResult?
     
-    
 }
