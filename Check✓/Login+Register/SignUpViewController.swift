@@ -97,7 +97,7 @@ class SignUpViewController: UIViewController {
     
     private func navigateToRegistrationForm() {
         if isUserChecker {
-            guard let firstRegistrationPageVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerFirstPageRegistration") as? CheckerFirstPageRegistration else { return }
+            guard let firstRegistrationPageVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerFirstPageRegistrationViewController") as? CheckerFirstPageRegistrationViewController else { return }
             self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
         } else {
             print("ceva")

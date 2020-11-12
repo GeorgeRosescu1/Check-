@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension CheckerFirstPageRegistration: UITextFieldDelegate {
+extension CheckerFirstPageRegistrationViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

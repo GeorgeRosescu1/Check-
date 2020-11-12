@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
 
-class CheckerFirstPageRegistration: UIViewController {
+class CheckerFirstPageRegistrationViewController: UIViewController {
     
     @IBOutlet weak var firstNameTextField: MDCOutlinedTextField!
     @IBOutlet weak var lastNameTextField: MDCOutlinedTextField!
@@ -27,8 +27,8 @@ class CheckerFirstPageRegistration: UIViewController {
         checkerRegistrationFPageVC.extraSpaceAboveKeyboard = 10
         
         nextButton.configureRoundButtonWithShadow()
-        nextButton.isUserInteractionEnabled = false
-        nextButton.alpha = 0.7
+       // nextButton.isUserInteractionEnabled = false
+       // nextButton.alpha = 0.7
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -38,7 +38,8 @@ class CheckerFirstPageRegistration: UIViewController {
     }
     
     @IBAction func nextPageAction(_ sender: Any) {
-        
+        guard let secondPageForm = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerSecondPageRegistrationViewController") as? CheckerSecondPageRegistrationViewController else { return }
+        navigationController?.pushViewController(secondPageForm, animated: false)
     }
     
     private func configureTextFields() {
@@ -64,4 +65,8 @@ struct CheckerRegisterFormConstants {
     
     static let phoneNumber = "Phone number"
     static let phonePlaceholder = "0799744071"
+    
+    static let ageText = "Age"
+    static let agePlaceholder = "Your age"
+    static let ageAssistiveLabel = "Age should be a number between 14 and 130"
 }

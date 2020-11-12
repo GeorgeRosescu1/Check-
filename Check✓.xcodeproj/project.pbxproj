@@ -22,9 +22,11 @@
 		F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */; };
 		F040E4A2255C475A0017C1B6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A1255C475A0017C1B6 /* Product.swift */; };
 		F040E4A5255C49990017C1B6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A4255C49990017C1B6 /* Review.swift */; };
-		F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift */; };
+		F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift */; };
 		F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */; };
 		F0577443255284E100BD2F22 /* CheckerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */; };
+		F05F1DF3255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */; };
+		F05F1DF6255D1E9F00305271 /* CheckerSP+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F1DF5255D1E9F00305271 /* CheckerSP+ImagePicker.swift */; };
 		F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490D1254C7C5500020E82 /* FirebaseAuth.swift */; };
 		F06490DB254C7CA200020E82 /* SwiftMessagesAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490DA254C7CA200020E82 /* SwiftMessagesAlert.swift */; };
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
@@ -66,9 +68,11 @@
 		F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
 		F040E4A1255C475A0017C1B6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F040E4A4255C49990017C1B6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerFirstPageRegistration.swift; sourceTree = "<group>"; };
+		F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerFirstPageRegistrationViewController.swift; sourceTree = "<group>"; };
 		F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerProfileViewController.swift; sourceTree = "<group>"; };
 		F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerTabBarViewController.swift; sourceTree = "<group>"; };
+		F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerSecondPageRegistrationViewController.swift; sourceTree = "<group>"; };
+		F05F1DF5255D1E9F00305271 /* CheckerSP+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckerSP+ImagePicker.swift"; sourceTree = "<group>"; };
 		F06490D1254C7C5500020E82 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		F06490DA254C7CA200020E82 /* SwiftMessagesAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessagesAlert.swift; sourceTree = "<group>"; };
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
@@ -219,8 +223,10 @@
 		F040E4A7255C4EF70017C1B6 /* Checker Registration */ = {
 			isa = PBXGroup;
 			children = (
-				F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift */,
+				F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift */,
 				F0EA16BE255C5B04005A9924 /* CheckerFPage+TextFields.swift */,
+				F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */,
+				F05F1DF5255D1E9F00305271 /* CheckerSP+ImagePicker.swift */,
 			);
 			path = "Checker Registration";
 			sourceTree = "<group>";
@@ -467,9 +473,11 @@
 				F0EA16BF255C5B04005A9924 /* CheckerFPage+TextFields.swift in Sources */,
 				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
 				F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */,
-				F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistration.swift in Sources */,
+				F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift in Sources */,
 				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
+				F05F1DF3255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift in Sources */,
+				F05F1DF6255D1E9F00305271 /* CheckerSP+ImagePicker.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
 				F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */,
