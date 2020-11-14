@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34C3FFD3A13E9082198DEC78 /* Pods_Check_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */; };
+		42FE8D7D7CEEA0FFF1EA69C8 /* Pods_Check_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533BAD2FAA9585577BC4C8F6 /* Pods_Check_.framework */; };
 		F00CA4EF25531D3000FC79C9 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00CA4EE25531D3000FC79C9 /* Alerts.swift */; };
 		F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */; };
 		F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */; };
@@ -19,6 +19,7 @@
 		F026EC8A253F02D300DBED7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F026EC88253F02D300DBED7E /* Main.storyboard */; };
 		F026EC8C253F02D400DBED7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8B253F02D400DBED7E /* Assets.xcassets */; };
 		F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F026EC8D253F02D400DBED7E /* LaunchScreen.storyboard */; };
+		F0284DEE25600E2300615A89 /* CheckerSPage+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0284DED25600E2300615A89 /* CheckerSPage+TextFields.swift */; };
 		F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */; };
 		F040E4A2255C475A0017C1B6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A1255C475A0017C1B6 /* Product.swift */; };
 		F040E4A5255C49990017C1B6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A4255C49990017C1B6 /* Review.swift */; };
@@ -26,7 +27,7 @@
 		F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */; };
 		F0577443255284E100BD2F22 /* CheckerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */; };
 		F05F1DF3255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */; };
-		F05F1DF6255D1E9F00305271 /* CheckerSP+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F1DF5255D1E9F00305271 /* CheckerSP+ImagePicker.swift */; };
+		F05F1DF6255D1E9F00305271 /* CheckerSPage+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F1DF5255D1E9F00305271 /* CheckerSPage+ImagePicker.swift */; };
 		F06490D2254C7C5500020E82 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490D1254C7C5500020E82 /* FirebaseAuth.swift */; };
 		F06490DB254C7CA200020E82 /* SwiftMessagesAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06490DA254C7CA200020E82 /* SwiftMessagesAlert.swift */; };
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
@@ -49,9 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		319B0EE301B6932B16361821 /* Pods-Check✓.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.debug.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.debug.xcconfig"; sourceTree = "<group>"; };
-		3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D2C95DD3C0ADF2D28099035 /* Pods-Check✓.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.release.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.release.xcconfig"; sourceTree = "<group>"; };
+		533BAD2FAA9585577BC4C8F6 /* Pods_Check_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAC1BA0C7ECB1BF5D30681E6 /* Pods-Check✓.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.debug.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.debug.xcconfig"; sourceTree = "<group>"; };
+		D1F52BE23586941AD831E491 /* Pods-Check✓.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check✓.release.xcconfig"; path = "Target Support Files/Pods-Check✓/Pods-Check✓.release.xcconfig"; sourceTree = "<group>"; };
 		F00CA4EE25531D3000FC79C9 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+TextFields.swift"; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		F026EC8B253F02D400DBED7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F026EC8E253F02D400DBED7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F026EC90253F02D400DBED7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0284DED25600E2300615A89 /* CheckerSPage+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckerSPage+TextFields.swift"; sourceTree = "<group>"; };
 		F03D7C322545EC5F005D6A83 /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
 		F040E4A1255C475A0017C1B6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F040E4A4255C49990017C1B6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerProfileViewController.swift; sourceTree = "<group>"; };
 		F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerTabBarViewController.swift; sourceTree = "<group>"; };
 		F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerSecondPageRegistrationViewController.swift; sourceTree = "<group>"; };
-		F05F1DF5255D1E9F00305271 /* CheckerSP+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckerSP+ImagePicker.swift"; sourceTree = "<group>"; };
+		F05F1DF5255D1E9F00305271 /* CheckerSPage+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckerSPage+ImagePicker.swift"; sourceTree = "<group>"; };
 		F06490D1254C7C5500020E82 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		F06490DA254C7CA200020E82 /* SwiftMessagesAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessagesAlert.swift; sourceTree = "<group>"; };
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
@@ -100,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34C3FFD3A13E9082198DEC78 /* Pods_Check_.framework in Frameworks */,
+				42FE8D7D7CEEA0FFF1EA69C8 /* Pods_Check_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,16 +112,16 @@
 		3B123F6C2446F3F03648A926 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				319B0EE301B6932B16361821 /* Pods-Check✓.debug.xcconfig */,
-				8D2C95DD3C0ADF2D28099035 /* Pods-Check✓.release.xcconfig */,
+				CAC1BA0C7ECB1BF5D30681E6 /* Pods-Check✓.debug.xcconfig */,
+				D1F52BE23586941AD831E491 /* Pods-Check✓.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		EEB5EEE687D19D3A6F902814 /* Frameworks */ = {
+		7D0D013EE64ABB43C5749988 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3854A1DF90C6B68DE92AF231 /* Pods_Check_.framework */,
+				533BAD2FAA9585577BC4C8F6 /* Pods_Check_.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,7 +143,7 @@
 				F026EC81253F02D300DBED7E /* Check✓ */,
 				F026EC80253F02D300DBED7E /* Products */,
 				3B123F6C2446F3F03648A926 /* Pods */,
-				EEB5EEE687D19D3A6F902814 /* Frameworks */,
+				7D0D013EE64ABB43C5749988 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,7 +228,8 @@
 				F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift */,
 				F0EA16BE255C5B04005A9924 /* CheckerFPage+TextFields.swift */,
 				F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */,
-				F05F1DF5255D1E9F00305271 /* CheckerSP+ImagePicker.swift */,
+				F05F1DF5255D1E9F00305271 /* CheckerSPage+ImagePicker.swift */,
+				F0284DED25600E2300615A89 /* CheckerSPage+TextFields.swift */,
 			);
 			path = "Checker Registration";
 			sourceTree = "<group>";
@@ -341,11 +344,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F026EC93253F02D400DBED7E /* Build configuration list for PBXNativeTarget "Check✓" */;
 			buildPhases = (
-				6ABD61F5EDCD9DAECFFD2C96 /* [CP] Check Pods Manifest.lock */,
+				4E51C794CACA74EC02238802 /* [CP] Check Pods Manifest.lock */,
 				F026EC7B253F02D300DBED7E /* Sources */,
 				F026EC7C253F02D300DBED7E /* Frameworks */,
 				F026EC7D253F02D300DBED7E /* Resources */,
-				9B74DC403D8BFDECC9A8E9AF /* [CP] Embed Pods Frameworks */,
+				47386056F4FB7914113BA4C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,7 +408,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6ABD61F5EDCD9DAECFFD2C96 /* [CP] Check Pods Manifest.lock */ = {
+		47386056F4FB7914113BA4C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Check✓/Pods-Check✓-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Check✓/Pods-Check✓-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Check✓/Pods-Check✓-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E51C794CACA74EC02238802 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -425,23 +445,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B74DC403D8BFDECC9A8E9AF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Check✓/Pods-Check✓-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Check✓/Pods-Check✓-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Check✓/Pods-Check✓-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -477,10 +480,11 @@
 				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F05F1DF3255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift in Sources */,
-				F05F1DF6255D1E9F00305271 /* CheckerSP+ImagePicker.swift in Sources */,
+				F05F1DF6255D1E9F00305271 /* CheckerSPage+ImagePicker.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
 				F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */,
+				F0284DEE25600E2300615A89 /* CheckerSPage+TextFields.swift in Sources */,
 				F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */,
 				F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */,
 			);
@@ -626,7 +630,7 @@
 		};
 		F026EC94253F02D400DBED7E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 319B0EE301B6932B16361821 /* Pods-Check✓.debug.xcconfig */;
+			baseConfigurationReference = CAC1BA0C7ECB1BF5D30681E6 /* Pods-Check✓.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -647,7 +651,7 @@
 		};
 		F026EC95253F02D400DBED7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D2C95DD3C0ADF2D28099035 /* Pods-Check✓.release.xcconfig */;
+			baseConfigurationReference = D1F52BE23586941AD831E491 /* Pods-Check✓.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

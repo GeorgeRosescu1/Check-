@@ -14,9 +14,12 @@ extension CheckerFirstPageRegistrationViewController: UITextFieldDelegate {
         switch textField {
         case firstNameTextField:
             lastNameTextField.becomeFirstResponder()
+            checkerToRegister.firstName = textField.text
         case lastNameTextField:
+            checkerToRegister.lastName = textField.text
             phoneTextField.becomeFirstResponder()
         case phoneTextField:
+            checkerToRegister.phoneNumber = textField.text
             phoneTextField.resignFirstResponder()
         default:
             return true

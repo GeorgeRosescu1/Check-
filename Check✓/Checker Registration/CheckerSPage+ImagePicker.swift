@@ -43,8 +43,8 @@ extension CheckerSecondPageRegistrationViewController: UIImagePickerControllerDe
         guard let image = info[.editedImage] as? UIImage else { return }
         
         profilePicture.image = image
-        picker.dismiss(animated: true, completion: nil)
         
+        checkerToRegister.profilePicture = image
+        picker.dismiss(animated: true, completion: nil)
     }
-    
 }

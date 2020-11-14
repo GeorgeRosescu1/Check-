@@ -20,6 +20,11 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
     //MARK: Visibility controller
     var checkerRegistrationFPageVC: TTInputVisibilityController!
     
+    var checkerToRegister = Checker()
+    
+    let phoneToolbar = UIToolbar()
+    let toolbarDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(toolbarDoneAction(_:)))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,8 +32,11 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
         checkerRegistrationFPageVC.extraSpaceAboveKeyboard = 10
         
         nextButton.configureRoundButtonWithShadow()
-       // nextButton.isUserInteractionEnabled = false
-       // nextButton.alpha = 0.7
+        
+        
+        //TODO button enabled only after data input is finish
+        // nextButton.isUserInteractionEnabled = false
+        // nextButton.alpha = 0.7
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -39,6 +47,7 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
     
     @IBAction func nextPageAction(_ sender: Any) {
         guard let secondPageForm = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerSecondPageRegistrationViewController") as? CheckerSecondPageRegistrationViewController else { return }
+        secondPageForm.checkerToRegister = self.checkerToRegister
         navigationController?.pushViewController(secondPageForm, animated: false)
     }
     
@@ -50,8 +59,20 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
         
         self.view.addSubview(phoneTextField.configureAuthenticationTextField(labelText: CheckerRegisterFormConstants.phoneNumber, placeholderText: CheckerRegisterFormConstants.phonePlaceholder, leadingAssistiveLabel: nil))
         
+        phoneToolbar.items = [toolbarDoneButton]
+        phoneToolbar.sizeToFit()
+        phoneToolbar.isTranslucent = true
+        
+        phoneTextField.inputAccessoryView = phoneToolbar
         phoneTextField.keyboardType = .phonePad
         
+        firstNameTextField.returnKeyType = .next
+        lastNameTextField.returnKeyType = .next
+    }
+    
+    @objc func toolbarDoneAction(_ sender: UITextField) {
+        checkerToRegister.phoneNumber = phoneTextField.text
+        phoneTextField.resignFirstResponder()
     }
 }
 

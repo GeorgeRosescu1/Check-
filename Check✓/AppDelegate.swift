@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
+        let _ = Firestore.firestore()
+        
         return true
     }
     

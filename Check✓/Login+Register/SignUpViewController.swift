@@ -98,6 +98,10 @@ class SignUpViewController: UIViewController {
     private func navigateToRegistrationForm() {
         if isUserChecker {
             guard let firstRegistrationPageVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerFirstPageRegistrationViewController") as? CheckerFirstPageRegistrationViewController else { return }
+            
+            firstRegistrationPageVc.checkerToRegister = Checker()
+            firstRegistrationPageVc.checkerToRegister.email = emailText
+            
             self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
         } else {
             print("ceva")
@@ -141,8 +145,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func backAction(_ sender: UIButton) {
-       // self.navigationController?.popViewController(animated: true)
-        navigateToRegistrationForm()
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func showPassword(_ sender: UITextField) {
