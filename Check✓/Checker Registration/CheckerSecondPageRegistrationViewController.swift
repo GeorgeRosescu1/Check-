@@ -21,6 +21,7 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
     var checkerToRegister = Checker()
     
     let firestore = Firestore.firestore()
+    let storage = Storage.storage().reference().child(CheckerConstants.FStore.picturesCollectionName)
     
     
     //MARK: Visibility controller
@@ -78,24 +79,36 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
         
         spinner.startAnimating()
         
-        let data: [String: Any] = [
-            CheckerConstants.FStore.age: checkerToRegister.age!,
-            CheckerConstants.FStore.firstName: checkerToRegister.firstName!,
-            CheckerConstants.FStore.lastName: checkerToRegister.lastName!,
-            CheckerConstants.FStore.phoneNumber: checkerToRegister.phoneNumber!,
-            CheckerConstants.FStore.email: checkerToRegister.email!,
-            CheckerConstants.FStore.profilePicture: ""
-        ]
+        guard let profilePictureData = profilePicture.image?.jpegData(compressionQuality: 1) else { return }
+        let imageName = UUID().uuidString
         
+        let imageStorage = storage.child(imageName)
         
-        firestore.collection(CheckerConstants.FStore.collectionName).addDocument(data: data) { (error) in
-            self.spinner.stopAnimating()
+        imageStorage.putData(profilePictureData, metadata: nil) { (metadata, error) in
             if let error = error {
-                SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
+                debugPrint(error.localizedDescription)
+                return
             } else {
-                SwiftMessagesAlert.displaySmallSuccessWithBody("Registration successful🤩")
-                guard let checkerMainMenu = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") as?  CheckerTabBarViewController else { return }
-                self.navigationController?.pushViewController(checkerMainMenu, animated: true)
+                let data: [String: Any] = [
+                    CheckerConstants.FStore.age: self.checkerToRegister.age!,
+                    CheckerConstants.FStore.firstName: self.checkerToRegister.firstName!,
+                    CheckerConstants.FStore.lastName: self.checkerToRegister.lastName!,
+                    CheckerConstants.FStore.phoneNumber: self.checkerToRegister.phoneNumber!,
+                    CheckerConstants.FStore.email: self.checkerToRegister.email!,
+                    CheckerConstants.FStore.profilePictureURL: imageName
+                ]
+                
+                
+                self.firestore.collection(CheckerConstants.FStore.collectionName).addDocument(data: data) { (error) in
+                    self.spinner.stopAnimating()
+                    if let error = error {
+                        SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
+                    } else {
+                        SwiftMessagesAlert.displaySmallSuccessWithBody("Registration successful🤩")
+                        guard let checkerMainMenu = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") as?  CheckerTabBarViewController else { return }
+                        self.navigationController?.pushViewController(checkerMainMenu, animated: true)
+                    }
+                }
             }
         }
     }

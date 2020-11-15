@@ -40,6 +40,7 @@ class CheckerProfileViewController: UIViewController {
             if let age = self.currentUser.age {
                 self.ageLabel.text = "Age: \(age)"
             }
+            self.profilePicture.image = self.currentUser.profilePicture
         }
         
     }
