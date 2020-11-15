@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 struct Session {
+    
+    static var registeredUser: UserEntity?
 
     static var userToken: String? {
         set { UserDefaults.standard.setValue(newValue, forKey: SessionKeys.currentUser) }

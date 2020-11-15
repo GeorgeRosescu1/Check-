@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Checker {
+class Checker: UserEntity {
     
     var age: Int!
     var firstName: String!
@@ -30,6 +30,16 @@ class Checker {
         self.email = email
         self.phoneNumber = phoneNumber
         self.profilePicture = profilePicture
+    }
+    
+    
+    func mapCheckerFromDictionary(dict: [String: Any]?) {
+        self.firstName = dict?[CheckerConstants.FStore.firstName] as? String
+        self.lastName = dict?[CheckerConstants.FStore.lastName] as? String
+        self.age = dict?[CheckerConstants.FStore.age] as? Int
+        self.phoneNumber = dict?[CheckerConstants.FStore.phoneNumber] as? String
+       // self.profilePicture = dict?[CheckerConstants.FStore.phoneNumber] as? String
+        self.email = dict?[CheckerConstants.FStore.email] as? String
     }
 }
 

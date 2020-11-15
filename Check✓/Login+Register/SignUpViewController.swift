@@ -79,7 +79,7 @@ class SignUpViewController: UIViewController {
         passwordTextField.isUserInteractionEnabled = false
         
         
-        FirebaseAuth.signUpUserWithEmail(emailText!, password: passwordText!) { (signUpModel) in
+        FirebaseAPI.signUpUserWithEmail(emailText!, password: passwordText!) { (signUpModel) in
             self.buttonSpinner.stopAnimating()
             self.signUpButton.isEnabled = true
             self.signUpButton.alpha = 1

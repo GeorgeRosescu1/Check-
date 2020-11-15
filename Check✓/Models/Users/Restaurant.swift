@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct Restaurant {
+struct Restaurant: UserEntity {
     
     var name: String!
     var address: String!
     var phoneNumber: String!
+    var email: String!
     var openingHour: Date!
     var closingHour: Date!
-    var menu: [Product]!
+    var menu: [Product]?
     var description: String!
     var pictureURL: String!
     var starRatings: [Double]! // star rating will be mandatory after each rezervation is done

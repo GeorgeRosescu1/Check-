@@ -50,19 +50,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFe-gz-qgT">
-                                <rect key="frame" x="14" y="31" width="30" height="30"/>
+                                <rect key="frame" x="24" y="30" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow.uturn.backward.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="logoutAction:" destination="M8z-2b-QkK" eventType="touchUpInside" id="NfT-bW-VlH"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bowl" translatesAutoresizingMaskIntoConstraints="NO" id="vR5-IF-RFH">
+                                <rect key="frame" x="24" y="80" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-rJ-FeK">
+                                <rect key="frame" x="186" y="170" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" name="dark blue color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9Z-4h-ZIK">
+                                <rect key="frame" x="186" y="199" width="208" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" name="dark blue color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5VQ-o1-Msd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="uUA-rR-p6G"/>
                     <connections>
+                        <outlet property="ageLabel" destination="e3U-rJ-FeK" id="jy9-UI-6lM"/>
+                        <outlet property="phoneLabel" destination="h9Z-4h-ZIK" id="KVZ-Ya-chD"/>
+                        <outlet property="profilePicture" destination="vR5-IF-RFH" id="y20-cx-7P1"/>
                         <outlet property="userNameLabel" destination="Yob-pG-gJC" id="OUs-Of-vUe"/>
                     </connections>
                 </viewController>
@@ -158,6 +179,7 @@
     <resources>
         <image name="arrow.uturn.backward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="bowl" width="341.33334350585938" height="341.33334350585938"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="person" catalog="system" width="128" height="117"/>

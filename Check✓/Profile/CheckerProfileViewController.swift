@@ -12,43 +12,36 @@ import Firebase
 class CheckerProfileViewController: UIViewController {
     
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     let currentUserEmail = Auth.auth().currentUser?.email
     
     let firestore = Firestore.firestore()
     
+    var currentUser: Checker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profilePicture.layer.cornerRadius = 10
         
         populateProfileData()
         
     }
     
-    
     private func populateProfileData() {
-        let checker = Checker()
-        checker.email = currentUserEmail
+        currentUser = Session.registeredUser as? Checker
         
-        //listen for updates here
-        firestore.collection(CheckerConstants.FStore.collectionName).getDocuments { (snapshot, error) in
-            if let error = error {
-                SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
-            } else {
-                let currentUserDocument = snapshot?.documents.first(where: { (docData) -> Bool in
-                    let document = docData.data()
-                    return document[CheckerConstants.FStore.email] as? String == self.currentUserEmail
-                })
-                
-                let currentUserData = currentUserDocument?.data()
-                
-                checker.firstName = currentUserData?[CheckerConstants.FStore.firstName] as? String
-                
-                DispatchQueue.main.async {
-                    self.userNameLabel.text = checker.firstName
-                }
-                 
+        DispatchQueue.main.async {
+            self.userNameLabel.text = self.currentUser.firstName + " " + self.currentUser.lastName
+            self.phoneLabel.text = "Phone: \(self.currentUser.phoneNumber ?? "")"
+            if let age = self.currentUser.age {
+                self.ageLabel.text = "Age: \(age)"
             }
         }
+        
     }
     
     @IBAction func logoutAction(_ sender: UIButton) {
@@ -56,7 +49,7 @@ class CheckerProfileViewController: UIViewController {
     }
     
     func logoutConfirmed() {
-        FirebaseAuth.logout()
+        FirebaseAPI.logout()
         guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
         self.navigationController?.pushViewController(loginVC, animated: true)
     }

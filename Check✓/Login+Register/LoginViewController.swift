@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
         loginButton.isUserInteractionEnabled = false
         loginButton.alpha = 0.7
         spinner.startAnimating()
-        FirebaseAuth.loginUserWithEmail(emailText, password: passwordText) { (loginModel) in
+        FirebaseAPI.loginUserWithEmail(emailText, password: passwordText) { (loginModel) in
             self.loginButton.isUserInteractionEnabled = true
             self.loginButton.alpha = 1
             self.spinner.stopAnimating()
