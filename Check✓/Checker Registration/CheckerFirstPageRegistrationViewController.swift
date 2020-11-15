@@ -25,6 +25,8 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
     let phoneToolbar = UIToolbar()
     let toolbarDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(toolbarDoneAction(_:)))
     
+    var formIsCompleted: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,11 +34,8 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
         checkerRegistrationFPageVC.extraSpaceAboveKeyboard = 10
         
         nextButton.configureRoundButtonWithShadow()
-        
-        
-        //TODO button enabled only after data input is finish
-        // nextButton.isUserInteractionEnabled = false
-        // nextButton.alpha = 0.7
+        nextButton.isUserInteractionEnabled = false
+        nextButton.alpha = 0.7
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
@@ -46,8 +45,14 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
     }
     
     @IBAction func nextPageAction(_ sender: Any) {
+        firstNameTextField.endEditing(true)
+        lastNameTextField.endEditing(true)
+        phoneTextField.endEditing(true)
+        
         guard let secondPageForm = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerSecondPageRegistrationViewController") as? CheckerSecondPageRegistrationViewController else { return }
+        
         secondPageForm.checkerToRegister = self.checkerToRegister
+        
         navigationController?.pushViewController(secondPageForm, animated: false)
     }
     
@@ -73,6 +78,20 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
     @objc func toolbarDoneAction(_ sender: UITextField) {
         checkerToRegister.phoneNumber = phoneTextField.text
         phoneTextField.resignFirstResponder()
+    }
+    
+    func validateFormData() {
+        guard let firstNameText = firstNameTextField.text else { return  }
+        guard let lastNameText = lastNameTextField.text else { return  }
+        guard let phoneText = phoneTextField.text else { return  }
+        
+        if !firstNameText.isEmpty && !lastNameText.isEmpty && !phoneText.isEmpty {
+            nextButton.isUserInteractionEnabled = true
+            nextButton.alpha = 1
+        } else {
+            nextButton.isUserInteractionEnabled = false
+            nextButton.alpha = 0.7
+        }
     }
 }
 

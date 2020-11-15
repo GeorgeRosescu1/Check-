@@ -397,6 +397,10 @@
                                 <color key="textColor" name="dark blue color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="UZ9-tH-8kW">
+                                <rect key="frame" x="303" y="638" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mdj-Nh-M0f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -406,6 +410,7 @@
                         <outlet property="finishButton" destination="FKq-zc-Rnn" id="TYi-kX-0Pa"/>
                         <outlet property="pageControl" destination="EBy-XS-VYb" id="uMU-SF-EfZ"/>
                         <outlet property="profilePicture" destination="qHP-kY-KGM" id="l9y-ve-KFy"/>
+                        <outlet property="spinner" destination="UZ9-tH-8kW" id="pxt-TY-Ivk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4k3-Jl-Lrr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

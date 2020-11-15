@@ -12,9 +12,13 @@ extension CheckerSecondPageRegistrationViewController: UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        checkerToRegister.age = Int(ageTextField.text!)
         ageTextField.resignFirstResponder()
         
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkerToRegister.age = Int(ageTextField.text!)
+        validateFormData()
     }
 }

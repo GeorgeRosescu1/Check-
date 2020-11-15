@@ -14,6 +14,22 @@ extension CheckerFirstPageRegistrationViewController: UITextFieldDelegate {
         switch textField {
         case firstNameTextField:
             lastNameTextField.becomeFirstResponder()
+        case lastNameTextField:
+            phoneTextField.becomeFirstResponder()
+        case phoneTextField:
+            phoneTextField.resignFirstResponder()
+        default:
+            
+            return true
+        }
+        
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case firstNameTextField:
+            lastNameTextField.becomeFirstResponder()
             checkerToRegister.firstName = textField.text
         case lastNameTextField:
             checkerToRegister.lastName = textField.text
@@ -22,9 +38,10 @@ extension CheckerFirstPageRegistrationViewController: UITextFieldDelegate {
             checkerToRegister.phoneNumber = textField.text
             phoneTextField.resignFirstResponder()
         default:
-            return true
+            
+            return
         }
         
-        return true
+        validateFormData()
     }
 }

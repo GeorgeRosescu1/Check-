@@ -16,15 +16,26 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var ageTextField: MDCOutlinedTextField!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var checkerToRegister = Checker()
     
     let firestore = Firestore.firestore()
     
+    
+    //MARK: Visibility controller
+    var checkerRegistrationSPageVC: TTInputVisibilityController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkerRegistrationSPageVC = self.view.addInputVisibilityController()
+        checkerRegistrationSPageVC.extraSpaceAboveKeyboard = 10
+        
         ageTextField.delegate = self
+        
+        finishButton.isUserInteractionEnabled = false
+        finishButton.alpha = 0.7
         
         configureUI()
     }
@@ -50,8 +61,23 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
         navigationController?.popViewController(animated: false)
     }
     
+    func validateFormData() {
+        guard let ageText = ageTextField.text else { return  }
+        
+        if !ageText.isEmpty {
+            finishButton.isUserInteractionEnabled = true
+            finishButton.alpha = 1
+        } else {
+            finishButton.isUserInteractionEnabled = false
+            finishButton.alpha = 0.7
+        }
+    }
+    
     @IBAction func finishAction(_ sender: UIButton) {
-        //TODO fix optionals
+        ageTextField.endEditing(true)
+        
+        spinner.startAnimating()
+        
         let data: [String: Any] = [
             CheckerConstants.FStore.age: checkerToRegister.age!,
             CheckerConstants.FStore.firstName: checkerToRegister.firstName!,
@@ -63,6 +89,7 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
         
         
         firestore.collection(CheckerConstants.FStore.collectionName).addDocument(data: data) { (error) in
+            self.spinner.stopAnimating()
             if let error = error {
                 SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
             } else {

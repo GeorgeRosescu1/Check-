@@ -89,7 +89,6 @@ class SignUpViewController: UIViewController {
             if let error = signUpModel.error {
                 SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
             } else {
-                SwiftMessagesAlert.displaySmallSuccessWithBody("User checked✓")
                 self.navigateToRegistrationForm()
             }
         }
@@ -104,7 +103,7 @@ class SignUpViewController: UIViewController {
             
             self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
         } else {
-            print("ceva")
+           //navigate to restaurnat regisration
         }
     }
     
