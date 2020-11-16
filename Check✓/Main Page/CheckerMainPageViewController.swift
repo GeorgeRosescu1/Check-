@@ -20,7 +20,7 @@ class CheckerMainPageViewController: UIViewController {
         tabBarController?.tabBar.isUserInteractionEnabled = false
         spinner.startAnimating()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.tabBarController?.tabBar.isUserInteractionEnabled = true
             self.spinner.stopAnimating()
         }

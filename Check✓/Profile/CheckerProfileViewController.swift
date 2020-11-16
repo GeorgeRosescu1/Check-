@@ -26,21 +26,22 @@ class CheckerProfileViewController: UIViewController {
         super.viewDidLoad()
         
         profilePicture.layer.cornerRadius = 10
+        profilePicture.layer.borderWidth = 1
         
         populateProfileData()
         
     }
     
     private func populateProfileData() {
-        currentUser = Session.registeredUser as? Checker
+        guard let currentUser = Session.registeredUser as? Checker else { return }
         
         DispatchQueue.main.async {
-            self.userNameLabel.text = self.currentUser.firstName + " " + self.currentUser.lastName
-            self.phoneLabel.text = "Phone: \(self.currentUser.phoneNumber ?? "")"
-            if let age = self.currentUser.age {
+            self.userNameLabel.text = currentUser.firstName + " " + currentUser.lastName
+            self.phoneLabel.text = "Phone: \(currentUser.phoneNumber ?? "")"
+            if let age = currentUser.age {
                 self.ageLabel.text = "Age: \(age)"
             }
-            self.profilePicture.image = self.currentUser.profilePicture
+            self.profilePicture.image = currentUser.profilePicture
         }
         
     }

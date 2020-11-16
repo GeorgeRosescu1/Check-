@@ -116,7 +116,8 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
                         SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
                     } else {
                         SwiftMessagesAlert.displaySmallSuccessWithBody("Registration successful🤩")
-                        guard let checkerMainMenu = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") as?  CheckerTabBarViewController else { return }
+                        guard let checkerMainMenu = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") as? CheckerTabBarViewController else { return }
+                        checkerMainMenu.tabBar.isUserInteractionEnabled = false
                         self.navigationController?.pushViewController(checkerMainMenu, animated: true)
                     }
                 }

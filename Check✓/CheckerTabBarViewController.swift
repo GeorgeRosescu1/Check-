@@ -27,7 +27,7 @@ class CheckerTabBarViewController: UITabBarController {
             
             let storage = Storage.storage().reference().child(CheckerConstants.FStore.picturesCollectionName + "/" + checker.profilePictureURL!)
             
-            storage.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+            storage.getData(maxSize: 15 * 1024 * 1024) { (data, error) in
                 if let error = error {
                     debugPrint("Error gor photo \(error.localizedDescription)")
                     return

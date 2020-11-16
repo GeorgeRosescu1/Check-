@@ -131,10 +131,10 @@
 		F010EFD2254EEAA400608287 /* CheckerAppMainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				F057743C255280D500BD2F22 /* Profile */,
 				F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */,
-				F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */,
 				F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */,
+				F0571E562562B75700997D87 /* Main Page */,
+				F057743C255280D500BD2F22 /* Profile */,
 			);
 			name = CheckerAppMainMenu;
 			sourceTree = "<group>";
@@ -250,6 +250,14 @@
 			children = (
 			);
 			path = "Restaurant Registration";
+			sourceTree = "<group>";
+		};
+		F0571E562562B75700997D87 /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */,
+			);
+			path = "Main Page";
 			sourceTree = "<group>";
 		};
 		F057743C255280D500BD2F22 /* Profile */ = {
