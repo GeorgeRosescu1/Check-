@@ -133,7 +133,7 @@
         <!--Home-->
         <scene sceneID="4a8-Ba-qYe">
             <objects>
-                <viewController storyboardIdentifier="CheckerMainPageViewController" id="yqx-ql-BSq" customClass="CheckerMainPageViewController" customModule="Check_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckerMainPageViewController" id="yqx-ql-BSq" customClass="CheckerHomePageViewController" customModule="Check_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTz-vI-SGG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,6 +173,7 @@
                         <color key="selectedImageTintColor" name="primary Color"/>
                     </tabBar>
                     <connections>
+                        <outlet property="checkerTabBar" destination="YrT-fF-Xre" id="eRQ-uJ-upV"/>
                         <segue destination="yqx-ql-BSq" kind="relationship" relationship="viewControllers" id="2xI-b3-nci"/>
                         <segue destination="jkI-Vf-xzN" kind="relationship" relationship="viewControllers" id="ETs-1s-xtY"/>
                         <segue destination="F45-YW-d2w" kind="relationship" relationship="viewControllers" id="CDU-kz-beu"/>

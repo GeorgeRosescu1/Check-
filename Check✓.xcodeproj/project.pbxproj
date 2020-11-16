@@ -12,7 +12,7 @@
 		F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */; };
 		F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */; };
 		F010EFD4254EEABF00608287 /* CheckerAppMainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */; };
-		F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */; };
+		F010EFD7254EEAF300608287 /* CheckerHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFD6254EEAF300608287 /* CheckerHomePageViewController.swift */; };
 		F013FB4E256188FC00C39AC5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013FB4D256188FC00C39AC5 /* UserEntity.swift */; };
 		F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC82253F02D300DBED7E /* AppDelegate.swift */; };
 		F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC84253F02D300DBED7E /* SceneDelegate.swift */; };
@@ -58,7 +58,7 @@
 		F010EFCB254ECC1B00608287 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		F010EFCE254ED76900608287 /* LoginViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckerAppMainMenu.storyboard; sourceTree = "<group>"; };
-		F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerMainPageViewController.swift; sourceTree = "<group>"; };
+		F010EFD6254EEAF300608287 /* CheckerHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerHomePageViewController.swift; sourceTree = "<group>"; };
 		F013FB4D256188FC00C39AC5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		F026EC7F253F02D300DBED7E /* Check✓.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check✓.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F026EC82253F02D300DBED7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			children = (
 				F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */,
 				F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */,
-				F0571E562562B75700997D87 /* Main Page */,
+				F0571E562562B75700997D87 /* Home Page */,
 				F057743C255280D500BD2F22 /* Profile */,
 			);
 			name = CheckerAppMainMenu;
@@ -252,12 +252,12 @@
 			path = "Restaurant Registration";
 			sourceTree = "<group>";
 		};
-		F0571E562562B75700997D87 /* Main Page */ = {
+		F0571E562562B75700997D87 /* Home Page */ = {
 			isa = PBXGroup;
 			children = (
-				F010EFD6254EEAF300608287 /* CheckerMainPageViewController.swift */,
+				F010EFD6254EEAF300608287 /* CheckerHomePageViewController.swift */,
 			);
-			path = "Main Page";
+			path = "Home Page";
 			sourceTree = "<group>";
 		};
 		F057743C255280D500BD2F22 /* Profile */ = {
@@ -505,7 +505,7 @@
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
 				F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */,
 				F0284DEE25600E2300615A89 /* CheckerSPage+TextFields.swift in Sources */,
-				F010EFD7254EEAF300608287 /* CheckerMainPageViewController.swift in Sources */,
+				F010EFD7254EEAF300608287 /* CheckerHomePageViewController.swift in Sources */,
 				F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

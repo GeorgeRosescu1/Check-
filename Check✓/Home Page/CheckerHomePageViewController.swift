@@ -1,5 +1,5 @@
 //
-//  CheckerMainPageViewController.swift
+//  CheckerHomePageViewController.swift
 //  Check✓
 //
 //  Created by George Rosescu on 01/11/2020.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class CheckerMainPageViewController: UIViewController {
+class CheckerHomePageViewController: UIViewController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableview: UITableView!

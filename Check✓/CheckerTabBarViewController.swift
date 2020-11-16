@@ -10,10 +10,12 @@ import Firebase
 
 class CheckerTabBarViewController: UITabBarController {
     
+    @IBOutlet weak var checkerTabBar: UITabBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.view.isUserInteractionEnabled = false
         fetchCurrentChecker()
     }
     
@@ -28,8 +30,14 @@ class CheckerTabBarViewController: UITabBarController {
             let storage = Storage.storage().reference().child(CheckerConstants.FStore.picturesCollectionName + "/" + checker.profilePictureURL!)
             
             storage.getData(maxSize: 15 * 1024 * 1024) { (data, error) in
+                self.view.isUserInteractionEnabled = true
+
+                if let homeVC = self.selectedViewController as? CheckerHomePageViewController {
+                    homeVC.spinner.stopAnimating()
+                }
+                
                 if let error = error {
-                    debugPrint("Error gor photo \(error.localizedDescription)")
+                    debugPrint("Error while loading the photo \(error.localizedDescription)")
                     return
                 } else {
                     guard let data = data else { return }
