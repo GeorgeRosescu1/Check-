@@ -73,6 +73,9 @@ class CheckerFirstPageRegistrationViewController: UIViewController {
         
         firstNameTextField.returnKeyType = .next
         lastNameTextField.returnKeyType = .next
+        
+        firstNameTextField.autocapitalizationType = .words
+        lastNameTextField.autocapitalizationType = .words
     }
     
     @objc func toolbarDoneAction(_ sender: UITextField) {

@@ -23,6 +23,8 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
     let firestore = Firestore.firestore()
     let storage = Storage.storage().reference().child(CheckerConstants.FStore.picturesCollectionName)
     
+    let ageToolbar = UIToolbar()
+    let toolbarDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(toolbarDoneAction(_:)))
     
     //MARK: Visibility controller
     var checkerRegistrationSPageVC: TTInputVisibilityController!
@@ -54,8 +56,12 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
         
         self.view.addSubview(ageTextField.configureAuthenticationTextField(labelText: CheckerRegisterFormConstants.ageText, placeholderText: CheckerRegisterFormConstants.agePlaceholder, leadingAssistiveLabel: CheckerRegisterFormConstants.ageAssistiveLabel))
         
-        //drop down maybe
-        ageTextField.keyboardType = .numbersAndPunctuation
+        ageToolbar.items = [toolbarDoneButton]
+        ageToolbar.sizeToFit()
+        ageToolbar.isTranslucent = true
+        
+        ageTextField.keyboardType = .numberPad
+        ageTextField.inputAccessoryView = ageToolbar
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -72,6 +78,11 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
             finishButton.isUserInteractionEnabled = false
             finishButton.alpha = 0.7
         }
+    }
+    
+    @objc func toolbarDoneAction(_ sender: UITextField) {
+        checkerToRegister.age = Int(ageTextField.text!)
+        ageTextField.resignFirstResponder()
     }
     
     @IBAction func finishAction(_ sender: UIButton) {
