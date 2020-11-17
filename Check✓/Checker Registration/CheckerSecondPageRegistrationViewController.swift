@@ -12,6 +12,8 @@ import Firebase
 
 class CheckerSecondPageRegistrationViewController: UIViewController {
     
+    @IBOutlet weak var profilePictureControlView: UIControl!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -95,9 +97,18 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
         
         let imageStorage = storage.child(imageName)
         
+        self.backButton.isUserInteractionEnabled = false
+        self.ageTextField.isUserInteractionEnabled = false
+        self.profilePictureControlView.isUserInteractionEnabled = false
+        
         imageStorage.putData(profilePictureData, metadata: nil) { (metadata, error) in
             if let error = error {
+                self.backButton.isUserInteractionEnabled = true
+                self.ageTextField.isUserInteractionEnabled = true
+                self.profilePictureControlView.isUserInteractionEnabled = true
+                
                 debugPrint(error.localizedDescription)
+                
                 return
             } else {
                 let data: [String: Any] = [

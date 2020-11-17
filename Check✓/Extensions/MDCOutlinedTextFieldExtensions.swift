@@ -35,3 +35,26 @@ extension MDCOutlinedTextField {
         return self
     }
 }
+
+extension MDCOutlinedTextArea {
+    
+    func configureAuthenticationTextField(labelText: String, placeholderText: String?, leadingAssistiveLabel: String?) -> MDCOutlinedTextArea {
+        let darkColor = #colorLiteral(red: 0.1321717799, green: 0.2752143443, blue: 0.3859785795, alpha: 1)
+        
+        self.leadingAssistiveLabel.text = leadingAssistiveLabel ?? ""
+        
+        self.label.text = labelText
+        self.setFloatingLabel(darkColor, for: .editing)
+        
+        self.leadingAssistiveLabel.isHidden = true
+       
+        self.setOutlineColor(.gray, for: .normal)
+        self.setOutlineColor(darkColor, for: .editing)
+        self.setTextColor(darkColor, for: .normal)
+        self.setTextColor(darkColor, for: .editing)
+        self.sizeToFit()
+        
+        return self
+    }
+}
+

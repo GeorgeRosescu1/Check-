@@ -27,7 +27,8 @@ class FirebaseAPI {
             if let error = error {
                 complition(FirebaseAuthModel(error: error, authResponse: nil))
             } else {
-                Session.userToken = Auth.auth().currentUser?.refreshToken
+                //decomenteaza cand ii gata register de restaurant
+        //        Session.userToken = Auth.auth().currentUser?.refreshToken
                 complition(FirebaseAuthModel(error: nil, authResponse: authResult!))
             }
         }

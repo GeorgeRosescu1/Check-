@@ -29,13 +29,13 @@ class SignUpViewController: UIViewController {
     
     var emailText: String? {
         didSet {
-          isEmailValid = validateEmail()
+            isEmailValid = validateEmail()
         }
     }
     
     var passwordText: String? {
         didSet {
-           isPasswordValid = validatePassword()
+            isPasswordValid = validatePassword()
         }
     }
     
@@ -103,7 +103,12 @@ class SignUpViewController: UIViewController {
             
             self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
         } else {
-           //navigate to restaurnat regisration
+            guard let firstRegistrationPageVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "RestaurantFPRegViewController") as? RestaurantFPRegViewController else { return }
+            
+            firstRegistrationPageVc.restaurantToRegister = Restaurant()
+            firstRegistrationPageVc.restaurantToRegister.email = emailText
+            
+            self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
         }
     }
     

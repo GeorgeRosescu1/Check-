@@ -25,6 +25,13 @@
 		F040E4A2255C475A0017C1B6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A1255C475A0017C1B6 /* Product.swift */; };
 		F040E4A5255C49990017C1B6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4A4255C49990017C1B6 /* Review.swift */; };
 		F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift */; };
+		F0411B2F2564037700D1A91B /* TTInputVisibilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0411B2E2564037700D1A91B /* TTInputVisibilityController.swift */; };
+		F041FC852562F56500554A21 /* RestaurantFPRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F041FC842562F56500554A21 /* RestaurantFPRegViewController.swift */; };
+		F0450E852564041B00837D4C /* RestaurantSPRegViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0450E842564041B00837D4C /* RestaurantSPRegViewController+ImagePicker.swift */; };
+		F0450E8925640A6E00837D4C /* RestaurantMainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0450E8825640A6E00837D4C /* RestaurantMainApp.storyboard */; };
+		F0450E8E25640EBF00837D4C /* RestaurantProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0450E8D25640EBF00837D4C /* RestaurantProfileViewController.swift */; };
+		F0450E9225640ED000837D4C /* RestaurantRezervationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0450E9125640ED000837D4C /* RestaurantRezervationsViewController.swift */; };
+		F0450E9525640EE300837D4C /* RestaurantTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0450E9425640EE300837D4C /* RestaurantTabBarViewController.swift */; };
 		F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */; };
 		F0577443255284E100BD2F22 /* CheckerTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */; };
 		F05F1DF3255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */; };
@@ -34,11 +41,14 @@
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
 		F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */; };
 		F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */; };
+		F0862A0925643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0862A0825643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift */; };
 		F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */; };
 		F08B915425518D0000B9273A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B915325518D0000B9273A /* Session.swift */; };
 		F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */; };
-		F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */; };
 		F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */; };
+		F0A7B7FF2562F66F002B89BF /* RestaurantSPRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7B7FE2562F66F002B89BF /* RestaurantSPRegViewController.swift */; };
+		F0A7B8022562F690002B89BF /* RestaurantTPRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7B8012562F690002B89BF /* RestaurantTPRegViewController.swift */; };
+		F0A7B8052562FAD5002B89BF /* RestaurantFPRegViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7B8042562FAD5002B89BF /* RestaurantFPRegViewController+TextFields.swift */; };
 		F0A7BC522545CAE700764CF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BC512545CAE700764CF4 /* LoginViewController.swift */; };
 		F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A7BC552545CCB900764CF4 /* Authentication.storyboard */; };
 		F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */; };
@@ -73,6 +83,13 @@
 		F040E4A1255C475A0017C1B6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F040E4A4255C49990017C1B6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		F040E4AA255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerFirstPageRegistrationViewController.swift; sourceTree = "<group>"; };
+		F0411B2E2564037700D1A91B /* TTInputVisibilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TTInputVisibilityController.swift; path = "../../../iOS Tutorials/scooter-move-ios.nosync/Move/View/TTVisibilityController/TTInputVisibilityController.swift"; sourceTree = "<group>"; };
+		F041FC842562F56500554A21 /* RestaurantFPRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFPRegViewController.swift; sourceTree = "<group>"; };
+		F0450E842564041B00837D4C /* RestaurantSPRegViewController+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantSPRegViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		F0450E8825640A6E00837D4C /* RestaurantMainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantMainApp.storyboard; sourceTree = "<group>"; };
+		F0450E8D25640EBF00837D4C /* RestaurantProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantProfileViewController.swift; sourceTree = "<group>"; };
+		F0450E9125640ED000837D4C /* RestaurantRezervationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRezervationsViewController.swift; sourceTree = "<group>"; };
+		F0450E9425640EE300837D4C /* RestaurantTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTabBarViewController.swift; sourceTree = "<group>"; };
 		F057743E255280F400BD2F22 /* CheckerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerProfileViewController.swift; sourceTree = "<group>"; };
 		F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerTabBarViewController.swift; sourceTree = "<group>"; };
 		F05F1DF2255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerSecondPageRegistrationViewController.swift; sourceTree = "<group>"; };
@@ -82,12 +99,15 @@
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
 		F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEntityViewController.swift; sourceTree = "<group>"; };
+		F0862A0825643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantSPRegViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthModel.swift; sourceTree = "<group>"; };
 		F08B915325518D0000B9273A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchRecognizer.swift; sourceTree = "<group>"; };
 		F08BCDBD254C89B600907F9E /* TTInputVisibilityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTInputVisibilityController.h; sourceTree = "<group>"; };
-		F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TTInputVisibilityController.swift; path = "../../../scooter-move-ios.nosync/Move/View/TTVisibilityController/TTInputVisibilityController.swift"; sourceTree = "<group>"; };
 		F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		F0A7B7FE2562F66F002B89BF /* RestaurantSPRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSPRegViewController.swift; sourceTree = "<group>"; };
+		F0A7B8012562F690002B89BF /* RestaurantTPRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTPRegViewController.swift; sourceTree = "<group>"; };
+		F0A7B8042562FAD5002B89BF /* RestaurantFPRegViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantFPRegViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F0A7BC512545CAE700764CF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0A7BC552545CCB900764CF4 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +148,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F010EFD2254EEAA400608287 /* CheckerAppMainMenu */ = {
+		F010EFD2254EEAA400608287 /* Checker Main App */ = {
 			isa = PBXGroup;
 			children = (
 				F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */,
@@ -136,7 +156,7 @@
 				F0571E562562B75700997D87 /* Home Page */,
 				F057743C255280D500BD2F22 /* Profile */,
 			);
-			name = CheckerAppMainMenu;
+			name = "Checker Main App";
 			sourceTree = "<group>";
 		};
 		F026EC76253F02D300DBED7E = {
@@ -180,7 +200,8 @@
 		F026EC9A253F03D700DBED7E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				F010EFD2254EEAA400608287 /* CheckerAppMainMenu */,
+				F041FC822562F18A00554A21 /* Restaurant Main App */,
+				F010EFD2254EEAA400608287 /* Checker Main App */,
 				F0A7BC502545C9EB00764CF4 /* Authentication */,
 				F026EC9E253F075600DBED7E /* OnBoarding */,
 			);
@@ -248,8 +269,41 @@
 		F040E4A9255C4F110017C1B6 /* Restaurant Registration */ = {
 			isa = PBXGroup;
 			children = (
+				F041FC842562F56500554A21 /* RestaurantFPRegViewController.swift */,
+				F0A7B8042562FAD5002B89BF /* RestaurantFPRegViewController+TextFields.swift */,
+				F0A7B7FE2562F66F002B89BF /* RestaurantSPRegViewController.swift */,
+				F0450E842564041B00837D4C /* RestaurantSPRegViewController+ImagePicker.swift */,
+				F0862A0825643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift */,
+				F0A7B8012562F690002B89BF /* RestaurantTPRegViewController.swift */,
 			);
 			path = "Restaurant Registration";
+			sourceTree = "<group>";
+		};
+		F041FC822562F18A00554A21 /* Restaurant Main App */ = {
+			isa = PBXGroup;
+			children = (
+				F0450E8825640A6E00837D4C /* RestaurantMainApp.storyboard */,
+				F0450E9425640EE300837D4C /* RestaurantTabBarViewController.swift */,
+				F0450E8C25640E8700837D4C /* Profile */,
+				F0450E8B25640E6D00837D4C /* Rezervations */,
+			);
+			path = "Restaurant Main App";
+			sourceTree = "<group>";
+		};
+		F0450E8B25640E6D00837D4C /* Rezervations */ = {
+			isa = PBXGroup;
+			children = (
+				F0450E9125640ED000837D4C /* RestaurantRezervationsViewController.swift */,
+			);
+			path = Rezervations;
+			sourceTree = "<group>";
+		};
+		F0450E8C25640E8700837D4C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F0450E8D25640EBF00837D4C /* RestaurantProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		F0571E562562B75700997D87 /* Home Page */ = {
@@ -320,7 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				F08BCDBD254C89B600907F9E /* TTInputVisibilityController.h */,
-				F08BCDC2254C89DB00907F9E /* TTInputVisibilityController.swift */,
+				F0411B2E2564037700D1A91B /* TTInputVisibilityController.swift */,
 				F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */,
 			);
 			name = TTViewController;
@@ -420,6 +474,7 @@
 				F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */,
 				F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */,
 				F026EC8C253F02D400DBED7E /* Assets.xcassets in Resources */,
+				F0450E8925640A6E00837D4C /* RestaurantMainApp.storyboard in Resources */,
 				F026EC8A253F02D300DBED7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +529,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08B915425518D0000B9273A /* Session.swift in Sources */,
+				F0450E9525640EE300837D4C /* RestaurantTabBarViewController.swift in Sources */,
+				F0450E8E25640EBF00837D4C /* RestaurantProfileViewController.swift in Sources */,
 				F00CA4EF25531D3000FC79C9 /* Alerts.swift in Sources */,
 				F06490D2254C7C5500020E82 /* FirebaseAPI.swift in Sources */,
 				F06490DB254C7CA200020E82 /* SwiftMessagesAlert.swift in Sources */,
@@ -482,6 +539,7 @@
 				F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */,
 				F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */,
 				F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */,
+				F0450E852564041B00837D4C /* RestaurantSPRegViewController+ImagePicker.swift in Sources */,
 				F040E4A5255C49990017C1B6 /* Review.swift in Sources */,
 				F026EC87253F02D300DBED7E /* OnboardingViewController.swift in Sources */,
 				F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */,
@@ -489,8 +547,9 @@
 				F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */,
 				F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */,
 				F0D64B212556B66000FAA364 /* Checker.swift in Sources */,
-				F08BCDC3254C89DB00907F9E /* TTInputVisibilityController.swift in Sources */,
+				F0A7B8052562FAD5002B89BF /* RestaurantFPRegViewController+TextFields.swift in Sources */,
 				F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */,
+				F0450E9225640ED000837D4C /* RestaurantRezervationsViewController.swift in Sources */,
 				F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */,
 				F0EA16BF255C5B04005A9924 /* CheckerFPage+TextFields.swift in Sources */,
 				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
@@ -501,12 +560,17 @@
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F05F1DF3255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift in Sources */,
 				F05F1DF6255D1E9F00305271 /* CheckerSPage+ImagePicker.swift in Sources */,
+				F041FC852562F56500554A21 /* RestaurantFPRegViewController.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
 				F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */,
 				F0284DEE25600E2300615A89 /* CheckerSPage+TextFields.swift in Sources */,
+				F0862A0925643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift in Sources */,
+				F0411B2F2564037700D1A91B /* TTInputVisibilityController.swift in Sources */,
 				F010EFD7254EEAF300608287 /* CheckerHomePageViewController.swift in Sources */,
 				F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */,
+				F0A7B8022562F690002B89BF /* RestaurantTPRegViewController.swift in Sources */,
+				F0A7B7FF2562F66F002B89BF /* RestaurantSPRegViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

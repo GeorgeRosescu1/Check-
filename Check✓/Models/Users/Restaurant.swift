@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Restaurant: UserEntity {
     
@@ -18,6 +19,7 @@ struct Restaurant: UserEntity {
     var menu: [Product]?
     var description: String!
     var pictureURL: String!
+    var profilePicture: UIImage?
     var starRatings: [Double]! // star rating will be mandatory after each rezervation is done
     var writtenReviews: [String]! // not mandatory
     var tables: [String]! // table type
@@ -34,5 +36,22 @@ struct Restaurant: UserEntity {
         let thirdCriteria = 0.1 * Double(writtenReviews.count)
         
         return firstCriteria + secondCriteria + thirdCriteria
+    }
+}
+
+struct RestaurantConstants {
+    
+    struct FStore {
+        static let collectionName = "restaurants"
+        static let picturesCollectionName = "restaurants profile pictures"
+        
+        static let name = "name"
+        static let address = "address"
+        static let phoneNumber = "phoneNumber"
+        static let email = "email"
+        static let openingHour = "openingHour"
+        static let closingHour = "closingHour"
+        static let description = "description"
+        static let pictureURL = "pictureURL"
     }
 }
