@@ -27,8 +27,7 @@ class FirebaseAPI {
             if let error = error {
                 complition(FirebaseAuthModel(error: error, authResponse: nil))
             } else {
-                //decomenteaza cand ii gata register de restaurant
-        //        Session.userToken = Auth.auth().currentUser?.refreshToken
+                Session.userToken = Auth.auth().currentUser?.refreshToken
                 complition(FirebaseAuthModel(error: nil, authResponse: authResult!))
             }
         }
@@ -46,7 +45,6 @@ class FirebaseAPI {
     }
     
     static func getCurrentCheckerWithEmail(_ email: String, complition: @escaping ([String: Any]?) -> Void) {
-        
         firestore.collection(CheckerConstants.FStore.collectionName).getDocuments { (snapshot, error) in
             if let _ = error {
                 SwiftMessagesAlert.displaySmallErrorWithBody("Server error, please try again.")
@@ -54,6 +52,23 @@ class FirebaseAPI {
                 let currentUserDocument = snapshot?.documents.first(where: { (docData) -> Bool in
                     let document = docData.data()
                     return document[CheckerConstants.FStore.email] as? String == email
+                })
+                
+                let currentUserData = currentUserDocument?.data()
+                
+                complition(currentUserData)
+            }
+        }
+    }
+    
+    static func getCurrentRestaurantWithEmail(_ email: String, complition: @escaping ([String: Any]?) -> Void) {
+        firestore.collection(RestaurantConstants.FStore.collectionName).getDocuments { (snapshot, error) in
+            if let _ = error {
+                SwiftMessagesAlert.displaySmallErrorWithBody("Server error, please try again.")
+            } else {
+                let currentUserDocument = snapshot?.documents.first(where: { (docData) -> Bool in
+                    let document = docData.data()
+                    return document[RestaurantConstants.FStore.email] as? String == email
                 })
                 
                 let currentUserData = currentUserDocument?.data()

@@ -17,10 +17,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         if Session.userToken != nil{
-            guard let checkerMainMenu = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") else { return }
-            let checkerMenuNavigationController = UINavigationController(rootViewController: checkerMainMenu)
-            checkerMenuNavigationController.setNavigationBarHidden(true, animated: true)
-            self.window?.rootViewController = checkerMenuNavigationController
+            if ((Session.registeredUser as? Checker) != nil) {
+                guard let checkerMainMenu = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") else { return }
+                let checkerMenuNavigationController = UINavigationController(rootViewController: checkerMainMenu)
+                checkerMenuNavigationController.setNavigationBarHidden(true, animated: true)
+                self.window?.rootViewController = checkerMenuNavigationController
+            } else {
+                guard let restaurantMainMenu = AppStoryboards.RestaurantMainApp.instance?.instantiateViewController(identifier: "RestaurantTabBarViewController") else { return }
+                let restaurantMenuNavigationController = UINavigationController(rootViewController: restaurantMainMenu)
+                restaurantMenuNavigationController.setNavigationBarHidden(true, animated: true)
+                self.window?.rootViewController = restaurantMenuNavigationController
+            }
             self.window?.makeKeyAndVisible()
         } else {
             if Session.passedFirstTimeOnboarding == true {

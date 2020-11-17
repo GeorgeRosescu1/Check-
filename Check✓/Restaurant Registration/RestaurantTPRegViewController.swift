@@ -18,7 +18,7 @@ class RestaurantTPRegViewController: UIViewController{
     var restaurantToRegister = Restaurant()
     
     let firestore = Firestore.firestore()
-    let storage = Storage.storage().reference().child(CheckerConstants.FStore.picturesCollectionName)
+    let storage = Storage.storage().reference().child(RestaurantConstants.FStore.picturesCollectionName)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,7 @@ class RestaurantTPRegViewController: UIViewController{
                     RestaurantConstants.FStore.name: self.restaurantToRegister.name!,
                     RestaurantConstants.FStore.address: self.restaurantToRegister.address!,
                     RestaurantConstants.FStore.description: self.restaurantToRegister.description!,
+                    RestaurantConstants.FStore.email: self.restaurantToRegister.email!,
                     RestaurantConstants.FStore.openingHour: "08:00", // change this
                     RestaurantConstants.FStore.closingHour: "22:00", // change this
                     RestaurantConstants.FStore.pictureURL: imageName
@@ -70,5 +71,4 @@ class RestaurantTPRegViewController: UIViewController{
             }
         }
     }
-    
 }

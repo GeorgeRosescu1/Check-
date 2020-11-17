@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Restaurant: UserEntity {
+class Restaurant: UserEntity {
     
     var name: String!
     var address: String!
@@ -36,6 +36,15 @@ struct Restaurant: UserEntity {
         let thirdCriteria = 0.1 * Double(writtenReviews.count)
         
         return firstCriteria + secondCriteria + thirdCriteria
+    }
+    
+     func mapRestaurantFromDictionary(dict: [String: Any]?) {
+        self.name = dict?[RestaurantConstants.FStore.name] as? String
+        self.address = dict?[RestaurantConstants.FStore.address] as? String
+        self.description = dict?[RestaurantConstants.FStore.description] as? String
+       // self.phoneNumber = dict?[RestaurantConstants.FStore.phoneNumber] as? String
+      //  self.email = dict?[RestaurantConstants.FStore.email] as? String
+        self.pictureURL = dict?[RestaurantConstants.FStore.pictureURL] as? String
     }
 }
 
