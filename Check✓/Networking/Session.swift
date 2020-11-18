@@ -11,7 +11,20 @@ import Firebase
 
 struct Session {
     
+    private init() {
+    }
+    
     static var registeredUser: UserEntity?
+    
+    static var isRegisterRestaurant: Bool? {
+        set { UserDefaults.standard.setValue(newValue, forKey: SessionKeys.isRegisterRestaurant) }
+        get { UserDefaults.standard.bool(forKey: SessionKeys.isRegisterRestaurant) }
+    }
+    
+    static var isRegisterChecker: Bool? {
+        set { UserDefaults.standard.setValue(newValue, forKey: SessionKeys.isRegisterChecker) }
+        get { UserDefaults.standard.bool(forKey: SessionKeys.isRegisterChecker) }
+    }
 
     static var userToken: String? {
         set { UserDefaults.standard.setValue(newValue, forKey: SessionKeys.currentUser) }
@@ -27,4 +40,6 @@ struct Session {
 struct SessionKeys {
     static let currentUser = "current_user"
     static let firstTimeOnboarding = "onboarding"
+    static let isRegisterRestaurant = "registered_restaurant"
+    static let isRegisterChecker = "registered_checker"
 }

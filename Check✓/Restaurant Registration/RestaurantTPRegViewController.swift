@@ -62,6 +62,7 @@ class RestaurantTPRegViewController: UIViewController{
                     if let error = error {
                         SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
                     } else {
+                        Session.isRegisterRestaurant = true
                         SwiftMessagesAlert.displaySmallSuccessWithBody("Registration successful🤩")
                         guard let checkerMainMenu = AppStoryboards.RestaurantMainApp.instance?.instantiateViewController(identifier: "RestaurantTabBarViewController") as? RestaurantTabBarViewController else { return }
                         checkerMainMenu.tabBar.isUserInteractionEnabled = false

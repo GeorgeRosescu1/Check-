@@ -16,6 +16,8 @@ class FirebaseAPI {
         do {
             try Auth.auth().signOut()
             Session.registeredUser = nil
+            Session.isRegisterChecker = nil
+            Session.isRegisterRestaurant = nil
             Session.userToken = Auth.auth().currentUser?.refreshToken
         } catch {
             debugPrint("Error while logging out \(error)")

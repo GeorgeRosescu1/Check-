@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         if Session.userToken != nil{
-            if ((Session.registeredUser as? Checker) != nil) {
+            if let isCheckerRegister = Session.isRegisterChecker, isCheckerRegister {
                 guard let checkerMainMenu = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") else { return }
                 let checkerMenuNavigationController = UINavigationController(rootViewController: checkerMainMenu)
                 checkerMenuNavigationController.setNavigationBarHidden(true, animated: true)

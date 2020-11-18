@@ -25,9 +25,6 @@ class RestaurantProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restaurantImage.layer.cornerRadius = 10
-        restaurantImage.layer.borderWidth = 1
-        
         populateProfileData()
     }
     
