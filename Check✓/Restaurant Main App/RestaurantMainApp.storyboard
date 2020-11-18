@@ -17,9 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bowl" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-xW-ADm">
-                                <rect key="frame" x="0.0" y="74" width="414" height="274"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-DA-kTG">
+                                <rect key="frame" x="7" y="74" width="401" height="274"/>
+                                <color key="backgroundColor" name="dark blue color"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowl" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-xW-ADm">
+                                <rect key="frame" x="7" y="74" width="401" height="274"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="274" id="HDV-f6-p1Y"/>
+                                    <constraint firstAttribute="width" constant="401" id="Qd2-J8-RRY"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an7-dQ-y3l">
                                 <rect key="frame" x="58" y="35" width="179" height="31"/>
@@ -35,13 +42,6 @@
                                 <color key="textColor" name="dark blue color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Strada Memorandumului, nr 23" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8c-Ff-exs">
-                                <rect key="frame" x="92" y="388" width="230" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <color key="textColor" name="dark blue color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-zL-6b0">
                                 <rect key="frame" x="20" y="40" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6I-xE-tZc">
-                                <rect key="frame" x="7" y="438" width="230" height="51"/>
+                                <rect key="frame" x="20" y="438" width="230" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Description">
@@ -59,13 +59,23 @@
                                             <color key="NSColor" name="dark blue color"/>
                                             <font key="NSFont" size="18" name="Avenir-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mkmmkmkkm mkmkmkmkm mkmkmk mkkmkkm kmkmkmkmkmkmkm mkmkmkmkmkm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-O3-xqY">
-                                <rect key="frame" x="20" y="483" width="305" height="113"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNk-oJ-aTN">
+                                <rect key="frame" x="27" y="479" width="367" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" name="dark blue color"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Strada Memorandumului, nr 23" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8c-Ff-exs">
+                                <rect key="frame" x="92" y="379" width="230" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" name="dark blue color"/>
@@ -74,13 +84,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vf1-QG-viV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RLw-DA-kTG" firstAttribute="top" secondItem="BdO-xW-ADm" secondAttribute="top" id="59k-2p-tS1"/>
+                            <constraint firstItem="RLw-DA-kTG" firstAttribute="leading" secondItem="BdO-xW-ADm" secondAttribute="leading" id="ClT-U9-ajq"/>
+                            <constraint firstItem="BdO-xW-ADm" firstAttribute="top" secondItem="wX0-AE-N8y" secondAttribute="top" constant="74" id="KwK-yF-GQ2"/>
+                            <constraint firstItem="RLw-DA-kTG" firstAttribute="trailing" secondItem="BdO-xW-ADm" secondAttribute="trailing" id="alQ-Hg-LaH"/>
+                            <constraint firstItem="RLw-DA-kTG" firstAttribute="bottom" secondItem="BdO-xW-ADm" secondAttribute="bottom" id="eHG-Lq-tqN"/>
+                            <constraint firstItem="BdO-xW-ADm" firstAttribute="leading" secondItem="vf1-QG-viV" secondAttribute="leading" constant="7" id="tch-ZH-AuY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="OJY-mY-WBI"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="aOh-O3-xqY" id="Ro0-bH-0NN"/>
+                        <outlet property="descriptionLabel" destination="vNk-oJ-aTN" id="m0t-cP-Zk4"/>
                         <outlet property="restaurantAddressLabel" destination="f8c-Ff-exs" id="fFP-dg-QEn"/>
                         <outlet property="restaurantImage" destination="BdO-xW-ADm" id="m7K-db-7Ih"/>
                         <outlet property="restaurantNameLabel" destination="an7-dQ-y3l" id="e9L-hN-CXx"/>
+                        <outlet property="shadowView" destination="RLw-DA-kTG" id="1nn-te-kDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ln-m0-A2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

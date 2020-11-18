@@ -42,6 +42,7 @@ extension RestaurantSPRegViewController: UIImagePickerControllerDelegate, UINavi
         
         guard let image = info[.editedImage] as? UIImage else { return }
         
+        isImageChanged = true
         profilePicture.image = image
         
         picker.dismiss(animated: true, completion: nil)

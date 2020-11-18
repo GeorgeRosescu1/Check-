@@ -14,7 +14,8 @@ class RestaurantProfileViewController: UIViewController {
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var restaurantImage: UIImageView!
     @IBOutlet weak var restaurantAddressLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var shadowView: UIView!
     
     let currentUserEmail = Auth.auth().currentUser?.email
     
@@ -24,7 +25,10 @@ class RestaurantProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        shadowView.layer.shadowOpacity = 0.5
+        shadowView.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+    
         populateProfileData()
     }
     
@@ -47,7 +51,7 @@ class RestaurantProfileViewController: UIViewController {
     func logoutConfirmed() {
         FirebaseAPI.logout()
         
-        guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
+        guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") else { return }
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }

@@ -52,7 +52,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func skipAction(_ sender: UIButton) {
-        guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
+        guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") as? ChooseEntityViewController else { return }
         self.navigationController?.pushViewController(loginVC, animated: true)
         Session.passedFirstTimeOnboarding = true
     }

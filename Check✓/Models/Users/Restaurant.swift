@@ -10,6 +10,7 @@ import UIKit
 
 class Restaurant: UserEntity {
     
+    var uid: String?
     var name: String!
     var address: String!
     var phoneNumber: String!
@@ -54,6 +55,7 @@ struct RestaurantConstants {
         static let collectionName = "restaurants"
         static let picturesCollectionName = "restaurants profile pictures"
         
+        static let uid = "uid"
         static let name = "name"
         static let address = "address"
         static let phoneNumber = "phoneNumber"

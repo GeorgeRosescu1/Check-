@@ -22,19 +22,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let checkerMenuNavigationController = UINavigationController(rootViewController: checkerMainMenu)
                 checkerMenuNavigationController.setNavigationBarHidden(true, animated: true)
                 self.window?.rootViewController = checkerMenuNavigationController
-            } else {
+            } else if let isRestaurant = Session.isRegisterRestaurant, isRestaurant{
                 guard let restaurantMainMenu = AppStoryboards.RestaurantMainApp.instance?.instantiateViewController(identifier: "RestaurantTabBarViewController") else { return }
                 let restaurantMenuNavigationController = UINavigationController(rootViewController: restaurantMainMenu)
                 restaurantMenuNavigationController.setNavigationBarHidden(true, animated: true)
                 self.window?.rootViewController = restaurantMenuNavigationController
+            } else {
+                guard let chooseEntityVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") else { return }
+                let _navigationController = UINavigationController(rootViewController: chooseEntityVC)
+                _navigationController.setNavigationBarHidden(true, animated: true)
+                self.window?.rootViewController = _navigationController
             }
             self.window?.makeKeyAndVisible()
         } else {
             if Session.passedFirstTimeOnboarding == true {
-                guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") else { return }
-                let authNavigationController = UINavigationController(rootViewController: loginVC)
-                authNavigationController.setNavigationBarHidden(true, animated: true)
-                self.window?.rootViewController = authNavigationController
+                guard let chooseEntityVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") else { return }
+                let _navigationController = UINavigationController(rootViewController: chooseEntityVC)
+                _navigationController.setNavigationBarHidden(true, animated: true)
+                self.window?.rootViewController = _navigationController
                 self.window?.makeKeyAndVisible()
             } else {
                 guard let onBoardingVC = AppStoryboards.Onboarding.instance?.instantiateViewController(identifier: "OnboardingViewController") else { return }

@@ -112,6 +112,7 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
                 return
             } else {
                 let data: [String: Any] = [
+                    CheckerConstants.FStore.uid: self.checkerToRegister.uid!,
                     CheckerConstants.FStore.age: self.checkerToRegister.age!,
                     CheckerConstants.FStore.firstName: self.checkerToRegister.firstName!,
                     CheckerConstants.FStore.lastName: self.checkerToRegister.lastName!,

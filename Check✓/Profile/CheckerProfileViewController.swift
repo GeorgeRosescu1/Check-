@@ -52,7 +52,7 @@ class CheckerProfileViewController: UIViewController {
     
     func logoutConfirmed() {
         FirebaseAPI.logout()
-        guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
+        guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") else { return }
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }

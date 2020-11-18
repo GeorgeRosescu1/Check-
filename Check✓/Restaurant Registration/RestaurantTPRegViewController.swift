@@ -47,6 +47,7 @@ class RestaurantTPRegViewController: UIViewController{
                 return
             } else {
                 let data: [String: Any] = [
+                    RestaurantConstants.FStore.uid: self.restaurantToRegister.uid!,
                     RestaurantConstants.FStore.name: self.restaurantToRegister.name!,
                     RestaurantConstants.FStore.address: self.restaurantToRegister.address!,
                     RestaurantConstants.FStore.description: self.restaurantToRegister.description!,

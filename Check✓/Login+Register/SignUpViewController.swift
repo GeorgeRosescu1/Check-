@@ -89,17 +89,19 @@ class SignUpViewController: UIViewController {
             if let error = signUpModel.error {
                 SwiftMessagesAlert.displaySmallErrorWithBody(error.localizedDescription)
             } else {
-                self.navigateToRegistrationForm()
+                self.navigateToRegistrationForm(uid: signUpModel.authResponse?.user.uid)
+                
             }
         }
     }
     
-    private func navigateToRegistrationForm() {
+    private func navigateToRegistrationForm(uid: String?) {
         if isUserChecker {
             guard let firstRegistrationPageVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "CheckerFirstPageRegistrationViewController") as? CheckerFirstPageRegistrationViewController else { return }
             
             firstRegistrationPageVc.checkerToRegister = Checker()
             firstRegistrationPageVc.checkerToRegister.email = emailText
+            firstRegistrationPageVc.checkerToRegister.uid = uid
             
             self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
         } else {
@@ -107,6 +109,7 @@ class SignUpViewController: UIViewController {
             
             firstRegistrationPageVc.restaurantToRegister = Restaurant()
             firstRegistrationPageVc.restaurantToRegister.email = emailText
+            firstRegistrationPageVc.restaurantToRegister.uid = uid
             
             self.navigationController?.pushViewController(firstRegistrationPageVc, animated: true)
         }

@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     let showPassword = UIBarButtonItem(title: "Show password", style: .plain, target: self, action: #selector(showPassword(_:)))
     
     var isToolbarShowButtonVisible = true
+    var isUserChecker = false
     
     //MARK: Visibility controller
     var loginVC: TTInputVisibilityController!
@@ -88,7 +89,7 @@ class LoginViewController: UIViewController {
         passwordTextField.becomeFirstResponder()
     }
     
-    //session
+    
     @IBAction func loginAction(_ sender: UIButton) {
         loginButton.isUserInteractionEnabled = false
         loginButton.alpha = 0.7
@@ -100,18 +101,27 @@ class LoginViewController: UIViewController {
             if loginModel.error != nil {
                 SwiftMessagesAlert.displaySmallErrorWithBody("User not found or user may have been deleted.")
             } else {
-                guard let checkerMainMenuVc = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") as? CheckerTabBarViewController else { return }
-                self.navigationController?.pushViewController(checkerMainMenuVc, animated: true)
+                if self.isUserChecker {
+                    Session.isRegisterChecker = true
+                    guard let checkerMainMenuVc = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "CheckerTabBarViewController") as? CheckerTabBarViewController else { return }
+                    self.navigationController?.pushViewController(checkerMainMenuVc, animated: true)
+                } else {
+                    Session.isRegisterRestaurant = true
+                    guard let restaurantMainMenuVC = AppStoryboards.RestaurantMainApp.instance?.instantiateViewController(identifier: "RestaurantTabBarViewController") as? RestaurantTabBarViewController else { return }
+                    self.navigationController?.pushViewController(restaurantMainMenuVC, animated: true)
+                }
             }
         }
         
     }
+    
     @IBAction func forgotPasswordAction(_ sender: UIButton) {
         print("forgot pass :(")
     }
     
     @IBAction func goToRegister(_ sender: UIButton) {
-        guard let chooseEntittVc = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") as? ChooseEntityViewController else { return }
-        self.navigationController?.pushViewController(chooseEntittVc, animated: true)
+        guard let signUpVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "SignUpViewController") as? SignUpViewController else { return }
+        signUpVC.isUserChecker = isUserChecker
+        self.navigationController?.pushViewController(signUpVC, animated: true)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class Checker: UserEntity {
     
+    var uid: String?
     var age: Int!
     var firstName: String!
     var lastName: String!
@@ -50,6 +51,7 @@ struct CheckerConstants {
         static let collectionName = "checkers"
         static let picturesCollectionName = "checkers profile pictures"
         
+        static let uid = "uid"
         static let age = "age"
         static let firstName = "firstName"
         static let lastName = "lastName"

@@ -21,6 +21,8 @@ class RestaurantSPRegViewController: UIViewController {
     //MARK: Visibility controller
     var restaurantRegistrationSPageVC: TTInputVisibilityController!
     
+    var isImageChanged = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +58,7 @@ class RestaurantSPRegViewController: UIViewController {
     @IBAction func nextPageAction(_ sender: UIButton) {
         descriptionTextArea.endEditing(true)
         
-        restaurantToRegister.profilePicture = profilePicture.image
+        restaurantToRegister.profilePicture = isImageChanged ? profilePicture.image : #imageLiteral(resourceName: "bowl")
         
         guard let thirdPageForm = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "RestaurantTPRegViewController") as? RestaurantTPRegViewController else { return }
         
