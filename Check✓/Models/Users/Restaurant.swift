@@ -15,8 +15,8 @@ class Restaurant: UserEntity {
     var address: String!
     var phoneNumber: String!
     var email: String!
-    var openingHour: Date!
-    var closingHour: Date!
+    var openingHour: String!
+    var closingHour: String!
     var menu: [Product]?
     var description: String!
     var pictureURL: String!

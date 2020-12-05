@@ -31,7 +31,7 @@ class OnboardingViewController: UIViewController {
     
     @IBAction func nextPageAction(_ sender: UIButton) {
         if pageControl.currentPage == onboardingVM.onboardingScreens.count - 1 {
-            guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else { return }
+            guard let loginVC = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "ChooseEntityViewController") as? ChooseEntityViewController else { return }
             self.navigationController?.pushViewController(loginVC, animated: true)
             Session.passedFirstTimeOnboarding = true
         } else {

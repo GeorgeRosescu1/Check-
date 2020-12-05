@@ -14,6 +14,9 @@
 		F010EFD4254EEABF00608287 /* CheckerAppMainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */; };
 		F010EFD7254EEAF300608287 /* CheckerHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010EFD6254EEAF300608287 /* CheckerHomePageViewController.swift */; };
 		F013FB4E256188FC00C39AC5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013FB4D256188FC00C39AC5 /* UserEntity.swift */; };
+		F02163EF257BD52200BB199A /* CheckerHomePage+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02163EE257BD52200BB199A /* CheckerHomePage+TableView.swift */; };
+		F02163F4257BD58900BB199A /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02163F2257BD58900BB199A /* RestaurantCell.swift */; };
+		F02163F5257BD58900BB199A /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02163F3257BD58900BB199A /* RestaurantCell.xib */; };
 		F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC82253F02D300DBED7E /* AppDelegate.swift */; };
 		F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC84253F02D300DBED7E /* SceneDelegate.swift */; };
 		F026EC87253F02D300DBED7E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F026EC86253F02D300DBED7E /* OnboardingViewController.swift */; };
@@ -70,6 +73,9 @@
 		F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckerAppMainMenu.storyboard; sourceTree = "<group>"; };
 		F010EFD6254EEAF300608287 /* CheckerHomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerHomePageViewController.swift; sourceTree = "<group>"; };
 		F013FB4D256188FC00C39AC5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		F02163EE257BD52200BB199A /* CheckerHomePage+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckerHomePage+TableView.swift"; sourceTree = "<group>"; };
+		F02163F2257BD58900BB199A /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		F02163F3257BD58900BB199A /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		F026EC7F253F02D300DBED7E /* Check✓.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check✓.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F026EC82253F02D300DBED7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F026EC84253F02D300DBED7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +163,15 @@
 				F057743C255280D500BD2F22 /* Profile */,
 			);
 			name = "Checker Main App";
+			sourceTree = "<group>";
+		};
+		F02163ED257BD50A00BB199A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F02163F2257BD58900BB199A /* RestaurantCell.swift */,
+				F02163F3257BD58900BB199A /* RestaurantCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F026EC76253F02D300DBED7E = {
@@ -309,7 +324,9 @@
 		F0571E562562B75700997D87 /* Home Page */ = {
 			isa = PBXGroup;
 			children = (
+				F02163ED257BD50A00BB199A /* Cells */,
 				F010EFD6254EEAF300608287 /* CheckerHomePageViewController.swift */,
+				F02163EE257BD52200BB199A /* CheckerHomePage+TableView.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -473,6 +490,7 @@
 				F0F702BB254C98E60034695B /* GoogleService-Info.plist in Resources */,
 				F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */,
 				F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */,
+				F02163F5257BD58900BB199A /* RestaurantCell.xib in Resources */,
 				F026EC8C253F02D400DBED7E /* Assets.xcassets in Resources */,
 				F0450E8925640A6E00837D4C /* RestaurantMainApp.storyboard in Resources */,
 				F026EC8A253F02D300DBED7E /* Main.storyboard in Resources */,
@@ -528,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F02163F4257BD58900BB199A /* RestaurantCell.swift in Sources */,
 				F08B915425518D0000B9273A /* Session.swift in Sources */,
 				F0450E9525640EE300837D4C /* RestaurantTabBarViewController.swift in Sources */,
 				F0450E8E25640EBF00837D4C /* RestaurantProfileViewController.swift in Sources */,
@@ -555,6 +574,7 @@
 				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
 				F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */,
 				F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift in Sources */,
+				F02163EF257BD52200BB199A /* CheckerHomePage+TableView.swift in Sources */,
 				F013FB4E256188FC00C39AC5 /* UserEntity.swift in Sources */,
 				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,

@@ -80,5 +80,33 @@ class FirebaseAPI {
         }
     }
     
+    static func getAllRestaurants(complition: @escaping ([Restaurant]) -> Void) {
+        firestore.collection(RestaurantConstants.FStore.collectionName).getDocuments { (snapshot, error) in
+            if let _ = error {
+                SwiftMessagesAlert.displaySmallErrorWithBody("Server error, please try again.")
+            } else {
+                var restaurants = [Restaurant]()
+                snapshot?.documents.forEach({ (docData) in
+                    let document = docData.data()
+                    let restaurant = Restaurant()
+                    restaurant.mapRestaurantFromDictionary(dict: document)
+                    
+                    let storage = Storage.storage().reference().child(RestaurantConstants.FStore.picturesCollectionName + "/" + restaurant.pictureURL!)
+                    storage.getData(maxSize: 15 * 1024 * 1024) { (data, error) in
+                        if let error = error {
+                            debugPrint("Error while loading the photo \(error.localizedDescription)")
+                            return
+                        } else {
+                            guard let data = data else { return }
+                            restaurant.profilePicture = UIImage(data: data)
+                        }
+                        restaurants.append(restaurant)
+                        
+                        complition(restaurants)
+                    }
+                })
+            }
+        }
+    }
     
 }
