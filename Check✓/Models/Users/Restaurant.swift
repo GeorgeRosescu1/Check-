@@ -23,7 +23,6 @@ class Restaurant: UserEntity {
     var profilePicture: UIImage?
     var starRatings: [Double]! // star rating will be mandatory after each rezervation is done
     var writtenReviews: [String]! // not mandatory
-    var tables: [String]! // table type
     
     var averageRatingInStars: Double { // this will be dispayed for each restaurant only when starRatings.count > 2
         let starRatingsSum = starRatings.reduce(0) { $0 + $1 }
@@ -43,8 +42,10 @@ class Restaurant: UserEntity {
         self.name = dict?[RestaurantConstants.FStore.name] as? String
         self.address = dict?[RestaurantConstants.FStore.address] as? String
         self.description = dict?[RestaurantConstants.FStore.description] as? String
-       // self.phoneNumber = dict?[RestaurantConstants.FStore.phoneNumber] as? String
-      //  self.email = dict?[RestaurantConstants.FStore.email] as? String
+        self.phoneNumber = dict?[RestaurantConstants.FStore.phoneNumber] as? String
+        self.openingHour = dict?[RestaurantConstants.FStore.openingHour] as? String
+        self.closingHour = dict?[RestaurantConstants.FStore.closingHour] as? String
+        self.email = dict?[RestaurantConstants.FStore.email] as? String
         self.pictureURL = dict?[RestaurantConstants.FStore.pictureURL] as? String
     }
 }

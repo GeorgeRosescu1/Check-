@@ -15,6 +15,8 @@ class RestaurantFPRegViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var restaurantNameTextField: MDCOutlinedTextField!
     @IBOutlet weak var restaurantAddressTextField: MDCOutlinedTextField!
+    @IBOutlet weak var openHour: MDCOutlinedTextField!
+    @IBOutlet weak var closingHour: MDCOutlinedTextField!
     
     //MARK: Visibility controller
     var restaurantRegistrationFPageVC: TTInputVisibilityController!
@@ -35,6 +37,8 @@ class RestaurantFPRegViewController: UIViewController {
         
         restaurantNameTextField.delegate = self
         restaurantAddressTextField.delegate = self
+        openHour.delegate = self
+        closingHour.delegate = self
         
         configureTextFields()
     }
@@ -45,10 +49,18 @@ class RestaurantFPRegViewController: UIViewController {
         
         self.view.addSubview(restaurantAddressTextField.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.restaurantAddress, placeholderText: RestaurantRegisterFormConstants.restaurantAddressPlaceholder, leadingAssistiveLabel: nil))
         
+        self.view.addSubview(openHour.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.openHour, placeholderText: RestaurantRegisterFormConstants.openHourPlaceholder, leadingAssistiveLabel: nil))
+        
+        self.view.addSubview(closingHour.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.closingHour, placeholderText: RestaurantRegisterFormConstants.closingHourPlaceholder, leadingAssistiveLabel: nil))
+        
         restaurantNameTextField.returnKeyType = .next
-        restaurantAddressTextField.returnKeyType = .done
+        restaurantAddressTextField.returnKeyType = .next
+        openHour.returnKeyType = .next
+        closingHour.returnKeyType = .done
         
         restaurantNameTextField.autocapitalizationType = .words
+        openHour.keyboardType = .default //pune de ala de data
+        closingHour.keyboardType = .default
         restaurantAddressTextField.autocapitalizationType = .words
     }
     
@@ -68,6 +80,8 @@ class RestaurantFPRegViewController: UIViewController {
     @IBAction func nextAction(_ sender: UIButton) {
         restaurantNameTextField.endEditing(true)
         restaurantAddressTextField.endEditing(true)
+        openHour.endEditing(true)
+        closingHour.endEditing(true)
         
         guard let secondPageForm = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "RestaurantSPRegViewController") as? RestaurantSPRegViewController else { return }
         
@@ -88,4 +102,12 @@ struct RestaurantRegisterFormConstants {
     static let restaurantDescription = "Restaurant description"
     static let restaurantDescriptionPlaceholder = "Tell us some words about your restaurant"
     
+    static let openHour = "Open hour"
+    static let openHourPlaceholder = "Open Hour"
+    
+    static let closingHour = "Open hour"
+    static let closingHourPlaceholder = "Open Hour"
+
+    static let restaurantPhone = "Phone number"
+    static let restaurantPhonePlaceholder = "Phone number"
 }

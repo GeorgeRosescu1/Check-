@@ -48,6 +48,15 @@ class RestaurantPageViewController: UIViewController {
     }
     
     @IBAction func makeCallAction(_ sender: UIButton) {
-        print("call")
+        guard let phone = restaurant?.phoneNumber else { return }
+        let phoneNumberURL = URL(string: "tel://\(phone)")
+        
+        if let url = phoneNumberURL, UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func makeRezervationAction(_ sender: UIButton) {
+    
     }
 }

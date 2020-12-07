@@ -338,12 +338,24 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1R8-SL-Jlm" customClass="MDCOutlinedTextField">
+                                <rect key="frame" x="36" y="454" width="149" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sqp-m3-Obl" customClass="MDCOutlinedTextField">
+                                <rect key="frame" x="230" y="454" width="149" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c6I-N1-fv7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="closingHour" destination="Sqp-m3-Obl" id="rZj-xv-drX"/>
                         <outlet property="nextButton" destination="xVf-ka-fSf" id="2mK-hL-PA5"/>
+                        <outlet property="openHour" destination="1R8-SL-Jlm" id="tT9-wq-pxo"/>
                         <outlet property="pageControl" destination="sY4-yy-JP9" id="5mC-L6-qzR"/>
                         <outlet property="restaurantAddressTextField" destination="zir-Lc-h0a" id="MPD-ln-V3P"/>
                         <outlet property="restaurantNameTextField" destination="E38-nY-lQ7" id="ewN-jx-UTy"/>
@@ -412,7 +424,12 @@
                                 <color key="currentPageIndicatorTintColor" name="dark blue color"/>
                             </pageControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CrX-aw-j67" customClass="MDCOutlinedTextArea">
-                                <rect key="frame" x="36" y="279" width="343" height="315"/>
+                                <rect key="frame" x="36" y="279" width="343" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJ1-3s-JPE" customClass="MDCOutlinedTextField">
+                                <rect key="frame" x="36" y="501" width="343" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -424,6 +441,7 @@
                         <outlet property="descriptionTextArea" destination="CrX-aw-j67" id="sJm-Bi-Bpd"/>
                         <outlet property="nextButton" destination="s20-Zn-p8R" id="qZh-Ts-hOE"/>
                         <outlet property="pageControl" destination="J88-BN-mSD" id="zF2-Z5-Nql"/>
+                        <outlet property="phone" destination="fJ1-3s-JPE" id="vBQ-hl-8RL"/>
                         <outlet property="profilePicture" destination="uex-rQ-pb3" id="MNS-nb-7S7"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,7 @@ class RestaurantSPRegViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var descriptionTextArea: MDCOutlinedTextArea!
+    @IBOutlet weak var phone: MDCOutlinedTextField!
     
     var restaurantToRegister = Restaurant()
     
@@ -35,6 +36,7 @@ class RestaurantSPRegViewController: UIViewController {
         pageControl.currentPage = 1
         
         descriptionTextArea.textView.delegate = self
+        phone.delegate = self
         
         configureUI()
     }
@@ -52,11 +54,16 @@ class RestaurantSPRegViewController: UIViewController {
         
         self.view.addSubview(descriptionTextArea.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.restaurantDescription, placeholderText: RestaurantRegisterFormConstants.restaurantDescriptionPlaceholder, leadingAssistiveLabel: nil))
         
+        self.view.addSubview(phone.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.restaurantPhone, placeholderText: RestaurantRegisterFormConstants.restaurantPhonePlaceholder, leadingAssistiveLabel: nil))
+        
+        phone.keyboardType = .phonePad
+        
         descriptionTextArea.sizeToFit()
     }
     
     @IBAction func nextPageAction(_ sender: UIButton) {
         descriptionTextArea.endEditing(true)
+        phone.endEditing(true)
         
         restaurantToRegister.profilePicture = isImageChanged ? profilePicture.image : #imageLiteral(resourceName: "bowl")
         

@@ -52,8 +52,9 @@ class RestaurantTPRegViewController: UIViewController{
                     RestaurantConstants.FStore.address: self.restaurantToRegister.address!,
                     RestaurantConstants.FStore.description: self.restaurantToRegister.description!,
                     RestaurantConstants.FStore.email: self.restaurantToRegister.email!,
-                    RestaurantConstants.FStore.openingHour: "08:00", // change this
-                    RestaurantConstants.FStore.closingHour: "22:00", // change this
+                    RestaurantConstants.FStore.openingHour: self.restaurantToRegister.openingHour!,
+                    RestaurantConstants.FStore.closingHour: self.restaurantToRegister.closingHour!,
+                    RestaurantConstants.FStore.phoneNumber: self.restaurantToRegister.phoneNumber!,
                     RestaurantConstants.FStore.pictureURL: imageName
                 ]
                 
