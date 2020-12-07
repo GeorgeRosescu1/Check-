@@ -16,6 +16,9 @@ class RestaurantCell: UITableViewCell {
     @IBOutlet weak var seeMoreButton: UIButton!
     @IBOutlet weak var cellView: UIView!
     
+    var restaurant: Restaurant!
+    var cellNavigationAction: ((Restaurant) -> Void)!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -26,6 +29,6 @@ class RestaurantCell: UITableViewCell {
     }
     
     @IBAction func seeMore(_ sender: UIButton) {
-        print("See more info")
+        cellNavigationAction(restaurant)
     }
 }
