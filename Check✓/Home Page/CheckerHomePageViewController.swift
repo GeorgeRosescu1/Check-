@@ -24,6 +24,7 @@ class CheckerHomePageViewController: UIViewController {
         
         tableview.delegate = self
         tableview.dataSource = self
+        tableview.showsVerticalScrollIndicator = false
         tableview.register(UINib(nibName: "RestaurantCell", bundle: nil), forCellReuseIdentifier: "RestaurantCell")
         
         DispatchQueue.main.async {

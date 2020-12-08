@@ -89,6 +89,9 @@ class LoginViewController: UIViewController {
         passwordTextField.becomeFirstResponder()
     }
     
+    @IBAction func backToChooseEntity(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func loginAction(_ sender: UIButton) {
         loginButton.isUserInteractionEnabled = false
