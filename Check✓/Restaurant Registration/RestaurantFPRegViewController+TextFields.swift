@@ -15,11 +15,11 @@ extension RestaurantFPRegViewController: UITextFieldDelegate {
         case restaurantNameTextField:
             restaurantAddressTextField.becomeFirstResponder()
         case restaurantAddressTextField:
-            openHour.becomeFirstResponder()
-        case openHour:
-            closingHour.becomeFirstResponder()
-        case closingHour:
-            closingHour.resignFirstResponder()
+            openHourTextField.becomeFirstResponder()
+        case openHourTextField:
+            closingHourTextField.becomeFirstResponder()
+        case closingHourTextField:
+            closingHourTextField.resignFirstResponder()
         default:
             
             return true
@@ -34,13 +34,13 @@ extension RestaurantFPRegViewController: UITextFieldDelegate {
             restaurantAddressTextField.becomeFirstResponder()
             restaurantToRegister.name = textField.text
         case restaurantAddressTextField:
-            openHour.resignFirstResponder()
+            openHourTextField.resignFirstResponder()
             restaurantToRegister.address = textField.text
-        case openHour:
-            closingHour.becomeFirstResponder()
+        case openHourTextField:
+            closingHourTextField.becomeFirstResponder()
             restaurantToRegister.openingHour = textField.text
-        case closingHour:
-            closingHour.resignFirstResponder()
+        case closingHourTextField:
+            closingHourTextField.resignFirstResponder()
             restaurantToRegister.closingHour = textField.text
         default:
             

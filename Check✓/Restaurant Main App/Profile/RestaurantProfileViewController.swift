@@ -16,6 +16,7 @@ class RestaurantProfileViewController: UIViewController {
     @IBOutlet weak var restaurantAddressLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     let currentUserEmail = Auth.auth().currentUser?.email
     
@@ -40,6 +41,7 @@ class RestaurantProfileViewController: UIViewController {
             self.descriptionLabel.text = currentUser.description
             self.restaurantAddressLabel.text = currentUser.address
             self.restaurantImage.image = currentUser.profilePicture
+            self.timeLabel.text = "\(currentUser.openingHour ?? "08:00") - \(currentUser.closingHour ?? "22:00")"
         }
         
     }

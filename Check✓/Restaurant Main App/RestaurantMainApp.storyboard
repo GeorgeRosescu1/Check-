@@ -100,6 +100,7 @@
                         <outlet property="restaurantImage" destination="BdO-xW-ADm" id="m7K-db-7Ih"/>
                         <outlet property="restaurantNameLabel" destination="an7-dQ-y3l" id="e9L-hN-CXx"/>
                         <outlet property="shadowView" destination="RLw-DA-kTG" id="1nn-te-kDj"/>
+                        <outlet property="timeLabel" destination="nXU-dV-KaG" id="1HN-Zc-AI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ln-m0-A2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

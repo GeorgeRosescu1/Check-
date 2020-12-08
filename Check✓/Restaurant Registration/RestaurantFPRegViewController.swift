@@ -15,8 +15,8 @@ class RestaurantFPRegViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var restaurantNameTextField: MDCOutlinedTextField!
     @IBOutlet weak var restaurantAddressTextField: MDCOutlinedTextField!
-    @IBOutlet weak var openHour: MDCOutlinedTextField!
-    @IBOutlet weak var closingHour: MDCOutlinedTextField!
+    @IBOutlet weak var openHourTextField: MDCOutlinedTextField!
+    @IBOutlet weak var closingHourTextField: MDCOutlinedTextField!
     
     //MARK: Visibility controller
     var restaurantRegistrationFPageVC: TTInputVisibilityController!
@@ -25,6 +25,12 @@ class RestaurantFPRegViewController: UIViewController {
     
     var formIsCompleted: Bool = false
     
+    //MARK: Pickers
+    var openingHourDatePicker: UIDatePicker?
+    var closingHourDatePicker: UIDatePicker?
+    
+    let timeFormatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,13 +38,31 @@ class RestaurantFPRegViewController: UIViewController {
         restaurantRegistrationFPageVC.extraSpaceAboveKeyboard = 10
         
         nextButton.configureRoundButtonWithShadow()
-//        nextButton.isUserInteractionEnabled = false
-//        nextButton.alpha = 0.7
+        //        nextButton.isUserInteractionEnabled = false
+        //        nextButton.alpha = 0.7
         
         restaurantNameTextField.delegate = self
         restaurantAddressTextField.delegate = self
-        openHour.delegate = self
-        closingHour.delegate = self
+        openHourTextField.delegate = self
+        closingHourTextField.delegate = self
+        
+        openingHourDatePicker = UIDatePicker()
+        openingHourDatePicker?.addTarget(self, action: #selector(changeOpeningTime), for: .valueChanged)
+        openingHourDatePicker?.datePickerMode = .time
+        openingHourDatePicker?.sizeToFit()
+        openingHourDatePicker?.locale = .current
+        openingHourDatePicker?.preferredDatePickerStyle = .wheels
+        
+        closingHourDatePicker = UIDatePicker()
+        closingHourDatePicker?.addTarget(self, action: #selector(changeClosingTime), for: .valueChanged)
+        closingHourDatePicker?.datePickerMode = .time
+        closingHourDatePicker?.sizeToFit()
+        closingHourDatePicker?.locale = .current
+        closingHourDatePicker?.preferredDatePickerStyle = .wheels
+        
+        
+        timeFormatter.dateFormat = "hh:mm"
+        timeFormatter.locale = .current
         
         configureTextFields()
     }
@@ -49,18 +73,28 @@ class RestaurantFPRegViewController: UIViewController {
         
         self.view.addSubview(restaurantAddressTextField.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.restaurantAddress, placeholderText: RestaurantRegisterFormConstants.restaurantAddressPlaceholder, leadingAssistiveLabel: nil))
         
-        self.view.addSubview(openHour.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.openHour, placeholderText: RestaurantRegisterFormConstants.openHourPlaceholder, leadingAssistiveLabel: nil))
+        self.view.addSubview(openHourTextField.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.openHour, placeholderText: RestaurantRegisterFormConstants.openHourPlaceholder, leadingAssistiveLabel: nil))
         
-        self.view.addSubview(closingHour.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.closingHour, placeholderText: RestaurantRegisterFormConstants.closingHourPlaceholder, leadingAssistiveLabel: nil))
+        self.view.addSubview(closingHourTextField.configureAuthenticationTextField(labelText: RestaurantRegisterFormConstants.closingHour, placeholderText: RestaurantRegisterFormConstants.closingHourPlaceholder, leadingAssistiveLabel: nil))
+        
+        let toolbar = UIToolbar()
+        let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneAction))
+        
+        toolbar.sizeToFit()
+        toolbar.isTranslucent = true
+        toolbar.items = [done]
+        
+        openHourTextField.inputAccessoryView = toolbar
+        closingHourTextField.inputAccessoryView = toolbar
         
         restaurantNameTextField.returnKeyType = .next
         restaurantAddressTextField.returnKeyType = .next
-        openHour.returnKeyType = .next
-        closingHour.returnKeyType = .done
+        openHourTextField.returnKeyType = .next
+        closingHourTextField.returnKeyType = .done
         
         restaurantNameTextField.autocapitalizationType = .words
-        openHour.keyboardType = .default //pune de ala de data
-        closingHour.keyboardType = .default
+        openHourTextField.inputView = openingHourDatePicker
+        closingHourTextField.inputView = closingHourDatePicker
         restaurantAddressTextField.autocapitalizationType = .words
     }
     
@@ -77,11 +111,33 @@ class RestaurantFPRegViewController: UIViewController {
         }
     }
     
+    @objc private func doneAction() {
+        view.findFirstResponder()?.resignFirstResponder()
+    }
+    
+    @objc private func changeOpeningTime() {
+        let hour = Calendar.current.date(byAdding: .hour, value: 0, to: openingHourDatePicker!.date)
+        if let hour = hour {
+            let time = timeFormatter.string(from: hour)
+            restaurantToRegister.openingHour = time
+            openHourTextField.text = time
+        }
+    }
+    
+    @objc private func changeClosingTime() {
+        let hour = Calendar.current.date(byAdding: .hour, value: 0, to: closingHourDatePicker!.date)
+        if let hour = hour {
+            let time = timeFormatter.string(from: hour)
+            restaurantToRegister.closingHour = time
+            closingHourTextField.text = time
+        }
+    }
+    
     @IBAction func nextAction(_ sender: UIButton) {
         restaurantNameTextField.endEditing(true)
         restaurantAddressTextField.endEditing(true)
-        openHour.endEditing(true)
-        closingHour.endEditing(true)
+        openHourTextField.endEditing(true)
+        closingHourTextField.endEditing(true)
         
         guard let secondPageForm = AppStoryboards.Authenthication.instance?.instantiateViewController(identifier: "RestaurantSPRegViewController") as? RestaurantSPRegViewController else { return }
         
@@ -107,7 +163,7 @@ struct RestaurantRegisterFormConstants {
     
     static let closingHour = "Open hour"
     static let closingHourPlaceholder = "Open Hour"
-
+    
     static let restaurantPhone = "Phone number"
     static let restaurantPhonePlaceholder = "Phone number"
 }
