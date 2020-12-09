@@ -48,6 +48,7 @@
 		F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */; };
 		F08B915425518D0000B9273A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B915325518D0000B9273A /* Session.swift */; };
 		F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */; };
+		F09F427E25813E3400E667FC /* MyRezervationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F427D25813E3400E667FC /* MyRezervationsViewController.swift */; };
 		F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */; };
 		F0A7B7FF2562F66F002B89BF /* RestaurantSPRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7B7FE2562F66F002B89BF /* RestaurantSPRegViewController.swift */; };
 		F0A7B8022562F690002B89BF /* RestaurantTPRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7B8012562F690002B89BF /* RestaurantTPRegViewController.swift */; };
@@ -111,6 +112,7 @@
 		F08B915325518D0000B9273A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F08BCDBA254C89AE00907F9E /* TouchRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchRecognizer.swift; sourceTree = "<group>"; };
 		F08BCDBD254C89B600907F9E /* TTInputVisibilityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTInputVisibilityController.h; sourceTree = "<group>"; };
+		F09F427D25813E3400E667FC /* MyRezervationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRezervationsViewController.swift; sourceTree = "<group>"; };
 		F0A58CDF253F100A0024B7EF /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		F0A7B7FE2562F66F002B89BF /* RestaurantSPRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSPRegViewController.swift; sourceTree = "<group>"; };
 		F0A7B8012562F690002B89BF /* RestaurantTPRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTPRegViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				F010EFD3254EEABF00608287 /* CheckerAppMainMenu.storyboard */,
 				F0577442255284E100BD2F22 /* CheckerTabBarViewController.swift */,
 				F0571E562562B75700997D87 /* Home Page */,
+				F09F427B25813DFC00E667FC /* My Rezervations */,
 				F057743C255280D500BD2F22 /* Profile */,
 			);
 			name = "Checker Main App";
@@ -400,6 +403,14 @@
 			name = TTViewController;
 			sourceTree = "<group>";
 		};
+		F09F427B25813DFC00E667FC /* My Rezervations */ = {
+			isa = PBXGroup;
+			children = (
+				F09F427D25813E3400E667FC /* MyRezervationsViewController.swift */,
+			);
+			path = "My Rezervations";
+			sourceTree = "<group>";
+		};
 		F0A58CDE253F0FF60024B7EF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +584,7 @@
 				F026EC85253F02D300DBED7E /* SceneDelegate.swift in Sources */,
 				F0450E9225640ED000837D4C /* RestaurantRezervationsViewController.swift in Sources */,
 				F0A58CE0253F100A0024B7EF /* OnboardingViewModel.swift in Sources */,
+				F09F427E25813E3400E667FC /* MyRezervationsViewController.swift in Sources */,
 				F0E072C1257E968400091CDD /* RestaurantPageViewController.swift in Sources */,
 				F0EA16BF255C5B04005A9924 /* CheckerFPage+TextFields.swift in Sources */,
 				F010EFCC254ECC1B00608287 /* UIButtonExtensions.swift in Sources */,
