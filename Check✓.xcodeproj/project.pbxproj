@@ -59,6 +59,9 @@
 		F0D64B212556B66000FAA364 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B202556B66000FAA364 /* Checker.swift */; };
 		F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B232556B67200FAA364 /* Restaurant.swift */; };
 		F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B262556B6F500FAA364 /* Rezervation.swift */; };
+		F0DB26B62582036200149239 /* RestaurantTPRegViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB26B52582036200149239 /* RestaurantTPRegViewController+TableView.swift */; };
+		F0DB26C0258204B500149239 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB26BE258204B500149239 /* MenuItemCell.swift */; };
+		F0DB26C1258204B500149239 /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0DB26BF258204B500149239 /* MenuItemCell.xib */; };
 		F0DF4F192544543400E576D8 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DF4F182544543400E576D8 /* OnboardingScreen.swift */; };
 		F0E072C1257E968400091CDD /* RestaurantPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E072C0257E968400091CDD /* RestaurantPageViewController.swift */; };
 		F0EA16BF255C5B04005A9924 /* CheckerFPage+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EA16BE255C5B04005A9924 /* CheckerFPage+TextFields.swift */; };
@@ -123,6 +126,9 @@
 		F0D64B202556B66000FAA364 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		F0D64B232556B67200FAA364 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F0D64B262556B6F500FAA364 /* Rezervation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rezervation.swift; sourceTree = "<group>"; };
+		F0DB26B52582036200149239 /* RestaurantTPRegViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantTPRegViewController+TableView.swift"; sourceTree = "<group>"; };
+		F0DB26BE258204B500149239 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		F0DB26BF258204B500149239 /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
 		F0DF4F182544543400E576D8 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		F0E072C0257E968400091CDD /* RestaurantPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPageViewController.swift; sourceTree = "<group>"; };
 		F0EA16BE255C5B04005A9924 /* CheckerFPage+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckerFPage+TextFields.swift"; sourceTree = "<group>"; };
@@ -289,12 +295,14 @@
 		F040E4A9255C4F110017C1B6 /* Restaurant Registration */ = {
 			isa = PBXGroup;
 			children = (
+				F0DB26B82582048D00149239 /* Menu Cell */,
 				F041FC842562F56500554A21 /* RestaurantFPRegViewController.swift */,
 				F0A7B8042562FAD5002B89BF /* RestaurantFPRegViewController+TextFields.swift */,
 				F0A7B7FE2562F66F002B89BF /* RestaurantSPRegViewController.swift */,
 				F0450E842564041B00837D4C /* RestaurantSPRegViewController+ImagePicker.swift */,
 				F0862A0825643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift */,
 				F0A7B8012562F690002B89BF /* RestaurantTPRegViewController.swift */,
+				F0DB26B52582036200149239 /* RestaurantTPRegViewController+TableView.swift */,
 			);
 			path = "Restaurant Registration";
 			sourceTree = "<group>";
@@ -441,6 +449,15 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
+		F0DB26B82582048D00149239 /* Menu Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB26BE258204B500149239 /* MenuItemCell.swift */,
+				F0DB26BF258204B500149239 /* MenuItemCell.xib */,
+			);
+			path = "Menu Cell";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,6 +521,7 @@
 				F0F702BB254C98E60034695B /* GoogleService-Info.plist in Resources */,
 				F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */,
 				F026EC8F253F02D400DBED7E /* LaunchScreen.storyboard in Resources */,
+				F0DB26C1258204B500149239 /* MenuItemCell.xib in Resources */,
 				F02163F5257BD58900BB199A /* RestaurantCell.xib in Resources */,
 				F026EC8C253F02D400DBED7E /* Assets.xcassets in Resources */,
 				F0450E8925640A6E00837D4C /* RestaurantMainApp.storyboard in Resources */,
@@ -578,6 +596,7 @@
 				F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */,
 				F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */,
 				F03D7C332545EC5F005D6A83 /* AppStoryboards.swift in Sources */,
+				F0DB26C0258204B500149239 /* MenuItemCell.swift in Sources */,
 				F026EC83253F02D300DBED7E /* AppDelegate.swift in Sources */,
 				F0D64B212556B66000FAA364 /* Checker.swift in Sources */,
 				F0A7B8052562FAD5002B89BF /* RestaurantFPRegViewController+TextFields.swift in Sources */,
@@ -592,6 +611,7 @@
 				F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift in Sources */,
 				F02163EF257BD52200BB199A /* CheckerHomePage+TableView.swift in Sources */,
 				F013FB4E256188FC00C39AC5 /* UserEntity.swift in Sources */,
+				F0DB26B62582036200149239 /* RestaurantTPRegViewController+TableView.swift in Sources */,
 				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,
 				F05F1DF3255D123F00305271 /* CheckerSecondPageRegistrationViewController.swift in Sources */,

@@ -14,6 +14,9 @@ class RestaurantTPRegViewController: UIViewController{
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var noItemsImageView: UIImageView!
+    @IBOutlet weak var noItemsLabel: UILabel!
+    @IBOutlet weak var itemsTableView: UITableView!
     
     var restaurantToRegister = Restaurant()
     
@@ -25,12 +28,21 @@ class RestaurantTPRegViewController: UIViewController{
         
         pageControl.currentPage = 2
         
+        itemsTableView.delegate = self
+        itemsTableView.register(UINib(nibName: "MenuItemCell", bundle: nil), forCellReuseIdentifier: "MenuItemCell")
+        
         finishButton.configureRoundButtonWithShadow()
     }
     
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    @IBAction func addItemAction(_ sender: UIButton) {
+        let productAlert = UIAlertController(title: "Menu product", message: "Add a new product to menu", preferredStyle: .alert)
+        
+        self.present(productAlert, animated: true, completion: nil)
     }
     
     @IBAction func finishAction(_ sender: UIButton) {

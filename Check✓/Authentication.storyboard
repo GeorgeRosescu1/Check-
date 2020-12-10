@@ -508,19 +508,48 @@
                                 <rect key="frame" x="303" y="638" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xmark.bin.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="u48-Ts-7Bt">
+                                <rect key="frame" x="157" y="318.66666666666652" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="dark blue color"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="There are no items in the menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PO-Uf-U6W">
+                                <rect key="frame" x="57" y="418" width="301" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" name="dark blue color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dys-ZN-ysG">
+                                <rect key="frame" x="123" y="82" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="dark blue color"/>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addItemAction:" destination="ZYC-cv-6xs" eventType="touchUpInside" id="twb-ON-EZx"/>
+                                </connections>
+                            </button>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MAb-DK-a90">
+                                <rect key="frame" x="0.0" y="122" width="414" height="478"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BlY-wq-mn4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="finishButton" destination="E8s-g7-Hfv" id="4oK-iD-yMc"/>
+                        <outlet property="itemsTableView" destination="MAb-DK-a90" id="T1n-gl-iGQ"/>
+                        <outlet property="noItemsImageView" destination="u48-Ts-7Bt" id="tvF-gV-1dx"/>
+                        <outlet property="noItemsLabel" destination="6PO-Uf-U6W" id="nKz-fO-gpr"/>
                         <outlet property="pageControl" destination="TrP-ro-TKA" id="DGF-ms-1tM"/>
                         <outlet property="spinner" destination="6m4-m7-WqT" id="m4r-IT-c1R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfJ-1M-LyE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4271" y="836"/>
+            <point key="canvasLocation" x="4269.5652173913049" y="835.59782608695662"/>
         </scene>
         <!--Checker Second Page Registration View Controller-->
         <scene sceneID="mz6-o2-InB">
@@ -687,6 +716,8 @@
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="bowl-dark" width="341.33334350585938" height="341.33334350585938"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark.bin.fill" catalog="system" width="128" height="93"/>
         <namedColor name="dark blue color">
             <color red="0.059000000357627869" green="0.18799999356269836" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
