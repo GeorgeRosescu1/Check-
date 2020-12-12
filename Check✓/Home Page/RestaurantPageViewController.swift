@@ -43,6 +43,15 @@ class RestaurantPageViewController: UIViewController {
         reserveButton.layer.shadowOpacity = 0.6
     }
     
+    @IBAction func seeMenuAction(_ sender: UIButton) {
+        let menuVC = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "MenuViewController") as? MenuViewController
+        
+        if let menuVC = menuVC {
+            menuVC.menu = restaurant!.menu
+            self.present(menuVC, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func backAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }

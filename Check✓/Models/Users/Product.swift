@@ -14,4 +14,20 @@ struct Product {
     var name: String!
     var ingrediends: String!
     var image: UIImage!
+    
+    init(price: String!, name: String!, ingrediends: String!, image: UIImage? = nil) {
+        self.price = price
+        self.name = name
+        self.ingrediends = ingrediends
+        self.image = image
+    }
+}
+
+struct ProductConstants {
+    
+    struct FStore {
+        static let price = "price"
+        static let name = "name"
+        static let ingrediends = "ingrediends"
+    }
 }

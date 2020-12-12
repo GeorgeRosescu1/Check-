@@ -59,6 +59,7 @@
 		F0D64B212556B66000FAA364 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B202556B66000FAA364 /* Checker.swift */; };
 		F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B232556B67200FAA364 /* Restaurant.swift */; };
 		F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B262556B6F500FAA364 /* Rezervation.swift */; };
+		F0D8A8C0258520B100799B49 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D8A8BF258520B100799B49 /* MenuViewController.swift */; };
 		F0DB26B62582036200149239 /* RestaurantTPRegViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB26B52582036200149239 /* RestaurantTPRegViewController+TableView.swift */; };
 		F0DB26C0258204B500149239 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB26BE258204B500149239 /* MenuItemCell.swift */; };
 		F0DB26C1258204B500149239 /* MenuItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0DB26BF258204B500149239 /* MenuItemCell.xib */; };
@@ -126,6 +127,7 @@
 		F0D64B202556B66000FAA364 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		F0D64B232556B67200FAA364 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F0D64B262556B6F500FAA364 /* Rezervation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rezervation.swift; sourceTree = "<group>"; };
+		F0D8A8BF258520B100799B49 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F0DB26B52582036200149239 /* RestaurantTPRegViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantTPRegViewController+TableView.swift"; sourceTree = "<group>"; };
 		F0DB26BE258204B500149239 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		F0DB26BF258204B500149239 /* MenuItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItemCell.xib; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				F010EFD6254EEAF300608287 /* CheckerHomePageViewController.swift */,
 				F02163EE257BD52200BB199A /* CheckerHomePage+TableView.swift */,
 				F0E072C0257E968400091CDD /* RestaurantPageViewController.swift */,
+				F0D8A8BF258520B100799B49 /* MenuViewController.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */,
 				F040E4AB255C4F3D0017C1B6 /* CheckerFirstPageRegistrationViewController.swift in Sources */,
 				F02163EF257BD52200BB199A /* CheckerHomePage+TableView.swift in Sources */,
+				F0D8A8C0258520B100799B49 /* MenuViewController.swift in Sources */,
 				F013FB4E256188FC00C39AC5 /* UserEntity.swift in Sources */,
 				F0DB26B62582036200149239 /* RestaurantTPRegViewController+TableView.swift in Sources */,
 				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,

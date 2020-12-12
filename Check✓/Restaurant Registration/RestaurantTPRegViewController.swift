@@ -113,8 +113,27 @@ class RestaurantTPRegViewController: UIViewController{
         products.insert(newMenuProduct, at: 0)
     }
     
+    private func menuDict(products: [Product]) -> [String: [String: Any]] {
+        var dict = [String: [String: Any]]()
+        var index = 0
+        for product in products {
+            var productDict = [String: Any]()
+            
+            productDict[ProductConstants.FStore.price] = product.price
+            productDict[ProductConstants.FStore.name] = product.name
+            productDict[ProductConstants.FStore.ingrediends] = product.ingrediends
+            
+            dict["product \(index)"] = productDict
+            index += 1
+        }
+        
+        return dict
+    }
+    
     @IBAction func finishAction(_ sender: UIButton) {
         spinner.startAnimating()
+        
+        restaurantToRegister.menu = products
         
         guard let profilePictureData = restaurantToRegister.profilePicture?.jpegData(compressionQuality: 1) else { return }
         let imageName = UUID().uuidString
@@ -135,9 +154,9 @@ class RestaurantTPRegViewController: UIViewController{
                     RestaurantConstants.FStore.openingHour: self.restaurantToRegister.openingHour!,
                     RestaurantConstants.FStore.closingHour: self.restaurantToRegister.closingHour!,
                     RestaurantConstants.FStore.phoneNumber: self.restaurantToRegister.phoneNumber!,
+                    RestaurantConstants.FStore.menuProducts: self.menuDict(products: self.restaurantToRegister.menu!),
                     RestaurantConstants.FStore.pictureURL: imageName
                 ]
-                
                 
                 self.firestore.collection(RestaurantConstants.FStore.collectionName).addDocument(data: data) { (error) in
                     self.spinner.stopAnimating()

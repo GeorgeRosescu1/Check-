@@ -17,7 +17,7 @@ class Restaurant: UserEntity {
     var email: String!
     var openingHour: String!
     var closingHour: String!
-    var menu: [Product]?
+    var menu: [Product]!
     var description: String!
     var pictureURL: String!
     var profilePicture: UIImage?
@@ -39,6 +39,8 @@ class Restaurant: UserEntity {
     }
     
      func mapRestaurantFromDictionary(dict: [String: Any]?) {
+        self.menu = [Product]()
+        
         self.name = dict?[RestaurantConstants.FStore.name] as? String
         self.address = dict?[RestaurantConstants.FStore.address] as? String
         self.description = dict?[RestaurantConstants.FStore.description] as? String
@@ -47,6 +49,39 @@ class Restaurant: UserEntity {
         self.closingHour = dict?[RestaurantConstants.FStore.closingHour] as? String
         self.email = dict?[RestaurantConstants.FStore.email] as? String
         self.pictureURL = dict?[RestaurantConstants.FStore.pictureURL] as? String
+        
+        let productsDict = dict?[RestaurantConstants.FStore.menuProducts] as? [String: [String: Any]]
+        if let dict = productsDict {
+            for item in dict.values {
+                let ingredients = item[ProductConstants.FStore.ingrediends] as! String
+                let price = item[ProductConstants.FStore.price] as! String
+                let name = item[ProductConstants.FStore.name] as! String
+                
+                var image = UIImage()
+                
+                if name.lowercased().contains("pizza") {
+                    image = #imageLiteral(resourceName: "pizza")
+                } else if name.lowercased().contains("sushi") {
+                    image = #imageLiteral(resourceName: "sushi")
+                } else if name.lowercased().contains("double") {
+                    image = #imageLiteral(resourceName: "doubleBurger")
+                } else if name.lowercased().contains("tacos") {
+                    image = #imageLiteral(resourceName: "tacos")
+                } else if name.lowercased().contains("bolognese") {
+                    image = #imageLiteral(resourceName: "pastaBolognese")
+                } else if name.lowercased().contains("home") || name.lowercased().contains("burger") {
+                    image = #imageLiteral(resourceName: "homeBurger")
+                } else if name.lowercased().contains("carbonara") {
+                    image = #imageLiteral(resourceName: "pastaCarbonara")
+                } else {
+                    image = #imageLiteral(resourceName: "savureaza")
+                }
+                
+                let product = Product(price: price, name: name, ingrediends: ingredients, image: image)
+                
+                self.menu.append(product)
+            }
+        }
     }
 }
 
@@ -65,5 +100,6 @@ struct RestaurantConstants {
         static let closingHour = "closingHour"
         static let description = "description"
         static let pictureURL = "pictureURL"
+        static let menuProducts = "menu"
     }
 }
