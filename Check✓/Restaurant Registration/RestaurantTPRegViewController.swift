@@ -15,13 +15,15 @@ class RestaurantTPRegViewController: UIViewController{
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var noItemsImageView: UIImageView!
-    @IBOutlet weak var noItemsLabel: UILabel!
     @IBOutlet weak var itemsTableView: UITableView!
+    @IBOutlet weak var noItemsLabel: UILabel!
     
     var restaurantToRegister = Restaurant()
     var products = [Product]() {
         didSet {
             itemsTableView.isHidden = products.isEmpty
+            noItemsLabel.isHidden = !products.isEmpty
+            noItemsImageView.isHidden = !products.isEmpty
             if !products.isEmpty {
                 itemsTableView.reloadData()
             }

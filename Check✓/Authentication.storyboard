@@ -542,7 +542,7 @@
                         <outlet property="finishButton" destination="E8s-g7-Hfv" id="4oK-iD-yMc"/>
                         <outlet property="itemsTableView" destination="MAb-DK-a90" id="T1n-gl-iGQ"/>
                         <outlet property="noItemsImageView" destination="u48-Ts-7Bt" id="tvF-gV-1dx"/>
-                        <outlet property="noItemsLabel" destination="6PO-Uf-U6W" id="nKz-fO-gpr"/>
+                        <outlet property="noItemsLabel" destination="6PO-Uf-U6W" id="TWm-9l-aR5"/>
                         <outlet property="pageControl" destination="TrP-ro-TKA" id="DGF-ms-1tM"/>
                         <outlet property="spinner" destination="6m4-m7-WqT" id="m4r-IT-c1R"/>
                     </connections>
