@@ -6,13 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct Product {
     
-    var price: Double!
+    var price: String!
     var name: String!
-    var ingrediends: [String]!
-    var isAvailable: Bool!
-    var observations: String!
-    var imageURL: URL!
+    var ingrediends: String!
+    var image: UIImage!
 }

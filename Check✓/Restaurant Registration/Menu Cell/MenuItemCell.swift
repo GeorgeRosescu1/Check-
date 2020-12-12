@@ -13,11 +13,12 @@ class MenuItemCell: UITableViewCell {
     @IBOutlet weak var ingrdiendsLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var cellView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        productImage.layer.cornerRadius = 4
-        productImage.layer.shadowOpacity = 0.5
+        cellView.layer.shadowOpacity = 0.6
+        cellView.layer.shadowOffset = CGSize(width: 0.5, height: 1)
     }
 }

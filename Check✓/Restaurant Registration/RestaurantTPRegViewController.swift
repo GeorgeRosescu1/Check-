@@ -19,6 +19,14 @@ class RestaurantTPRegViewController: UIViewController{
     @IBOutlet weak var itemsTableView: UITableView!
     
     var restaurantToRegister = Restaurant()
+    var products = [Product]() {
+        didSet {
+            itemsTableView.isHidden = products.isEmpty
+            if !products.isEmpty {
+                itemsTableView.reloadData()
+            }
+        }
+    }
     
     let firestore = Firestore.firestore()
     let storage = Storage.storage().reference().child(RestaurantConstants.FStore.picturesCollectionName)
@@ -29,6 +37,7 @@ class RestaurantTPRegViewController: UIViewController{
         pageControl.currentPage = 2
         
         itemsTableView.delegate = self
+        itemsTableView.dataSource = self
         itemsTableView.register(UINib(nibName: "MenuItemCell", bundle: nil), forCellReuseIdentifier: "MenuItemCell")
         
         finishButton.configureRoundButtonWithShadow()
@@ -40,9 +49,66 @@ class RestaurantTPRegViewController: UIViewController{
     }
     
     @IBAction func addItemAction(_ sender: UIButton) {
+        var productName = ""
+        var productPrice = ""
+        var productIngredients = ""
+        
         let productAlert = UIAlertController(title: "Menu product", message: "Add a new product to menu", preferredStyle: .alert)
         
+        productAlert.addTextField { (nameTextField) in
+            nameTextField.placeholder = "Product name"
+            nameTextField.autocapitalizationType = .sentences
+        }
+        
+        productAlert.addTextField { (priceTextField) in
+            priceTextField.placeholder = "Product price and currency"
+        }
+        
+        productAlert.addTextField { (ingredientsTextField) in
+            ingredientsTextField.placeholder = "Product ingredients"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let addProductAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            productName = productAlert.textFields![0].text!
+            productPrice = productAlert.textFields![1].text!
+            productIngredients = productAlert.textFields![2].text!
+            
+            if productName.count > 1 && productPrice.count > 1 && productIngredients.count > 1 {
+                self.addProduct(name: productName, price: productPrice, ingredients: productIngredients)
+            } else {
+                SwiftMessagesAlert.displaySmallErrorWithBody("Please enter valid product data.")
+            }
+        }
+        productAlert.addAction(cancelAction)
+        productAlert.addAction(addProductAction)
+        
         self.present(productAlert, animated: true, completion: nil)
+    }
+    
+    private func addProduct(name: String, price: String, ingredients: String) {
+        var image = UIImage()
+        
+        if name.lowercased().contains("pizza") {
+            image = #imageLiteral(resourceName: "pizza")
+        } else if name.lowercased().contains("sushi") {
+            image = #imageLiteral(resourceName: "sushi")
+        } else if name.lowercased().contains("double") {
+            image = #imageLiteral(resourceName: "doubleBurger")
+        } else if name.lowercased().contains("tacos") {
+            image = #imageLiteral(resourceName: "tacos")
+        } else if name.lowercased().contains("bolognese") {
+            image = #imageLiteral(resourceName: "pastaBolognese")
+        } else if name.lowercased().contains("home") || name.lowercased().contains("burger") {
+            image = #imageLiteral(resourceName: "homeBurger")
+        } else if name.lowercased().contains("carbonara") {
+            image = #imageLiteral(resourceName: "pastaCarbonara")
+        } else {
+            image = #imageLiteral(resourceName: "savureaza")
+        }
+        
+        let newMenuProduct = Product(price: price, name: name, ingrediends: ingredients, image: image)
+        products.insert(newMenuProduct, at: 0)
     }
     
     @IBAction func finishAction(_ sender: UIButton) {
