@@ -160,9 +160,12 @@
                                 <color key="textColor" name="dark blue color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPJ-Yl-6Bd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPJ-Yl-6Bd">
                                 <rect key="frame" x="27" y="430" width="303" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="ZeR-vs-bhc"/>
+                                    <constraint firstAttribute="width" constant="303" id="ce5-PW-B6y"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="By continuing you agree with Check's ">
                                         <attributes>
@@ -211,9 +214,25 @@
                                 <rect key="frame" x="197" y="563" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NN-nK-C82" customClass="UIControl">
+                                <rect key="frame" x="27" y="430" width="303" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="termsAndConditionsAction:" destination="VYc-IS-9xc" eventType="touchUpInside" id="0Gc-bW-j1k"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EDr-B4-0E7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9NN-nK-C82" firstAttribute="trailing" secondItem="mPJ-Yl-6Bd" secondAttribute="trailing" id="18w-YT-oiH"/>
+                            <constraint firstItem="9NN-nK-C82" firstAttribute="top" secondItem="mPJ-Yl-6Bd" secondAttribute="top" id="GPT-yq-fPW"/>
+                            <constraint firstItem="mPJ-Yl-6Bd" firstAttribute="top" secondItem="X3s-xK-P3s" secondAttribute="topMargin" constant="430" id="Q7x-4c-xiq"/>
+                            <constraint firstItem="9NN-nK-C82" firstAttribute="leading" secondItem="mPJ-Yl-6Bd" secondAttribute="leading" id="Vby-sf-reF"/>
+                            <constraint firstItem="9NN-nK-C82" firstAttribute="bottom" secondItem="mPJ-Yl-6Bd" secondAttribute="bottom" id="Zmm-Tv-Miu"/>
+                            <constraint firstItem="mPJ-Yl-6Bd" firstAttribute="leading" secondItem="EDr-B4-0E7" secondAttribute="leading" constant="27" id="d61-dq-DIO"/>
+                            <constraint firstItem="EDr-B4-0E7" firstAttribute="trailing" secondItem="mPJ-Yl-6Bd" secondAttribute="trailing" constant="84" id="f3q-zy-9eM"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonSpinner" destination="b2w-0r-IPE" id="k0V-HK-bsF"/>

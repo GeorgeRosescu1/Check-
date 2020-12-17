@@ -26,4 +26,15 @@ struct Alerts {
         viewController.present(alert, animated: true, completion: nil)
     }
     
+    static func presentFeatureNotValidAlert(fromVC viewController: UIViewController) {
+        
+        let alert = UIAlertController(title: "Feature not available", message: "Please contact the administrator", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
 }

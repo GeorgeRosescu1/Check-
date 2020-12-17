@@ -7,6 +7,7 @@
 
 import UIKit
 import MaterialComponents.MDCOutlinedTextField
+import SafariServices
 
 class SignUpViewController: UIViewController {
     
@@ -92,6 +93,14 @@ class SignUpViewController: UIViewController {
                 self.navigateToRegistrationForm(uid: signUpModel.authResponse?.user.uid)
                 
             }
+        }
+    }
+    
+    @IBAction func termsAndConditionsAction(_ sender: UIControl) {
+        let url = URL(string: "https://usabilla.com/terms/")
+        if let url = url {
+            let svc = SFSafariViewController(url: url)
+            self.present(svc, animated: true, completion: nil)
         }
     }
     

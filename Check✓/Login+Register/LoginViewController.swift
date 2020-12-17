@@ -119,7 +119,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordAction(_ sender: UIButton) {
-        print("forgot pass :(")
+        Alerts.presentFeatureNotValidAlert(fromVC: self)
     }
     
     @IBAction func goToRegister(_ sender: UIButton) {
