@@ -19,6 +19,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
         
         tableView.register(UINib(nibName: "MenuItemCell", bundle: nil), forCellReuseIdentifier: "MenuItemCell")
     }

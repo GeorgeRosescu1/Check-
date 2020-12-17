@@ -56,6 +56,7 @@
 		F0A7BC522545CAE700764CF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BC512545CAE700764CF4 /* LoginViewController.swift */; };
 		F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A7BC552545CCB900764CF4 /* Authentication.storyboard */; };
 		F0A7BC592545EB9C00764CF4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */; };
+		F0BB0A96258B4B9D00983495 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB0A95258B4B9D00983495 /* ReservationViewController.swift */; };
 		F0D64B212556B66000FAA364 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B202556B66000FAA364 /* Checker.swift */; };
 		F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B232556B67200FAA364 /* Restaurant.swift */; };
 		F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B262556B6F500FAA364 /* Rezervation.swift */; };
@@ -124,6 +125,7 @@
 		F0A7BC512545CAE700764CF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0A7BC552545CCB900764CF4 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		F0A7BC582545EB9C00764CF4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F0BB0A95258B4B9D00983495 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		F0D64B202556B66000FAA364 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		F0D64B232556B67200FAA364 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		F0D64B262556B6F500FAA364 /* Rezervation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rezervation.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				F02163EE257BD52200BB199A /* CheckerHomePage+TableView.swift */,
 				F0E072C0257E968400091CDD /* RestaurantPageViewController.swift */,
 				F0D8A8BF258520B100799B49 /* MenuViewController.swift */,
+				F0BB0A95258B4B9D00983495 /* ReservationViewController.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				F057743F255280F400BD2F22 /* CheckerProfileViewController.swift in Sources */,
 				F0A7B8022562F690002B89BF /* RestaurantTPRegViewController.swift in Sources */,
 				F0A7B7FF2562F66F002B89BF /* RestaurantSPRegViewController.swift in Sources */,
+				F0BB0A96258B4B9D00983495 /* ReservationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

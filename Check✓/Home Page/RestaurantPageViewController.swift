@@ -66,6 +66,10 @@ class RestaurantPageViewController: UIViewController {
     }
     
     @IBAction func makeRezervationAction(_ sender: UIButton) {
-    
+        guard let reservationVC = AppStoryboards.CheckerAppMainMenu.instance?.instantiateViewController(identifier: "ReservationViewController") as? ReservationViewController else { return }
+        reservationVC.checker = Session.registeredUser as? Checker
+        reservationVC.restaurant = restaurant
+        navigationController?.pushViewController(reservationVC, animated: true)
+        
     }
 }
