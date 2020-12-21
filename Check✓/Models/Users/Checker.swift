@@ -18,7 +18,7 @@ class Checker: UserEntity {
     var phoneNumber: String!
     var profilePictureURL: String?
     var profilePicture: UIImage?
-    var myRezervations: [Rezervation]?
+    var myRezervations: [String]?
     var ongoingRezervation: Rezervation?
     
     init() {
@@ -41,7 +41,8 @@ class Checker: UserEntity {
         self.phoneNumber = dict?[CheckerConstants.FStore.phoneNumber] as? String
         self.email = dict?[CheckerConstants.FStore.email] as? String
         self.profilePictureURL = dict?[CheckerConstants.FStore.profilePictureURL] as? String
-        self.myRezervations = dict?[CheckerConstants.FStore.myRezervations] as? [Rezervation]
+        self.myRezervations = dict?[CheckerConstants.FStore.myRezervations] as? [String]
+        print(self.myRezervations)
     }
 }
 
@@ -57,7 +58,7 @@ struct CheckerConstants {
         static let lastName = "lastName"
         static let email = "email"
         static let phoneNumber = "phoneNumber"
-        static let myRezervations = "rezervations"
+        static let myRezervations = "myRezervations"
         static let ongoingRezervation = "ongoingRezervation"
         static let profilePictureURL = "profilePictureURL"
     }

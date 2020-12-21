@@ -60,7 +60,6 @@ class RestaurantFPRegViewController: UIViewController {
         closingHourDatePicker?.locale = .current
         closingHourDatePicker?.preferredDatePickerStyle = .wheels
         
-        
         timeFormatter.dateFormat = "hh:mm"
         timeFormatter.locale = .current
         

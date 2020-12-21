@@ -9,24 +9,36 @@ import Foundation
 
 struct Rezervation {
     
-    var owner: Checker!
-    var restaurant: Restaurant!
-    var dateAndTime: Date!
-    var maximumDelay: String!
+    var id: String?
+    var ownerEmail: String!
+    var restaurantEmail: String!
+    var day: String!
+    var hour: String!
     var numberOfGuests: Int! //including the owner
-    var observations: String!
     var status: RezervationStatus!
-    var orderedProducts: [Product]?
 }
 
-enum RezervationStatus {
+enum RezervationStatus: String {
     
-    case init_ //when is created
-    case confirmed // when is confirmed by restaurant
-    case rejected // when is rejected by restaurant
-    case completed // when is done
+    case init_ = "init" //when is created
+    case confirmed = "confirmed" // when is confirmed by restaurant
+    case rejected  = "rejected"// when is rejected by restaurant
+    case completed = "completed" // when is done
     
-    case ongoing // ongoing rezervation
-    case future // future rezervation
-    case closedByChecker // closed by checker, due to some reasons
+    case ongoing = "ongoing"// ongoing rezervation
+    case closedByChecker = "closedByMe"// closed by checker, due to some reasons
+}
+
+enum ReservationConstants {
+    struct FStore {
+        static let collectionName = "reservations"
+        
+        static let id = "id"
+        static let ownerEmail = "ownerEmail"
+        static let restaurantEmail = "restaurantEmail"
+        static let day = "day"
+        static let hour = "hour"
+        static let numberOfGuests = "numberOfGuests"
+        static let status = "status"
+    }
 }
