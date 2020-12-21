@@ -80,6 +80,25 @@ class FirebaseAPI {
         }
     }
     
+    static func getAllReservationsForUserEmail(_ email: String, complition: @escaping ([Rezervation]) -> Void) {
+        var rezervations = [Rezervation]()
+        firestore.collection(ReservationConstants.FStore.collectionName).getDocuments { (snapshot, error) in
+            if let _ = error {
+                SwiftMessagesAlert.displaySmallErrorWithBody("Server error, please try again.")
+            } else {
+                snapshot?.documents.forEach({ (docData) in
+                    let document = docData.data()
+                    if document[ReservationConstants.FStore.ownerEmail] as? String == email || document[ReservationConstants.FStore.restaurantEmail] as? String == email {
+                        let rezervation = Rezervation()
+                        rezervation.mapReservationFromDictionary(dict: document)
+                        rezervations.append(rezervation)
+                    }
+                })
+                complition(rezervations)
+            }
+        }
+    }
+    
     static func getAllRestaurants(complition: @escaping ([Restaurant]) -> Void) {
         firestore.collection(RestaurantConstants.FStore.collectionName).getDocuments { (snapshot, error) in
             if let _ = error {

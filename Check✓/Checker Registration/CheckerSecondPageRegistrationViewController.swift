@@ -118,7 +118,6 @@ class CheckerSecondPageRegistrationViewController: UIViewController {
                     CheckerConstants.FStore.lastName: self.checkerToRegister.lastName!,
                     CheckerConstants.FStore.phoneNumber: self.checkerToRegister.phoneNumber!,
                     CheckerConstants.FStore.email: self.checkerToRegister.email!,
-                    CheckerConstants.FStore.myRezervations: [Rezervation](),
                     CheckerConstants.FStore.profilePictureURL: imageName
                 ]
                 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Rezervation {
+class Rezervation {
     
     var id: String?
     var ownerEmail: String!
@@ -16,6 +16,17 @@ struct Rezervation {
     var hour: String!
     var numberOfGuests: Int! //including the owner
     var status: RezervationStatus!
+    
+    func mapReservationFromDictionary(dict: [String: Any]?) {
+        self.id = dict?[ReservationConstants.FStore.id] as? String
+        self.ownerEmail = dict?[ReservationConstants.FStore.ownerEmail] as? String
+        self.restaurantEmail = dict?[ReservationConstants.FStore.restaurantEmail] as? String
+        self.day = dict?[ReservationConstants.FStore.day] as? String
+        self.hour = dict?[ReservationConstants.FStore.hour] as? String
+        
+        let statusString = dict?[ReservationConstants.FStore.status] as? String
+        self.status = RezervationStatus(rawValue: statusString!)
+    }
 }
 
 enum RezervationStatus: String {
