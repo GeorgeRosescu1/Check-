@@ -132,6 +132,7 @@ class ReservationViewController: UIViewController {
         reservation.ownerEmail = checker?.email
         reservation.restaurantEmail = restaurant?.email
         reservation.status = .init_
+        reservation.restaurantName = restaurant?.name
         reservation.id = UUID().uuidString
         
         spinner.startAnimating()
@@ -143,6 +144,7 @@ class ReservationViewController: UIViewController {
             ReservationConstants.FStore.day: self.reservation.day!,
             ReservationConstants.FStore.hour: self.reservation.hour!,
             ReservationConstants.FStore.numberOfGuests: self.reservation.numberOfGuests ?? 1,
+            ReservationConstants.FStore.restaurantName: self.reservation.restaurantName!,
             ReservationConstants.FStore.status: self.reservation.status.rawValue
         ]
         
@@ -153,6 +155,9 @@ class ReservationViewController: UIViewController {
             } else {
                 SwiftMessagesAlert.displaySmallSuccessWithBody("Reservation Done! You will be notified after confirmation.")
                 self.navigationController?.popViewController(animated: true)
+                let currentUser = Session.registeredUser as? Checker
+                currentUser?.myRezervations?.append(self.reservation)
+                Session.registeredUser = currentUser
             }
         }
     }

@@ -16,6 +16,7 @@ class Rezervation {
     var hour: String!
     var numberOfGuests: Int! //including the owner
     var status: RezervationStatus!
+    var restaurantName: String!
     
     func mapReservationFromDictionary(dict: [String: Any]?) {
         self.id = dict?[ReservationConstants.FStore.id] as? String
@@ -23,6 +24,7 @@ class Rezervation {
         self.restaurantEmail = dict?[ReservationConstants.FStore.restaurantEmail] as? String
         self.day = dict?[ReservationConstants.FStore.day] as? String
         self.hour = dict?[ReservationConstants.FStore.hour] as? String
+        self.restaurantName = dict?[ReservationConstants.FStore.restaurantName] as? String
         
         let statusString = dict?[ReservationConstants.FStore.status] as? String
         self.status = RezervationStatus(rawValue: statusString!)
@@ -44,6 +46,7 @@ enum ReservationConstants {
     struct FStore {
         static let collectionName = "reservations"
         
+        static let restaurantName = "restaurantName"
         static let id = "id"
         static let ownerEmail = "ownerEmail"
         static let restaurantEmail = "restaurantEmail"

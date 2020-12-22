@@ -25,18 +25,24 @@ class MyRezervationsViewController: UIViewController {
         
         currentUser = Session.registeredUser as? Checker
         if let myRezervations = currentUser?.myRezervations {
-            reservations = myRezervations
+            reservations = myRezervations.reversed()
         }
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.register(UINib(nibName: "ReservationCell", bundle: nil), forCellReuseIdentifier: "ReservationCell")
-            
-        configureUI()
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        currentUser = Session.registeredUser as? Checker
+        if let myRezervations = currentUser?.myRezervations {
+            reservations = myRezervations.reversed()
+        }
+        
+        configureUI()
         tableView.reloadData()
     }
     
@@ -63,6 +69,7 @@ extension MyRezervationsViewController: UITableViewDelegate, UITableViewDataSour
         cell.hourLabel.text = reservations[indexPath.row].hour
         cell.dateLabel.text = reservations[indexPath.row].day
         cell.statusLabel.text = reservations[indexPath.row].status.rawValue
+        cell.restaurantNameLabel.text = reservations[indexPath.row].restaurantName
         
         return cell
     }
