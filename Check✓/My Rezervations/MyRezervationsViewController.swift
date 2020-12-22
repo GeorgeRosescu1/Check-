@@ -74,6 +74,24 @@ extension MyRezervationsViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        let start = UITableViewRowAction(style: .default, title: "Start") { (row, index) in
+            print("Start")
+        }
+        start.backgroundColor = .lightGray
+        
+        
+        let cancel = UITableViewRowAction(style: .default, title: "Cancel Reservation") { (row, index) in
+            print("Cancel")
+        }
+        cancel.backgroundColor = .red
+        
+        return [start, cancel]
+    }
     
     
 }
