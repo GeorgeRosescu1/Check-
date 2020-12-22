@@ -31,13 +31,13 @@ class Rezervation {
 
 enum RezervationStatus: String {
     
-    case init_ = "init" //when is created
-    case confirmed = "confirmed" // when is confirmed by restaurant
-    case rejected  = "rejected"// when is rejected by restaurant
-    case completed = "completed" // when is done
+    case init_ = "Panding" //when is created
+    case confirmed = "Confirmed" // when is confirmed by restaurant
+    case rejected  = "Rejected"// when is rejected by restaurant
+    case completed = "Completed" // when is done
     
-    case ongoing = "ongoing"// ongoing rezervation
-    case closedByChecker = "closedByMe"// closed by checker, due to some reasons
+    case ongoing = "Ongoing"// ongoing rezervation
+    case closedByChecker = "Closed"// closed by checker, due to some reasons
 }
 
 enum ReservationConstants {

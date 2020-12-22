@@ -44,6 +44,8 @@
 		F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */; };
 		F06946C1254EB26B005F9F50 /* SignUpViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */; };
 		F06946C7254EC1CC005F9F50 /* ChooseEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */; };
+		F080843225925AA700DAB485 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080843025925AA700DAB485 /* ReservationCell.swift */; };
+		F080843325925AA700DAB485 /* ReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F080843125925AA700DAB485 /* ReservationCell.xib */; };
 		F0862A0925643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0862A0825643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift */; };
 		F08B91502551807D00B9273A /* FirebaseAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */; };
 		F08B915425518D0000B9273A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B915325518D0000B9273A /* Session.swift */; };
@@ -112,6 +114,8 @@
 		F067747B2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCOutlinedTextFieldExtensions.swift; sourceTree = "<group>"; };
 		F06946C0254EB26B005F9F50 /* SignUpViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F06946C6254EC1CC005F9F50 /* ChooseEntityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEntityViewController.swift; sourceTree = "<group>"; };
+		F080843025925AA700DAB485 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
+		F080843125925AA700DAB485 /* ReservationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationCell.xib; sourceTree = "<group>"; };
 		F0862A0825643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantSPRegViewController+TextFields.swift"; sourceTree = "<group>"; };
 		F08B914F2551807D00B9273A /* FirebaseAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthModel.swift; sourceTree = "<group>"; };
 		F08B915325518D0000B9273A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -407,6 +411,15 @@
 			name = "Register Flow";
 			sourceTree = "<group>";
 		};
+		F080842E25925A3D00DAB485 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F080843025925AA700DAB485 /* ReservationCell.swift */,
+				F080843125925AA700DAB485 /* ReservationCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F08BCDB9254C89A200907F9E /* TTViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				F09F427D25813E3400E667FC /* MyRezervationsViewController.swift */,
+				F080842E25925A3D00DAB485 /* Cell */,
 			);
 			path = "My Rezervations";
 			sourceTree = "<group>";
@@ -523,6 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F080843325925AA700DAB485 /* ReservationCell.xib in Resources */,
 				F010EFD4254EEABF00608287 /* CheckerAppMainMenu.storyboard in Resources */,
 				F0F702BB254C98E60034695B /* GoogleService-Info.plist in Resources */,
 				F0A7BC562545CCB900764CF4 /* Authentication.storyboard in Resources */,
@@ -618,6 +633,7 @@
 				F02163EF257BD52200BB199A /* CheckerHomePage+TableView.swift in Sources */,
 				F0D8A8C0258520B100799B49 /* MenuViewController.swift in Sources */,
 				F013FB4E256188FC00C39AC5 /* UserEntity.swift in Sources */,
+				F080843225925AA700DAB485 /* ReservationCell.swift in Sources */,
 				F0DB26B62582036200149239 /* RestaurantTPRegViewController+TableView.swift in Sources */,
 				F040E4A2255C475A0017C1B6 /* Product.swift in Sources */,
 				F010EFCF254ED76900608287 /* LoginViewController+TextFields.swift in Sources */,

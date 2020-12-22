@@ -18,12 +18,26 @@ class MyRezervationsViewController: UIViewController {
     @IBOutlet weak var ongoingLabel: UILabel!
     
     var currentUser: Checker?
+    var reservations = [Rezervation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currentUser = Session.registeredUser as? Checker
+        if let myRezervations = currentUser?.myRezervations {
+            reservations = myRezervations
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.showsVerticalScrollIndicator = false
+        tableView.register(UINib(nibName: "ReservationCell", bundle: nil), forCellReuseIdentifier: "ReservationCell")
+            
         configureUI()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        tableView.reloadData()
     }
     
     private func configureUI() {
@@ -35,4 +49,24 @@ class MyRezervationsViewController: UIViewController {
         
         numberOfRezervationsLabel.text = "You have \(currentUser?.myRezervations?.count ?? 0) rezervations"
     }
+}
+
+extension MyRezervationsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        reservations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReservationCell") as! ReservationCell
+        
+        cell.hourLabel.text = reservations[indexPath.row].hour
+        cell.dateLabel.text = reservations[indexPath.row].day
+        cell.statusLabel.text = reservations[indexPath.row].status.rawValue
+        
+        return cell
+    }
+    
+    
+    
 }

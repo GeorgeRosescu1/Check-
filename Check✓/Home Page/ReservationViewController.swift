@@ -142,7 +142,7 @@ class ReservationViewController: UIViewController {
             ReservationConstants.FStore.restaurantEmail: self.reservation.restaurantEmail!,
             ReservationConstants.FStore.day: self.reservation.day!,
             ReservationConstants.FStore.hour: self.reservation.hour!,
-            ReservationConstants.FStore.numberOfGuests: self.reservation.numberOfGuests!,
+            ReservationConstants.FStore.numberOfGuests: self.reservation.numberOfGuests ?? 1,
             ReservationConstants.FStore.status: self.reservation.status.rawValue
         ]
         
