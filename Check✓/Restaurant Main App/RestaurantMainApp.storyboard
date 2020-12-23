@@ -135,6 +135,10 @@
                                         <color key="textColor" name="dark blue color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="W1H-ym-WHh">
+                                        <rect key="frame" x="197" y="279" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -144,8 +148,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Rezervations" image="list.bullet.rectangle" catalog="system" id="gaP-92-LKV"/>
                     <connections>
+                        <outlet property="noResLabel" destination="GPO-Xc-0b8" id="GHm-Pb-2dJ"/>
                         <outlet property="noReservationsView" destination="dvc-4t-JHm" id="cGC-n4-KlN"/>
-                        <outlet property="spinner" destination="MUq-yx-Z4q" id="KLv-DZ-FaZ"/>
+                        <outlet property="spinner" destination="W1H-ym-WHh" id="reh-Qk-z9R"/>
                         <outlet property="tableView" destination="dsh-ku-zzh" id="XdL-JJ-DS2"/>
                     </connections>
                 </viewController>

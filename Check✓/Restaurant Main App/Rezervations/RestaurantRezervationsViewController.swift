@@ -13,12 +13,20 @@ class RestaurantRezervationsViewController: UIViewController {
     @IBOutlet weak var noReservationsView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var noResLabel: UILabel!
     
     var reservations = [Reservation]()
     var currentUser: Restaurant?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { (timer) in
+            self.fetchData()
+        }
+        
+        spinner.startAnimating()
+        noResLabel.isHidden = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,7 +35,11 @@ class RestaurantRezervationsViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+        fetchData()
+    }
+    
+    private func fetchData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
             self.currentUser = Session.registeredUser as? Restaurant
             FirebaseAPI.getAllReservationsForUserEmail(self.currentUser?.email ?? "") { (reservationData) in
                 var reservations = [Reservation]()
@@ -42,12 +54,14 @@ class RestaurantRezervationsViewController: UIViewController {
                 
                 self.configureUI()
                 self.tableView.reloadData()
+                self.spinner.stopAnimating()
             }
         }
     }
     
     private func configureUI() {
         noReservationsView.isHidden = !reservations.isEmpty
+        noResLabel.isHidden = reservations.isEmpty
     }
 }
 
