@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Rezervation {
+class Reservation {
     
     var id: String?
     var ownerEmail: String!

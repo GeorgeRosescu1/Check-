@@ -18,7 +18,7 @@ class MyRezervationsViewController: UIViewController {
     @IBOutlet weak var ongoingLabel: UILabel!
     
     var currentUser: Checker?
-    var reservations = [Rezervation]()
+    var reservations = [Reservation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

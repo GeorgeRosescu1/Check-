@@ -21,7 +21,7 @@ class Restaurant: UserEntity {
     var description: String!
     var pictureURL: String!
     var profilePicture: UIImage?
-    var resrvations: [Rezervation]?
+    var resrvations: [Reservation]?
     var starRatings: [Double]! // star rating will be mandatory after each rezervation is done
     var writtenReviews: [String]! // not mandatory
     

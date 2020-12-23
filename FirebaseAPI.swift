@@ -80,8 +80,8 @@ class FirebaseAPI {
         }
     }
     
-    static func getAllReservationsForUserEmail(_ email: String, complition: @escaping ([Rezervation]) -> Void) {
-        var rezervations = [Rezervation]()
+    static func getAllReservationsForUserEmail(_ email: String, complition: @escaping ([Reservation]) -> Void) {
+        var rezervations = [Reservation]()
         firestore.collection(ReservationConstants.FStore.collectionName).getDocuments { (snapshot, error) in
             if let _ = error {
                 SwiftMessagesAlert.displaySmallErrorWithBody("Server error, please try again.")
@@ -89,7 +89,7 @@ class FirebaseAPI {
                 snapshot?.documents.forEach({ (docData) in
                     let document = docData.data()
                     if document[ReservationConstants.FStore.ownerEmail] as? String == email || document[ReservationConstants.FStore.restaurantEmail] as? String == email {
-                        let rezervation = Rezervation()
+                        let rezervation = Reservation()
                         rezervation.mapReservationFromDictionary(dict: document)
                         rezervations.append(rezervation)
                     }

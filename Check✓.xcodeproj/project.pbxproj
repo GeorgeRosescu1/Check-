@@ -61,7 +61,7 @@
 		F0BB0A96258B4B9D00983495 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BB0A95258B4B9D00983495 /* ReservationViewController.swift */; };
 		F0D64B212556B66000FAA364 /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B202556B66000FAA364 /* Checker.swift */; };
 		F0D64B242556B67200FAA364 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B232556B67200FAA364 /* Restaurant.swift */; };
-		F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B262556B6F500FAA364 /* Rezervation.swift */; };
+		F0D64B272556B6F500FAA364 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64B262556B6F500FAA364 /* Reservation.swift */; };
 		F0D8A8C0258520B100799B49 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D8A8BF258520B100799B49 /* MenuViewController.swift */; };
 		F0DB26B62582036200149239 /* RestaurantTPRegViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB26B52582036200149239 /* RestaurantTPRegViewController+TableView.swift */; };
 		F0DB26C0258204B500149239 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB26BE258204B500149239 /* MenuItemCell.swift */; };
@@ -132,7 +132,7 @@
 		F0BB0A95258B4B9D00983495 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		F0D64B202556B66000FAA364 /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		F0D64B232556B67200FAA364 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		F0D64B262556B6F500FAA364 /* Rezervation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rezervation.swift; sourceTree = "<group>"; };
+		F0D64B262556B6F500FAA364 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		F0D8A8BF258520B100799B49 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F0DB26B52582036200149239 /* RestaurantTPRegViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantTPRegViewController+TableView.swift"; sourceTree = "<group>"; };
 		F0DB26BE258204B500149239 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 			children = (
 				F0D64B202556B66000FAA364 /* Checker.swift */,
 				F0D64B232556B67200FAA364 /* Restaurant.swift */,
-				F0D64B262556B6F500FAA364 /* Rezervation.swift */,
+				F0D64B262556B6F500FAA364 /* Reservation.swift */,
 				F040E4A1255C475A0017C1B6 /* Product.swift */,
 				F040E4A4255C49990017C1B6 /* Review.swift */,
 			);
@@ -642,7 +642,7 @@
 				F041FC852562F56500554A21 /* RestaurantFPRegViewController.swift in Sources */,
 				F067747C2549E927006ABE24 /* MDCOutlinedTextFieldExtensions.swift in Sources */,
 				F08BCDBB254C89AE00907F9E /* TouchRecognizer.swift in Sources */,
-				F0D64B272556B6F500FAA364 /* Rezervation.swift in Sources */,
+				F0D64B272556B6F500FAA364 /* Reservation.swift in Sources */,
 				F0284DEE25600E2300615A89 /* CheckerSPage+TextFields.swift in Sources */,
 				F0862A0925643A2300BEA9D1 /* RestaurantSPRegViewController+TextFields.swift in Sources */,
 				F0411B2F2564037700D1A91B /* TTInputVisibilityController.swift in Sources */,

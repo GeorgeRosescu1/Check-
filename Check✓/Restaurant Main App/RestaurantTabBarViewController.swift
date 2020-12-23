@@ -11,9 +11,12 @@ import Firebase
 
 class RestaurantTabBarViewController: UITabBarController {
     
+    let restaurnat = Restaurant()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.isUserInteractionEnabled = false
         fetchCurrentRestaurant()
     }
     
@@ -25,11 +28,14 @@ class RestaurantTabBarViewController: UITabBarController {
             let restaurant = Restaurant()
             restaurant.mapRestaurantFromDictionary(dict: userDataDictionary)
             
+            self.view.isUserInteractionEnabled = true
+            
+            
             let storage = Storage.storage().reference().child(RestaurantConstants.FStore.picturesCollectionName + "/" + restaurant.pictureURL!)
             
             storage.getData(maxSize: 15 * 1024 * 1024) { (data, error) in
                 self.view.isUserInteractionEnabled = true
-
+                
                 if let homeVC = self.selectedViewController as? RestaurantRezervationsViewController {
                     homeVC.spinner.stopAnimating()
                 }
@@ -49,4 +55,3 @@ class RestaurantTabBarViewController: UITabBarController {
         }
     }
 }
-

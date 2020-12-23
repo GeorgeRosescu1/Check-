@@ -21,7 +21,6 @@ class CheckerTabBarViewController: UITabBarController {
         fetchCurrentChecker()
     }
     
-    
     private func fetchCurrentChecker() {
         let currentUserEmail = Auth.auth().currentUser?.email
         
@@ -59,13 +58,14 @@ class CheckerTabBarViewController: UITabBarController {
             }
             return
         }
-        
-        FirebaseAPI.getAllReservationsForUserEmail(currentUserEmail ?? "") { (reservationData) in
-            var reservations = [Rezervation]()
-            reservations = reservationData
-            
-            self.checker.myRezervations = reservations
-            Session.registeredUser = self.checker
+        DispatchQueue.main.async {
+            FirebaseAPI.getAllReservationsForUserEmail(currentUserEmail ?? "") { (reservationData) in
+                var reservations = [Reservation]()
+                reservations = reservationData
+                
+                self.checker.myRezervations = reservations
+                Session.registeredUser = self.checker
+            }
         }
     }
 }

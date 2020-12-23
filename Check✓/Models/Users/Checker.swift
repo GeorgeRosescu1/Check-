@@ -18,8 +18,8 @@ class Checker: UserEntity {
     var phoneNumber: String!
     var profilePictureURL: String?
     var profilePicture: UIImage?
-    var myRezervations: [Rezervation]?
-    var ongoingRezervation: Rezervation?
+    var myRezervations: [Reservation]?
+    var ongoingRezervation: Reservation?
     
     init() {
     }

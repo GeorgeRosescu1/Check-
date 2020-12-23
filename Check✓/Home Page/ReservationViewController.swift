@@ -24,7 +24,7 @@ class ReservationViewController: UIViewController {
     var restaurant: Restaurant?
     var checker: Checker?
     
-    var reservation = Rezervation()
+    var reservation = Reservation()
     
     //MARK: Pickers
     var dayPicker = UIDatePicker()
