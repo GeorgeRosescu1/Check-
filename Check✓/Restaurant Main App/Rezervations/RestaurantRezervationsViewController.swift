@@ -21,7 +21,7 @@ class RestaurantRezervationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let _ = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { (timer) in
+        let _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
             self.fetchData()
         }
         
@@ -54,14 +54,20 @@ class RestaurantRezervationsViewController: UIViewController {
                 
                 self.configureUI()
                 self.tableView.reloadData()
-                self.spinner.stopAnimating()
+                DispatchQueue.main.async {
+                    self.spinner.stopAnimating()
+                }
             }
         }
     }
     
     private func configureUI() {
-        noReservationsView.isHidden = !reservations.isEmpty
-        noResLabel.isHidden = reservations.isEmpty
+        if reservations.isEmpty {
+            noResLabel.isHidden = false
+        } else {
+            noResLabel.isHidden = true
+            noReservationsView.isHidden = true
+        }
     }
 }
 
@@ -76,7 +82,8 @@ extension RestaurantRezervationsViewController: UITableViewDataSource, UITableVi
         cell.hourLabel.text = reservations[indexPath.row].hour
         cell.dateLabel.text = reservations[indexPath.row].day
         cell.statusLabel.text = reservations[indexPath.row].status.rawValue
-        cell.restaurantNameLabel.text = reservations[indexPath.row].restaurantName
+        cell.reservationText.text = "Reserved by"
+        cell.restaurantNameLabel.text = reservations[indexPath.row].checkerName
         
         return cell
     }

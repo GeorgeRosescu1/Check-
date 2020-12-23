@@ -20,10 +20,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uf2-cT-Npy">
                         <rect key="frame" x="0.0" y="0.0" width="501" height="168"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKB-v7-27R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Reservation at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKB-v7-27R">
                                 <rect key="frame" x="20" y="20" width="148" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="XfK-7f-2uE"/>
                                     <constraint firstAttribute="height" constant="31" id="fS0-Tc-gRw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
@@ -90,6 +89,7 @@
                             <constraint firstItem="KcG-UO-ess" firstAttribute="top" secondItem="jKB-v7-27R" secondAttribute="bottom" constant="12" id="D9n-24-ti4"/>
                             <constraint firstItem="jhJ-Yk-25z" firstAttribute="leading" secondItem="jKB-v7-27R" secondAttribute="trailing" constant="7" id="GN5-iW-HVv"/>
                             <constraint firstAttribute="height" constant="168" id="KT6-6c-Ign"/>
+                            <constraint firstItem="jhJ-Yk-25z" firstAttribute="leading" secondItem="jKB-v7-27R" secondAttribute="trailing" constant="7" id="O6y-lq-DUk"/>
                             <constraint firstAttribute="trailing" secondItem="KcG-UO-ess" secondAttribute="trailing" constant="10" id="PbA-uB-obl"/>
                             <constraint firstItem="jhJ-Yk-25z" firstAttribute="top" secondItem="uf2-cT-Npy" secondAttribute="top" constant="20" id="SK4-H5-ifP"/>
                             <constraint firstAttribute="trailing" secondItem="jhJ-Yk-25z" secondAttribute="trailing" id="bEY-cl-y1T"/>
@@ -120,6 +120,7 @@
                 <outlet property="cellView" destination="uf2-cT-Npy" id="rlf-ZI-kHN"/>
                 <outlet property="dateLabel" destination="KcG-UO-ess" id="Rt0-Bq-jrt"/>
                 <outlet property="hourLabel" destination="VNl-tL-cCc" id="Oa4-rN-AWw"/>
+                <outlet property="reservationText" destination="jKB-v7-27R" id="P52-8m-z9q"/>
                 <outlet property="restaurantNameLabel" destination="jhJ-Yk-25z" id="Iof-sM-VAh"/>
                 <outlet property="statusLabel" destination="OuS-qM-IOR" id="MvW-ta-TG0"/>
             </connections>

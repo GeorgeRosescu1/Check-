@@ -133,6 +133,7 @@ class ReservationViewController: UIViewController {
         reservation.restaurantEmail = restaurant?.email
         reservation.status = .init_
         reservation.restaurantName = restaurant?.name
+        reservation.checkerName = (checker?.lastName)! + " " + (checker?.firstName)!
         reservation.id = UUID().uuidString
         
         spinner.startAnimating()
@@ -143,6 +144,7 @@ class ReservationViewController: UIViewController {
             ReservationConstants.FStore.restaurantEmail: self.reservation.restaurantEmail!,
             ReservationConstants.FStore.day: self.reservation.day!,
             ReservationConstants.FStore.hour: self.reservation.hour!,
+            ReservationConstants.FStore.checkerName: self.reservation.checkerName!,
             ReservationConstants.FStore.numberOfGuests: self.reservation.numberOfGuests ?? 1,
             ReservationConstants.FStore.restaurantName: self.reservation.restaurantName!,
             ReservationConstants.FStore.status: self.reservation.status.rawValue
