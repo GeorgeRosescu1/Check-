@@ -10,6 +10,10 @@ import Firebase
 
 class FirebaseAPI {
     
+    static let instance: FirebaseAPI? = FirebaseAPI()
+    
+    private init() { }
+    
     static let firestore = Firestore.firestore()
     
     static func logout() {
