@@ -19,6 +19,7 @@ class MyRezervationsViewController: UIViewController {
     
     var currentUser: Checker?
     var reservations = [Reservation]()
+    var reservationIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,8 @@ class MyRezervationsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        restaurantNameLabel.text = "No ongoing reservations"
+        
         currentUser = Session.registeredUser as? Checker
         if let myRezervations = currentUser?.myRezervations {
             reservations = myRezervations.reversed()
@@ -44,6 +47,11 @@ class MyRezervationsViewController: UIViewController {
         
         configureUI()
         tableView.reloadData()
+    }
+    
+    @IBAction func endReservationAction(_ sender: UIButton) {
+        self.restaurantNameLabel.isHidden = false
+        self.restaurantNameLabel.text = "No ongoing reservations"
     }
     
     private func configureUI() {
@@ -80,13 +88,21 @@ extension MyRezervationsViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let start = UITableViewRowAction(style: .default, title: "Start") { (row, index) in
-            print("Start")
+            if self.restaurantNameLabel.text == "No ongoing reservations" {
+                self.restaurantNameLabel.isHidden = false
+                self.restaurantNameLabel.text = "At \(self.reservations[editActionsForRowAt.row].restaurantName!)"
+                self.reservationIndex = editActionsForRowAt.row
+            }
         }
         start.backgroundColor = .lightGray
         
         
         let cancel = UITableViewRowAction(style: .default, title: "Cancel Reservation") { (row, index) in
-            print("Cancel")
+            if let index = self.reservationIndex, index == editActionsForRowAt.row {
+                self.restaurantNameLabel.isHidden = false
+                self.restaurantNameLabel.text = "No ongoing reservations"
+                
+            }
         }
         cancel.backgroundColor = .red
         

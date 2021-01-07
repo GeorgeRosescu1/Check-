@@ -18,16 +18,18 @@ class RestaurantRezervationsViewController: UIViewController {
     var reservations = [Reservation]()
     var currentUser: Restaurant?
     
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { (timer) in
             self.fetchData()
         }
         
         spinner.startAnimating()
         noResLabel.isHidden = true
-        
+    
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
@@ -45,17 +47,19 @@ class RestaurantRezervationsViewController: UIViewController {
                 var reservations = [Reservation]()
                 reservations = reservationData
                 
-                self.currentUser!.resrvations = reservations
-                Session.registeredUser = self.currentUser
-                
-                if let myRezervations = self.currentUser?.resrvations {
-                    self.reservations = myRezervations.reversed()
-                }
-                
-                self.configureUI()
-                self.tableView.reloadData()
-                DispatchQueue.main.async {
-                    self.spinner.stopAnimating()
+                if let _ = self.currentUser {
+                    self.currentUser!.resrvations = reservations
+                    Session.registeredUser = self.currentUser
+                    
+                    if let myRezervations = self.currentUser?.resrvations {
+                        self.reservations = myRezervations.reversed()
+                    }
+                    
+                    self.configureUI()
+                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                    }
                 }
             }
         }
@@ -100,7 +104,9 @@ extension RestaurantRezervationsViewController: UITableViewDataSource, UITableVi
         
         
         let cancel = UITableViewRowAction(style: .default, title: "Reject Reservation") { (row, index) in
-            print("Reject")
+            self.reservations.remove(at: editActionsForRowAt.row)
+            tableView.deleteRows(at: [editActionsForRowAt], with: .bottom)
+            self.timer?.invalidate()
         }
         cancel.backgroundColor = .red
         
