@@ -40,6 +40,12 @@ class RestaurantRezervationsViewController: UIViewController {
         fetchData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer?.invalidate()
+    }
+    
     private func fetchData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
             self.currentUser = Session.registeredUser as? Restaurant

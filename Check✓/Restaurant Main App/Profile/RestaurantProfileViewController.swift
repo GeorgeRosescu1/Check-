@@ -17,6 +17,8 @@ class RestaurantProfileViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var logoutButton: UIButton!
     
     let currentUserEmail = Auth.auth().currentUser?.email
     
@@ -26,7 +28,11 @@ class RestaurantProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        logoutButton.tintColor = #colorLiteral(red: 0.05882352941, green: 0.1882352941, blue: 0.3411764706, alpha: 1)
+        
+        topView.layer.shadowOpacity = 0.5
+        
         shadowView.layer.shadowOpacity = 0.5
         shadowView.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
     

@@ -15,6 +15,8 @@ class CheckerProfileViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var shadowView: UIView!
     
     let currentUserEmail = Auth.auth().currentUser?.email
     
@@ -25,11 +27,13 @@ class CheckerProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilePicture.layer.cornerRadius = 10
-        profilePicture.layer.borderWidth = 1
+        logoutButton.tintColor = #colorLiteral(red: 0.05882352941, green: 0.1882352941, blue: 0.3411764706, alpha: 1)
+        
+        profilePicture.layer.cornerRadius = profilePicture.frame.height / 2
+        shadowView.layer.shadowOpacity = 0.9
+        shadowView.layer.shadowColor = UIColor.black.cgColor
         
         populateProfileData()
-        
     }
     
     private func populateProfileData() {

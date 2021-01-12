@@ -17,24 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-DA-kTG">
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-DA-kTG">
                                 <rect key="frame" x="7" y="74" width="401" height="274"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="dark blue color"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowl" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-xW-ADm">
-                                <rect key="frame" x="7" y="74" width="401" height="274"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="274" id="HDV-f6-p1Y"/>
-                                    <constraint firstAttribute="width" constant="401" id="Qd2-J8-RRY"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an7-dQ-y3l">
-                                <rect key="frame" x="58" y="35" width="179" height="31"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bowl" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-xW-ADm">
+                                <rect key="frame" x="0.0" y="74" width="414" height="274"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
-                                <color key="textColor" name="dark blue color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="08:00 - 22:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXU-dV-KaG">
                                 <rect key="frame" x="157" y="356" width="101" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -42,14 +33,6 @@
                                 <color key="textColor" name="dark blue color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-zL-6b0">
-                                <rect key="frame" x="20" y="40" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="arrowshape.turn.up.left.circle.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="logoutAction:" destination="Jgr-lR-f2f" eventType="touchUpInside" id="0on-JT-caI"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6I-xE-tZc">
                                 <rect key="frame" x="20" y="438" width="230" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,26 +64,42 @@
                                 <color key="textColor" name="dark blue color"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z79-hT-zLn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-zL-6b0">
+                                        <rect key="frame" x="17" y="30" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="arrowshape.turn.up.left.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="logoutAction:" destination="Jgr-lR-f2f" eventType="touchUpInside" id="0on-JT-caI"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an7-dQ-y3l">
+                                        <rect key="frame" x="58" y="25" width="179" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" name="dark blue color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vf1-QG-viV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="RLw-DA-kTG" firstAttribute="top" secondItem="BdO-xW-ADm" secondAttribute="top" id="59k-2p-tS1"/>
-                            <constraint firstItem="RLw-DA-kTG" firstAttribute="leading" secondItem="BdO-xW-ADm" secondAttribute="leading" id="ClT-U9-ajq"/>
-                            <constraint firstItem="BdO-xW-ADm" firstAttribute="top" secondItem="wX0-AE-N8y" secondAttribute="top" constant="74" id="KwK-yF-GQ2"/>
-                            <constraint firstItem="RLw-DA-kTG" firstAttribute="trailing" secondItem="BdO-xW-ADm" secondAttribute="trailing" id="alQ-Hg-LaH"/>
-                            <constraint firstItem="RLw-DA-kTG" firstAttribute="bottom" secondItem="BdO-xW-ADm" secondAttribute="bottom" id="eHG-Lq-tqN"/>
-                            <constraint firstItem="BdO-xW-ADm" firstAttribute="leading" secondItem="vf1-QG-viV" secondAttribute="leading" constant="7" id="tch-ZH-AuY"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="OJY-mY-WBI"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="vNk-oJ-aTN" id="m0t-cP-Zk4"/>
+                        <outlet property="logoutButton" destination="Fyc-zL-6b0" id="UMM-eL-IuL"/>
                         <outlet property="restaurantAddressLabel" destination="f8c-Ff-exs" id="fFP-dg-QEn"/>
                         <outlet property="restaurantImage" destination="BdO-xW-ADm" id="m7K-db-7Ih"/>
                         <outlet property="restaurantNameLabel" destination="an7-dQ-y3l" id="e9L-hN-CXx"/>
                         <outlet property="shadowView" destination="RLw-DA-kTG" id="1nn-te-kDj"/>
                         <outlet property="timeLabel" destination="nXU-dV-KaG" id="1HN-Zc-AI0"/>
+                        <outlet property="topView" destination="Z79-hT-zLn" id="IW3-Tb-po3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ln-m0-A2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
