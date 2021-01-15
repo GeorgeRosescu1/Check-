@@ -1,0 +1,8 @@
+	Check✓ is an iOS app designed using Swift as the main programming language and Firebase as the backend provider.
+	It's main purpose, as a project, was to deserve as homework for my assignment in the third year of university at the computer engineering course.
+
+	It's mission, however, is to be a "bridge" between restaurants and their customers. We all know that during the Covid-19 pandemic, hanging out was quite a terrible issue. Many restaurants were closed any many people were not leaving their homes for days. Even if we could get our favourite goodies from nearby restaurants by food delivering, eating a type of food is not the same as going out with your friends and eat together.
+	Check✓ enables people to make reservations to nearby restaurants, see their menu, call the restaurant and see other info about them. Restaurnats managers/ or stuff can see upcoming reservations from different users and handle them. The main reason of all this is to automate the process (or at least to make it much more easier) of making a reservation at a restaurant in order to minimise the interaction between customers and waitresses or waiters. 
+	Imagine you could order the food/ drinks you want before you arrive at the restaurant, at the same moment you make a new reservation. By the moment you step in, they are ready for you. You don’t even need to think about the payment method by the time you leave the restaurant, because you’ve already payed before the arrival😎. And beyond that, you can even give a feedback for your overall experience at that restaurant 🤩.
+
+*Note: Not all the features described above are already implemented, but you can feel free to fetch the repo and implement them.

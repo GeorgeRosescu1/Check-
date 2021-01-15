@@ -35,7 +35,7 @@ class Reservation {
 
 enum RezervationStatus: String {
     
-    case init_ = "Panding" //when is created
+    case init_ = "Pending" //when is created
     case confirmed = "Confirmed" // when is confirmed by restaurant
     case rejected  = "Rejected"// when is rejected by restaurant
     case completed = "Completed" // when is done

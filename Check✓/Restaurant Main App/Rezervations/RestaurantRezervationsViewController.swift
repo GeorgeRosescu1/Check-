@@ -32,6 +32,7 @@ class RestaurantRezervationsViewController: UIViewController {
     
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.showsVerticalScrollIndicator = false
         tableView.register(UINib(nibName: "ReservationCell", bundle: nil), forCellReuseIdentifier: "ReservationCell")
     }
@@ -83,7 +84,7 @@ class RestaurantRezervationsViewController: UIViewController {
 
 extension RestaurantRezervationsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        reservations.count
+        return reservations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

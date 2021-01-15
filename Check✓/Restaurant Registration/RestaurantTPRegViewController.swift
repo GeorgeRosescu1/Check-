@@ -103,7 +103,7 @@ class RestaurantTPRegViewController: UIViewController{
             image = #imageLiteral(resourceName: "pastaBolognese")
         } else if name.lowercased().contains("home") || name.lowercased().contains("burger") {
             image = #imageLiteral(resourceName: "homeBurger")
-        } else if name.lowercased().contains("carbonara") {
+        } else if name.lowercased().contains("carbonara") || name.lowercased().contains("paste") {
             image = #imageLiteral(resourceName: "pastaCarbonara")
         } else {
             image = #imageLiteral(resourceName: "savureaza")

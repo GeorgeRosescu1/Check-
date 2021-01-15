@@ -76,7 +76,7 @@ extension MyRezervationsViewController: UITableViewDelegate, UITableViewDataSour
         
         cell.hourLabel.text = reservations[indexPath.row].hour
         cell.dateLabel.text = reservations[indexPath.row].day
-        cell.statusLabel.text = reservations[indexPath.row].status.rawValue
+       // cell.statusLabel.text = reservations[indexPath.row].status.rawValue
         cell.restaurantNameLabel.text = reservations[indexPath.row].restaurantName
         
         return cell
